@@ -2,7 +2,7 @@
   <img src="https://github.com/tanvirjahanshakib/tanvirjahanshakib/blob/main/GitHub%20banner.png" alt="GitHub Banner" width="100%">
 </p>
 
-<h1 align="center">Hi 👋, I'm Md. Tanvir Jahan Shakib</h1>
+<h1 align="center">Hey👋, I'm Md. Tanvir Jahan Shakib</h1>
 <h3 align="center">Full-Stack Developer</h3>
 
 <p align="center">
@@ -10,10 +10,6 @@ Learning • Building • Improving
 </p>
 
 ---
-
-## 🚀 About Me
-
-Hi, I'm **Md. Tanvir Jahan Shakib** 👋
 
 I'm an enthusiastic **Full-Stack Developer** passionate about creating clean, scalable, and modern web applications. I enjoy learning new technologies, building meaningful projects, and continuously improving my development skills.
 
@@ -24,13 +20,6 @@ I'm an enthusiastic **Full-Stack Developer** passionate about creating clean, sc
 - React.js
 - Git & GitHub
 - Full-Stack Web Development
-
-### 💡 What I Do
-
-- Build responsive and user-friendly web applications.
-- Practice problem-solving and write clean, maintainable code.
-- Work on personal projects to strengthen my development skills.
-- Learn modern development tools and best practices.
 
 ### 🎯 My Goal
 
