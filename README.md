@@ -50,8 +50,6 @@ To become a professional Full-Stack Developer, contribute to open-source communi
 
 ---
 
----
-
 ## 📊 GitHub Analytics
 
 <p align="center">
