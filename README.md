@@ -50,10 +50,14 @@ To become a professional Full-Stack Developer, contribute to open-source communi
 
 ---
 
-## 📈 Contribution Graph
+## 📈 Contribution Activity
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=tanvirjahanshakib&theme=tokyo-night&hide_border=true" />
+  <img
+    src="https://github-readme-activity-graph.vercel.app/graph?username=tanvirjahanshakib&theme=github-dark&hide_border=true&area=true&custom_title=Tanvir%20Jahan%20Shakib's%20Contribution%20Graph"
+    width="100%"
+    alt="Contribution Graph"
+  />
 </p>
 
 ---
