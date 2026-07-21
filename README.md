@@ -52,14 +52,15 @@ To become a professional Full-Stack Developer, contribute to open-source communi
 
 ---
 
-## 🚀 GitHub Analytics
+## 📊 GitHub Analytics
 
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=tanvirjahanshakib&theme=algolia&no-frame=true&no-bg=true&margin-w=15&row=1&column=6" />
+  <img width="49%" src="https://github-readme-stats.vercel.app/api?username=tanvirjahanshakib&show_icons=true&theme=tokyonight&hide_border=true" />
+  <img width="49%" src="https://github-readme-streak-stats.herokuapp.com/?user=tanvirjahanshakib&theme=tokyonight&hide_border=true" />
 </p>
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=tanvirjahanshakib&theme=react-dark&bg_color=20232a&hide_border=true&area=true&custom_title=Contribution%20Activity" width="100%" />
+  <img width="42%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=tanvirjahanshakib&layout=compact&theme=tokyonight&hide_border=true" />
 </p>
 
 ---
