@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="YOUR_BANNER_LINK_HERE" alt="GitHub Banner" width="100%">
+  <img src="GitHub banner.png" alt="GitHub Banner" width="100%">
 </p>
 
 <h1 align="center">Hi 👋, I'm Md. Tanvir Jahan Shakib</h1>
