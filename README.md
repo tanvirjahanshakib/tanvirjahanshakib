@@ -82,6 +82,11 @@ I love turning ideas into real-world applications with modern technologies. I en
 <p align="center">
   <b>Every commit tells a story ✨</b>
 </p>
+<p align="center">
+  <img src="https://img.shields.io/badge/Code%20Everyday-💻-38BDF8?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Learning-🚀-22C55E?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Building-✨-A855F7?style=for-the-badge" />
+</p>
 
 ---
 
