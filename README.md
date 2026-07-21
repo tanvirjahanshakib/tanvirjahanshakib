@@ -1,3 +1,6 @@
+<p align="center">
+<img src="GitHub banner.png" width="100%">
+</p>
 <h1 align="center">Hey 👋, I'm Md. Tanvir Jahan Shakib</h1>
 
 <h3 align="center">
@@ -72,6 +75,7 @@ I love turning ideas into real-world applications with modern technologies. I en
 <p align="center">
 <img src="https://raw.githubusercontent.com/tanvirjahanshakib/tanvirjahanshakib/output/github-contribution-grid-snake.svg" />
 </p>
+
 ---
 
 ## 🌱 Currently Learning
