@@ -1,10 +1,10 @@
 name: Generate Snake
 
 on:
-  schedule:
-    - cron: "0 */12 * * *"
-
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   generate:
@@ -17,9 +17,9 @@ jobs:
           outputs: |
             dist/github-contribution-grid-snake.svg
 
-      - uses: crazy-max/ghaction-github-pages@v4
+      - name: Deploy snake
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          build_dir: dist
-          target_branch: output
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: output
