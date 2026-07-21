@@ -72,7 +72,6 @@ I love turning ideas into real-world applications with modern technologies. I en
 <p align="center">
 <img src="https://raw.githubusercontent.com/tanvirjahanshakib/tanvirjahanshakib/output/github-contribution-grid-snake.svg" />
 </p>
-
 ---
 
 ## 🌱 Currently Learning
