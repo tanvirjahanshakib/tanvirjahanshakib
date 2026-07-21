@@ -70,17 +70,18 @@ I love turning ideas into real-world applications with modern technologies. I en
 
 ---
 
-<h2 align="center">🐍 My Coding Journey</h2>
+<h2 align="center">My Coding Journey</h2>
 
 <p align="center">
-  <img 
+  <img
     src="https://raw.githubusercontent.com/tanvirjahanshakib/tanvirjahanshakib/output/github-contribution-grid-snake.svg"
     width="100%"
+    alt="GitHub Contribution Snake"
   />
 </p>
 
 <p align="center">
-  <b>Every commit tells a story ✨</b>
+  <b>✨ Every commit tells a story ✨</b>
 </p>
 <p align="center">
   <img src="https://img.shields.io/badge/Code%20Everyday-💻-38BDF8?style=for-the-badge" />
