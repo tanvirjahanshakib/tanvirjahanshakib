@@ -67,11 +67,9 @@ I love turning ideas into real-world applications with modern technologies. I en
 <p align="center">
 <img src="https://github-readme-activity-graph.vercel.app/graph?username=tanvirjahanshakib&bg_color=0D1117&color=58A6FF&line=00D9FF&point=FFFFFF&area=true&hide_border=true" width="100%" />
 </p>
-
 ---
 
 <h2 align="center">My Coding Journey</h2>
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/tanvirjahanshakib/tanvirjahanshakib/output/github-contribution-grid-snake.svg" width="100%" alt="GitHub Contribution Snake">
 </p>
