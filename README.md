@@ -70,10 +70,17 @@ I love turning ideas into real-world applications with modern technologies. I en
 
 ---
 
-## 🐍 Contribution Snake
+<h2 align="center">🐍 My Coding Journey</h2>
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/tanvirjahanshakib/tanvirjahanshakib/output/github-contribution-grid-snake.svg" />
+  <img 
+    src="https://raw.githubusercontent.com/tanvirjahanshakib/tanvirjahanshakib/output/github-contribution-grid-snake.svg"
+    width="100%"
+  />
+</p>
+
+<p align="center">
+  <b>Every commit tells a story ✨</b>
 </p>
 
 ---
