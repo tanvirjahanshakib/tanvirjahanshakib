@@ -12,7 +12,7 @@ Hi, I'm Md. Tanvir Jahan Shakib 👋<br><br>💻 I'm an aspiring developer passi
 ![](https://github-readme-stats.shion.dev/api/top-langs/?username=tanvirjahanshakib&theme=dark&hide_border=false&include_all_commits=true&count_private=false&layout=compact)
 
 <p align="center">
-  <img src="Github banner.png" alt="GitHub Banner" width="100%">
+  <img src="GitHub banner.png" alt="GitHub Banner" width="100%">
 </p>
 
 ---
