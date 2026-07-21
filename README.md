@@ -1,38 +1,46 @@
+<h1 align="center">Hey 👋, I'm Md. Tanvir Jahan Shakib</h1>
+
+<h3 align="center">
+Full-Stack Developer | MERN Stack Enthusiast
+</h3>
+
 <p align="center">
-  <img src="GitHub banner.png" alt="GitHub Banner" width="100%">
+Learning • Building • Improving 🚀
 </p>
 
-<h1 align="center">Hey👋, I'm Md. Tanvir Jahan Shakib</h1>
-<h3 align="center">Full-Stack Developer</h3>
-
 <p align="center">
-Learning • Building • Improving
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=24&duration=3000&pause=1000&color=38BDF8&center=true&vCenter=true&width=600&lines=Full-Stack+Developer;MERN+Stack+Developer;Building+Modern+Web+Applications;Always+Learning+New+Technologies" />
 </p>
 
 ---
 
-I'm an enthusiastic **Full-Stack Developer** passionate about creating clean, scalable, and modern web applications. I enjoy learning new technologies, building meaningful projects, and continuously improving my development skills.
+## 👨‍💻 About Me
 
-### 🌱 Currently Exploring
+I'm an enthusiastic **Full-Stack Developer** passionate about creating clean, scalable, and modern web applications.
 
-- Front-End Development
-- JavaScript (ES6+)
-- React.js
-- Git & GitHub
-- Full-Stack Web Development
+I love turning ideas into real-world applications with modern technologies. I enjoy solving problems, learning new tools, and improving my development skills every day.
 
-### 🎯 My Goal
+### 🚀 Currently Working On
 
-To become a professional Full-Stack Developer, contribute to open-source communities, and develop impactful software solutions.
+- Building Full-Stack Web Applications
+- Improving React.js Skills
+- Learning Backend Architecture
+- Exploring Modern Web Technologies
+
+### 🎯 Goals
+
+- Become a Professional Full-Stack Engineer
+- Contribute to Open Source Projects
+- Build impactful software solutions
 
 > **Always Learning. Always Building. Always Improving.**
 
 ---
 
-## 💻 Tech Stack
+## 🛠️ Tech Stack
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=html,css,js,react,nodejs,express,mongodb,git,github,vscode,npm" />
+<img src="https://skillicons.dev/icons?i=html,css,js,react,nodejs,express,mongodb,git,github,vscode,npm" />
 </p>
 
 ---
@@ -40,53 +48,55 @@ To become a professional Full-Stack Developer, contribute to open-source communi
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img width="49%" src="https://github-readme-stats-sigma-five.vercel.app/api?username=tanvirjahanshakib&show_icons=true&theme=tokyonight&hide_border=true" />
-  <img width="49%" src="https://streak-stats.demolab.com?user=tanvirjahanshakib&theme=tokyonight&hide_border=true" />
+<img width="49%" src="https://github-readme-stats-sigma-five.vercel.app/api?username=tanvirjahanshakib&show_icons=true&theme=tokyonight&hide_border=true" />
+
+<img width="49%" src="https://streak-stats.demolab.com?user=tanvirjahanshakib&theme=tokyonight&hide_border=true" />
 </p>
 
 <p align="center">
-  <img width="42%" src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=tanvirjahanshakib&layout=compact&theme=tokyonight&hide_border=true" />
-</p>
-
----
-
-## 📊 GitHub Analytics
-
-<p align="center">
-  <img 
-    src="https://github-readme-activity-graph.vercel.app/graph?username=tanvirjahanshakib&bg_color=0D1117&color=58A6FF&line=00D9FF&point=FFFFFF&area_color=161B22&area=true&hide_border=true&custom_title=My%20Coding%20Activity"
-    width="100%"
-  />
-</p>
-
-<p align="center">
-  <img 
-    src="https://github-profile-trophy.vercel.app/?username=tanvirjahanshakib&theme=darkhub&no-frame=true&no-bg=true&margin-w=10&column=7"
-  />
+<img width="42%" src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=tanvirjahanshakib&layout=compact&theme=tokyonight&hide_border=true" />
 </p>
 
 ---
 
-## 🛠️ Tools & Technologies
+## 📈 Contribution Activity
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=html,css,js,react,nodejs,express,mongodb,git,github,vscode,npm" />
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=tanvirjahanshakib&bg_color=0D1117&color=58A6FF&line=00D9FF&point=FFFFFF&area=true&hide_border=true" width="100%" />
 </p>
 
 ---
 
-## 📫 Connect With Me
+## 🐍 Contribution Snake
 
 <p align="center">
-  <a href="mailto:mdtanvirjahanshakib@gmail.com">
-    <img src="https://img.shields.io/badge/Email-mdtanvirjahanshakib%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
-  </a>
+<img src="https://raw.githubusercontent.com/tanvirjahanshakib/tanvirjahanshakib/output/github-contribution-grid-snake.svg" />
 </p>
 
+---
+
+## 🌱 Currently Learning
+
+- Advanced React
+- Node.js Backend Development
+- REST API Development
+- Database Optimization
+- System Design Basics
+
+---
+
+## 🌐 Connect With Me
+
 <p align="center">
-  <a href="https://github.com/tanvirjahanshakib">
-    <img src="https://img.shields.io/badge/GitHub-tanvirjahanshakib-181717?style=for-the-badge&logo=github&logoColor=white" />
-  </a>
+
+<a href="mailto:mdtanvirjahanshakib@gmail.com">
+<img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white"/>
+</a>
+
+<a href="https://github.com/tanvirjahanshakib">
+<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
+</a>
+
 </p>
 
 ---
@@ -94,11 +104,15 @@ To become a professional Full-Stack Developer, contribute to open-source communi
 ## 👀 Profile Views
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=tanvirjahanshakib&label=Profile%20Views&color=0e75b6&style=for-the-badge" />
+<img src="https://komarev.com/ghpvc/?username=tanvirjahanshakib&style=for-the-badge&color=0e75b6"/>
 </p>
 
 ---
 
 <p align="center">
-  <b>Thank you for visiting my GitHub profile! 🚀</b>
+<b>Thanks for visiting my profile 🚀</b>
+</p>
+
+<p align="center">
+⭐ Feel free to explore my repositories and connect with me!
 </p>
