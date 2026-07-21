@@ -40,12 +40,12 @@ To become a professional Full-Stack Developer, contribute to open-source communi
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img width="49%" src="https://github-readme-stats.vercel.app/api?username=tanvirjahanshakib&theme=tokyonight&show_icons=true&hide_border=true&include_all_commits=true&line_height=24" />
+  <img width="49%" src="https://github-readme-stats-sigma-five.vercel.app/api?username=tanvirjahanshakib&show_icons=true&theme=tokyonight&hide_border=true" />
   <img width="49%" src="https://streak-stats.demolab.com?user=tanvirjahanshakib&theme=tokyonight&hide_border=true" />
 </p>
 
 <p align="center">
-  <img width="42%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=tanvirjahanshakib&layout=compact&theme=tokyonight&hide_border=true" />
+  <img width="42%" src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=tanvirjahanshakib&layout=compact&theme=tokyonight&hide_border=true" />
 </p>
 
 ---
