@@ -63,7 +63,7 @@ function generateTable(repos) {
 </td>
 `;
       } else {
-        html += `<td width="50%"></td>`;
+        html += '<td width="50%"></td>\n';
       }
     }
 
