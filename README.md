@@ -52,97 +52,173 @@ I love turning ideas into real-world applications with modern technologies. I en
 
 
 
+
 <!--START_PINNED-->
 
 
 <table width="100%" style="table-layout:fixed;">
 <tbody>
 <tr>
-<td width="50%" valign="top" style="width:50%; padding:10px;">
+<td width="50%" valign="top" style="
+width:50%;
+padding:10px;
+">
+
 
 <table width="100%" style="
 border:1px solid #30363d;
-border-radius:10px;
-height:280px;
+border-radius:12px;
+height:320px;
 ">
 
+
 <tr>
+
 <td style="
 padding:20px;
 vertical-align:top;
 ">
 
 
-<h3>
-📦 <a href="https://github.com/tanvirjahanshakib/Assignment-01-WEB14-1311-" target="_blank">
+<div style="
+height:260px;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+">
+
+
+<div>
+
+
+<h3 style="margin-top:0;">
+📦 
+<a href="https://github.com/tanvirjahanshakib/Assignment-01-WEB14-1311-" target="_blank">
 Assignment-01-WEB14-1311-
 </a>
 </h3>
 
 
-<p style="
-height:60px;
+<div style="
+height:80px;
 overflow:hidden;
 ">
+
+
+<p>
 _No description available._
 </p>
 
 
+</div>
+
+
+</div>
+
+
+
+<div>
+
+
 <p>
-🔗 <a href="https://github.com/tanvirjahanshakib/Assignment-01-WEB14-1311-" target="_blank">
+🔗 
+<a href="https://github.com/tanvirjahanshakib/Assignment-01-WEB14-1311-" target="_blank">
 View Repository
 </a>
 </p>
 
 
 
+
 <p>
-🌐 <a href="https://tanvirjahanshakib.github.io/Assignment-01-WEB14-1311-/" target="_blank">
+🌐 
+<a href="https://tanvirjahanshakib.github.io/Assignment-01-WEB14-1311-/" target="_blank">
 Live Link
 </a>
 </p>
 
 
 
+</div>
+
+
+</div>
+
+
 </td>
+
 </tr>
+
 
 </table>
 
+
 </td>
 
-<td width="50%" valign="top" style="width:50%; padding:10px;">
+<td width="50%" valign="top" style="
+width:50%;
+padding:10px;
+">
+
 
 <table width="100%" style="
 border:1px solid #30363d;
-border-radius:10px;
-height:280px;
+border-radius:12px;
+height:320px;
 ">
 
+
 <tr>
+
 <td style="
 padding:20px;
 vertical-align:top;
 ">
 
 
-<h3>
-📦 <a href="https://github.com/tanvirjahanshakib/My-first-github-project" target="_blank">
+<div style="
+height:260px;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+">
+
+
+<div>
+
+
+<h3 style="margin-top:0;">
+📦 
+<a href="https://github.com/tanvirjahanshakib/My-first-github-project" target="_blank">
 My-first-github-project
 </a>
 </h3>
 
 
-<p style="
-height:60px;
+<div style="
+height:80px;
 overflow:hidden;
 ">
+
+
+<p>
 _No description available._
 </p>
 
 
+</div>
+
+
+</div>
+
+
+
+<div>
+
+
 <p>
-🔗 <a href="https://github.com/tanvirjahanshakib/My-first-github-project" target="_blank">
+🔗 
+<a href="https://github.com/tanvirjahanshakib/My-first-github-project" target="_blank">
 View Repository
 </a>
 </p>
@@ -151,45 +227,87 @@ View Repository
 
 
 
+
+</div>
+
+
+</div>
+
+
 </td>
+
 </tr>
+
 
 </table>
 
+
 </td>
 </tr><tr>
-<td width="50%" valign="top" style="width:50%; padding:10px;">
+<td width="50%" valign="top" style="
+width:50%;
+padding:10px;
+">
+
 
 <table width="100%" style="
 border:1px solid #30363d;
-border-radius:10px;
-height:280px;
+border-radius:12px;
+height:320px;
 ">
 
+
 <tr>
+
 <td style="
 padding:20px;
 vertical-align:top;
 ">
 
 
-<h3>
-📦 <a href="https://github.com/tanvirjahanshakib/JavaScript" target="_blank">
+<div style="
+height:260px;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+">
+
+
+<div>
+
+
+<h3 style="margin-top:0;">
+📦 
+<a href="https://github.com/tanvirjahanshakib/JavaScript" target="_blank">
 JavaScript
 </a>
 </h3>
 
 
-<p style="
-height:60px;
+<div style="
+height:80px;
 overflow:hidden;
 ">
+
+
+<p>
 _No description available._
 </p>
 
 
+</div>
+
+
+</div>
+
+
+
+<div>
+
+
 <p>
-🔗 <a href="https://github.com/tanvirjahanshakib/JavaScript" target="_blank">
+🔗 
+<a href="https://github.com/tanvirjahanshakib/JavaScript" target="_blank">
 View Repository
 </a>
 </p>
@@ -198,45 +316,87 @@ View Repository
 
 
 
+
+</div>
+
+
+</div>
+
+
 </td>
+
 </tr>
+
 
 </table>
 
+
 </td>
 
-<td width="50%" valign="top" style="width:50%; padding:10px;">
+<td width="50%" valign="top" style="
+width:50%;
+padding:10px;
+">
+
 
 <table width="100%" style="
 border:1px solid #30363d;
-border-radius:10px;
-height:280px;
+border-radius:12px;
+height:320px;
 ">
 
+
 <tr>
+
 <td style="
 padding:20px;
 vertical-align:top;
 ">
 
 
-<h3>
-📦 <a href="https://github.com/tanvirjahanshakib/tanvirjahanshakib" target="_blank">
+<div style="
+height:260px;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+">
+
+
+<div>
+
+
+<h3 style="margin-top:0;">
+📦 
+<a href="https://github.com/tanvirjahanshakib/tanvirjahanshakib" target="_blank">
 tanvirjahanshakib
 </a>
 </h3>
 
 
-<p style="
-height:60px;
+<div style="
+height:80px;
 overflow:hidden;
 ">
+
+
+<p>
 _No description available._
 </p>
 
 
+</div>
+
+
+</div>
+
+
+
+<div>
+
+
 <p>
-🔗 <a href="https://github.com/tanvirjahanshakib/tanvirjahanshakib" target="_blank">
+🔗 
+<a href="https://github.com/tanvirjahanshakib/tanvirjahanshakib" target="_blank">
 View Repository
 </a>
 </p>
@@ -245,45 +405,87 @@ View Repository
 
 
 
+
+</div>
+
+
+</div>
+
+
 </td>
+
 </tr>
 
+
 </table>
+
 
 </td>
 </tr><tr>
-<td width="50%" valign="top" style="width:50%; padding:10px;">
+<td width="50%" valign="top" style="
+width:50%;
+padding:10px;
+">
+
 
 <table width="100%" style="
 border:1px solid #30363d;
-border-radius:10px;
-height:280px;
+border-radius:12px;
+height:320px;
 ">
 
+
 <tr>
+
 <td style="
 padding:20px;
 vertical-align:top;
 ">
 
 
-<h3>
-📦 <a href="https://github.com/tanvirjahanshakib/Sawbia-Assignment" target="_blank">
+<div style="
+height:260px;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+">
+
+
+<div>
+
+
+<h3 style="margin-top:0;">
+📦 
+<a href="https://github.com/tanvirjahanshakib/Sawbia-Assignment" target="_blank">
 Sawbia-Assignment
 </a>
 </h3>
 
 
-<p style="
-height:60px;
+<div style="
+height:80px;
 overflow:hidden;
 ">
+
+
+<p>
 _No description available._
 </p>
 
 
+</div>
+
+
+</div>
+
+
+
+<div>
+
+
 <p>
-🔗 <a href="https://github.com/tanvirjahanshakib/Sawbia-Assignment" target="_blank">
+🔗 
+<a href="https://github.com/tanvirjahanshakib/Sawbia-Assignment" target="_blank">
 View Repository
 </a>
 </p>
@@ -292,45 +494,87 @@ View Repository
 
 
 
+
+</div>
+
+
+</div>
+
+
 </td>
+
 </tr>
+
 
 </table>
 
+
 </td>
 
-<td width="50%" valign="top" style="width:50%; padding:10px;">
+<td width="50%" valign="top" style="
+width:50%;
+padding:10px;
+">
+
 
 <table width="100%" style="
 border:1px solid #30363d;
-border-radius:10px;
-height:280px;
+border-radius:12px;
+height:320px;
 ">
 
+
 <tr>
+
 <td style="
 padding:20px;
 vertical-align:top;
 ">
 
 
-<h3>
-📦 <a href="https://github.com/sawbiaakter/Sawbia-Assignment" target="_blank">
+<div style="
+height:260px;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+">
+
+
+<div>
+
+
+<h3 style="margin-top:0;">
+📦 
+<a href="https://github.com/sawbiaakter/Sawbia-Assignment" target="_blank">
 Sawbia-Assignment
 </a>
 </h3>
 
 
-<p style="
-height:60px;
+<div style="
+height:80px;
 overflow:hidden;
 ">
+
+
+<p>
 _No description available._
 </p>
 
 
+</div>
+
+
+</div>
+
+
+
+<div>
+
+
 <p>
-🔗 <a href="https://github.com/sawbiaakter/Sawbia-Assignment" target="_blank">
+🔗 
+<a href="https://github.com/sawbiaakter/Sawbia-Assignment" target="_blank">
 View Repository
 </a>
 </p>
@@ -339,10 +583,20 @@ View Repository
 
 
 
+
+</div>
+
+
+</div>
+
+
 </td>
+
 </tr>
 
+
 </table>
+
 
 </td>
 </tr>
@@ -351,6 +605,7 @@ View Repository
 
 
 <!--END_PINNED-->
+
 
 
 
