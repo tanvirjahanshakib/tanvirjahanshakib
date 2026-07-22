@@ -14,7 +14,7 @@ async function getRepos() {
     homepage: repo.homepage
   }));
 
-  document.getElementById("repo-container").innerHTML = generateTable(repos);
+  return generateTable(repos);
 }
 
 
@@ -42,7 +42,7 @@ function generateTable(repos) {
 <td style="padding:20px;">
 
 <h3>
-📦 <a href="${repo.url}" target="_blank">
+📦 <a href="${repo.url}">
 ${repo.name}
 </a>
 </h3>
@@ -51,22 +51,19 @@ ${repo.name}
 ${repo.description || "_No description available._"}
 </p>
 
-
 <p>
-🔗 <a href="${repo.url}" target="_blank">
+🔗 <a href="${repo.url}">
 View Repository
 </a>
 </p>
 
-
 ${repo.homepage ? `
 <p>
-🌐 <a href="${repo.homepage}" target="_blank">
+🌐 <a href="${repo.homepage}">
 Live Demo
 </a>
 </p>
 ` : ""}
-
 
 </td>
 </tr>
@@ -96,4 +93,7 @@ Live Demo
 }
 
 
-getRepos();
+// Generate README content
+getRepos().then(repoCards => {
+  console.log(repoCards);
+});
