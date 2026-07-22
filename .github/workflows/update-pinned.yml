@@ -22,7 +22,7 @@ jobs:
           node-version: 22
 
       - name: Install Dependencies
-        run: npm install --package-lock-only
+        run: npm install
 
       - name: Update README
         env:
