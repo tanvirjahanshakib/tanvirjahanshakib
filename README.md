@@ -53,6 +53,7 @@ I love turning ideas into real-world applications with modern technologies. I en
 
 
 
+
 <!--START_PINNED-->
 
 
@@ -68,7 +69,7 @@ padding:10px;
 <table width="100%" style="
 border:1px solid #30363d;
 border-radius:12px;
-height:320px;
+height:330px;
 ">
 
 
@@ -81,29 +82,35 @@ vertical-align:top;
 
 
 <div style="
-height:260px;
+height:270px;
 display:flex;
 flex-direction:column;
-justify-content:space-between;
 ">
 
 
 <div>
 
 
-<h3 style="margin-top:0;">
+<h3 style="
+margin:0;
+height:35px;
+overflow:hidden;
+">
+
 📦 
 <a href="https://github.com/tanvirjahanshakib/Assignment-01-WEB14-1311-" target="_blank">
 Assignment-01-WEB14-1311-
 </a>
+
 </h3>
 
 
-<div style="
-height:80px;
-overflow:hidden;
-">
 
+<div style="
+height:100px;
+overflow:hidden;
+margin-top:10px;
+">
 
 <p>
 _No description available._
@@ -117,7 +124,11 @@ _No description available._
 
 
 
-<div>
+
+
+<div style="
+margin-top:auto;
+">
 
 
 <p>
@@ -126,6 +137,7 @@ _No description available._
 View Repository
 </a>
 </p>
+
 
 
 
@@ -139,7 +151,9 @@ Live Link
 
 
 
+
 </div>
+
 
 
 </div>
@@ -164,7 +178,7 @@ padding:10px;
 <table width="100%" style="
 border:1px solid #30363d;
 border-radius:12px;
-height:320px;
+height:330px;
 ">
 
 
@@ -177,29 +191,35 @@ vertical-align:top;
 
 
 <div style="
-height:260px;
+height:270px;
 display:flex;
 flex-direction:column;
-justify-content:space-between;
 ">
 
 
 <div>
 
 
-<h3 style="margin-top:0;">
+<h3 style="
+margin:0;
+height:35px;
+overflow:hidden;
+">
+
 📦 
 <a href="https://github.com/tanvirjahanshakib/My-first-github-project" target="_blank">
 My-first-github-project
 </a>
+
 </h3>
 
 
-<div style="
-height:80px;
-overflow:hidden;
-">
 
+<div style="
+height:100px;
+overflow:hidden;
+margin-top:10px;
+">
 
 <p>
 _No description available._
@@ -213,7 +233,11 @@ _No description available._
 
 
 
-<div>
+
+
+<div style="
+margin-top:auto;
+">
 
 
 <p>
@@ -228,7 +252,10 @@ View Repository
 
 
 
+
+
 </div>
+
 
 
 </div>
@@ -253,7 +280,7 @@ padding:10px;
 <table width="100%" style="
 border:1px solid #30363d;
 border-radius:12px;
-height:320px;
+height:330px;
 ">
 
 
@@ -266,29 +293,35 @@ vertical-align:top;
 
 
 <div style="
-height:260px;
+height:270px;
 display:flex;
 flex-direction:column;
-justify-content:space-between;
 ">
 
 
 <div>
 
 
-<h3 style="margin-top:0;">
+<h3 style="
+margin:0;
+height:35px;
+overflow:hidden;
+">
+
 📦 
 <a href="https://github.com/tanvirjahanshakib/JavaScript" target="_blank">
 JavaScript
 </a>
+
 </h3>
 
 
-<div style="
-height:80px;
-overflow:hidden;
-">
 
+<div style="
+height:100px;
+overflow:hidden;
+margin-top:10px;
+">
 
 <p>
 _No description available._
@@ -302,7 +335,11 @@ _No description available._
 
 
 
-<div>
+
+
+<div style="
+margin-top:auto;
+">
 
 
 <p>
@@ -317,7 +354,10 @@ View Repository
 
 
 
+
+
 </div>
+
 
 
 </div>
@@ -342,7 +382,7 @@ padding:10px;
 <table width="100%" style="
 border:1px solid #30363d;
 border-radius:12px;
-height:320px;
+height:330px;
 ">
 
 
@@ -355,29 +395,35 @@ vertical-align:top;
 
 
 <div style="
-height:260px;
+height:270px;
 display:flex;
 flex-direction:column;
-justify-content:space-between;
 ">
 
 
 <div>
 
 
-<h3 style="margin-top:0;">
+<h3 style="
+margin:0;
+height:35px;
+overflow:hidden;
+">
+
 📦 
 <a href="https://github.com/tanvirjahanshakib/tanvirjahanshakib" target="_blank">
 tanvirjahanshakib
 </a>
+
 </h3>
 
 
-<div style="
-height:80px;
-overflow:hidden;
-">
 
+<div style="
+height:100px;
+overflow:hidden;
+margin-top:10px;
+">
 
 <p>
 _No description available._
@@ -391,7 +437,11 @@ _No description available._
 
 
 
-<div>
+
+
+<div style="
+margin-top:auto;
+">
 
 
 <p>
@@ -406,7 +456,10 @@ View Repository
 
 
 
+
+
 </div>
+
 
 
 </div>
@@ -431,7 +484,7 @@ padding:10px;
 <table width="100%" style="
 border:1px solid #30363d;
 border-radius:12px;
-height:320px;
+height:330px;
 ">
 
 
@@ -444,29 +497,35 @@ vertical-align:top;
 
 
 <div style="
-height:260px;
+height:270px;
 display:flex;
 flex-direction:column;
-justify-content:space-between;
 ">
 
 
 <div>
 
 
-<h3 style="margin-top:0;">
+<h3 style="
+margin:0;
+height:35px;
+overflow:hidden;
+">
+
 📦 
 <a href="https://github.com/tanvirjahanshakib/Sawbia-Assignment" target="_blank">
 Sawbia-Assignment
 </a>
+
 </h3>
 
 
-<div style="
-height:80px;
-overflow:hidden;
-">
 
+<div style="
+height:100px;
+overflow:hidden;
+margin-top:10px;
+">
 
 <p>
 _No description available._
@@ -480,7 +539,11 @@ _No description available._
 
 
 
-<div>
+
+
+<div style="
+margin-top:auto;
+">
 
 
 <p>
@@ -495,7 +558,10 @@ View Repository
 
 
 
+
+
 </div>
+
 
 
 </div>
@@ -520,7 +586,7 @@ padding:10px;
 <table width="100%" style="
 border:1px solid #30363d;
 border-radius:12px;
-height:320px;
+height:330px;
 ">
 
 
@@ -533,29 +599,35 @@ vertical-align:top;
 
 
 <div style="
-height:260px;
+height:270px;
 display:flex;
 flex-direction:column;
-justify-content:space-between;
 ">
 
 
 <div>
 
 
-<h3 style="margin-top:0;">
+<h3 style="
+margin:0;
+height:35px;
+overflow:hidden;
+">
+
 📦 
 <a href="https://github.com/sawbiaakter/Sawbia-Assignment" target="_blank">
 Sawbia-Assignment
 </a>
+
 </h3>
 
 
-<div style="
-height:80px;
-overflow:hidden;
-">
 
+<div style="
+height:100px;
+overflow:hidden;
+margin-top:10px;
+">
 
 <p>
 _No description available._
@@ -569,7 +641,11 @@ _No description available._
 
 
 
-<div>
+
+
+<div style="
+margin-top:auto;
+">
 
 
 <p>
@@ -584,7 +660,10 @@ View Repository
 
 
 
+
+
 </div>
+
 
 
 </div>
@@ -605,6 +684,7 @@ View Repository
 
 
 <!--END_PINNED-->
+
 
 
 
