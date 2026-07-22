@@ -22,7 +22,7 @@ function generateTable(repos) {
 <td style="padding:20px;">
 
 <h3>
-📦 <a href="${repo.url}">
+📦 <a href="${repo.homepage}">
 ${repo.name}
 </a>
 </h3>
@@ -32,7 +32,7 @@ ${repo.description || "_No description available._"}
 </p>
 
 <p>
-🔗 <a href="${repo.url}">
+🔗 <a href="${repo.homepage}">
 View Repository
 </a>
 </p>
