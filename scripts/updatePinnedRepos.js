@@ -83,7 +83,7 @@ padding:10px;
 <table width="100%" style="
 border:1px solid #30363d;
 border-radius:12px;
-height:300px;
+height:320px;
 ">
 
 
@@ -91,9 +91,19 @@ height:300px;
 
 <td style="
 padding:20px;
-height:260px;
 vertical-align:top;
 ">
+
+
+<div style="
+height:260px;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+">
+
+
+<div>
 
 
 <h3 style="margin-top:0;">
@@ -105,7 +115,7 @@ ${repo.name}
 
 
 <div style="
-height:70px;
+height:80px;
 overflow:hidden;
 ">
 
@@ -117,6 +127,12 @@ ${repo.description || "_No description available._"}
 
 </div>
 
+
+</div>
+
+
+
+<div>
 
 
 <p>
@@ -137,6 +153,11 @@ Live Link
 </p>
 ` : ""}
 
+
+</div>
+
+
+</div>
 
 
 </td>
@@ -175,6 +196,7 @@ Live Link
   return html;
 
 }
+
 
 
 
