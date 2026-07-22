@@ -51,10 +51,6 @@ I love turning ideas into real-world applications with modern technologies. I en
 
 <!--START_PINNED-->
 
-<p align="center">
-🚀 Automatically updated from my GitHub repositories
-</p>
-
 <!--END_PINNED-->
 ## 📊 GitHub Stats
 
