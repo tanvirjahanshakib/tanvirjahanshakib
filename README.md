@@ -47,35 +47,13 @@ I love turning ideas into real-world applications with modern technologies. I en
 </p>
 
 ---
+<h2 align="center">📌 Featured Repositories</h2>
+
+<p align="center">
+My highlighted projects and open-source work.
+</p>
+
 <!--START_PINNED-->
-
-<table>
-<tr>
-<td width="50%">
-  <a href="https://github.com/tanvirjahanshakib/repo1">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=tanvirjahanshakib&repo=repo1&theme=tokyonight" />
-  </a>
-</td>
-<td width="50%">
-  <a href="https://github.com/tanvirjahanshakib/repo2">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=tanvirjahanshakib&repo=repo2&theme=tokyonight" />
-  </a>
-</td>
-</tr>
-<tr>
-<td width="50%">
-  <a href="https://github.com/tanvirjahanshakib/repo3">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=tanvirjahanshakib&repo=repo3&theme=tokyonight" />
-  </a>
-</td>
-<td width="50%">
-  <a href="https://github.com/tanvirjahanshakib/repo4">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=tanvirjahanshakib&repo=repo4&theme=tokyonight" />
-  </a>
-</td>
-</tr>
-</table>
-
 <!--END_PINNED-->
 ## 📊 GitHub Stats
 
