@@ -96,19 +96,17 @@ vertical-align:top;
 
 
 <div style="
-height:280px;
+height:270px;
 display:flex;
 flex-direction:column;
-justify-content:space-between;
 ">
-
 
 
 <div>
 
 
 <h3 style="
-margin-top:0;
+margin:0;
 height:35px;
 overflow:hidden;
 ">
@@ -123,8 +121,9 @@ ${repo.name}
 
 
 <div style="
-height:90px;
+height:100px;
 overflow:hidden;
+margin-top:10px;
 ">
 
 <p>
@@ -141,7 +140,9 @@ ${repo.description || "_No description available._"}
 
 
 
-<div>
+<div style="
+margin-top:auto;
+">
 
 
 <p>
@@ -162,7 +163,6 @@ Live Link
 </a>
 </p>
 ` : ""}
-
 
 
 
