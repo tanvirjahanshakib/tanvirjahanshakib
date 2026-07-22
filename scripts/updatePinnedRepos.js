@@ -1,3 +1,23 @@
+const username = "tanvirjahanshakib";
+
+async function getRepos() {
+  const response = await fetch(
+    `https://api.github.com/users/${username}/repos?sort=updated`
+  );
+
+  const data = await response.json();
+
+  const repos = data.map(repo => ({
+    name: repo.name,
+    description: repo.description,
+    url: repo.html_url,
+    homepage: repo.homepage
+  }));
+
+  document.getElementById("repo-container").innerHTML = generateTable(repos);
+}
+
+
 function generateTable(repos) {
   let html = `
 <table width="100%" style="table-layout:fixed;">
@@ -22,7 +42,7 @@ function generateTable(repos) {
 <td style="padding:20px;">
 
 <h3>
-📦 <a href="${repo.url}">
+📦 <a href="${repo.url}" target="_blank">
 ${repo.name}
 </a>
 </h3>
@@ -31,19 +51,22 @@ ${repo.name}
 ${repo.description || "_No description available._"}
 </p>
 
+
 <p>
-🔗 <a href="${repo.url}">
+🔗 <a href="${repo.url}" target="_blank">
 View Repository
 </a>
 </p>
 
+
 ${repo.homepage ? `
 <p>
-🌐 <a href="${repo.homepage}">
+🌐 <a href="${repo.homepage}" target="_blank">
 Live Demo
 </a>
 </p>
 ` : ""}
+
 
 </td>
 </tr>
@@ -71,3 +94,6 @@ Live Demo
 
   return html;
 }
+
+
+getRepos();
