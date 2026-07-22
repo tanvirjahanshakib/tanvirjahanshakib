@@ -14,11 +14,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 22
+
+      - name: Install Dependencies
+        run: npm install
 
       - name: Update README
         env:
@@ -26,7 +31,7 @@ jobs:
           GITHUB_USERNAME: tanvirjahanshakib
         run: node scripts/updatePinnedRepos.js
 
-      - name: Commit changes
+      - name: Commit Changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
