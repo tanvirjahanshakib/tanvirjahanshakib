@@ -50,6 +50,17 @@ I love turning ideas into real-world applications with modern technologies. I en
 ## 📌 Featured Repositories
 
 <!--START_PINNED-->
+
+<table><tr>
+<td width="50%" valign="top">
+
+### 📦 <a href="https://github.com/tanvirjahanshakib/Assignment-01-WEB14-1311-">Assignment-01-WEB14-1311-</a>
+
+_No description available._
+
+</td>
+<td width="50%"></td></tr></table>
+
 <!--END_PINNED-->
 ## 📊 GitHub Stats
 
