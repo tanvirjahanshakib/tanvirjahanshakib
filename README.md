@@ -47,19 +47,14 @@ I love turning ideas into real-world applications with modern technologies. I en
 </p>
 
 ---
-<h2 align="center">📌 Featured Repositories</h2>
-
-<p align="center">
-My highlighted projects and open-source work.
-</p>
-
+<!--START_PINNED-->
 <h2 align="center">📌 Featured Repositories</h2>
 
 <p align="center">
 My pinned repositories, automatically updated.
 </p>
 
-<!--START_PINNED-->
+
 <!--END_PINNED-->
 ## 📊 GitHub Stats
 
