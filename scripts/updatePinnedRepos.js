@@ -76,25 +76,36 @@ function generateTable(repos) {
         html += `
 <td width="50%" valign="top" style="width:50%; padding:10px;">
 
-<table width="100%" style="border:1px solid #30363d; border-radius:10px;">
+<table width="100%" style="
+border:1px solid #30363d;
+border-radius:10px;
+height:280px;
+">
+
 <tr>
-<td style="padding:20px;">
+<td style="
+padding:20px;
+vertical-align:top;
+">
 
 
 <h3>
-📦 <a href="${repo.url}">
+📦 <a href="${repo.url}" target="_blank">
 ${repo.name}
 </a>
 </h3>
 
 
-<p>
+<p style="
+height:60px;
+overflow:hidden;
+">
 ${repo.description || "_No description available._"}
 </p>
 
 
 <p>
-🔗 <a href="${repo.url}">
+🔗 <a href="${repo.url}" target="_blank">
 View Repository
 </a>
 </p>
@@ -102,8 +113,8 @@ View Repository
 
 ${repo.homepage ? `
 <p>
-🌐 <a href="${repo.homepage}">
-Live Demo
+🌐 <a href="${repo.homepage}" target="_blank">
+Live Link
 </a>
 </p>
 ` : ""}
@@ -111,6 +122,7 @@ Live Demo
 
 </td>
 </tr>
+
 </table>
 
 </td>
