@@ -1,61 +1,11 @@
-const fs = require("fs");
-
-const username = "tanvirjahanshakib";
-
-
-async function getPinnedRepos() {
-
-  const query = `
-  query {
-    user(login: "${username}") {
-      pinnedItems(first: 6, types: REPOSITORY) {
-        nodes {
-          ... on Repository {
-            name
-            description
-            url
-            homepageUrl
-          }
-        }
-      }
-    }
-  }
-  `;
-
-
-  const response = await fetch(
-    "https://api.github.com/graphql",
-    {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ query }),
-    }
-  );
-
-
-  const result = await response.json();
-
-
-  const repos = result.data.user.pinnedItems.nodes.map(repo => ({
-    name: repo.name,
-    description: repo.description,
-    url: repo.url,
-    homepage: repo.homepageUrl
-  }));
-
-
-  return generateTable(repos);
-}
-
-
-
 function generateTable(repos) {
 
   let html = `
-<table width="100%" style="table-layout:fixed;">
+<table width="100%" style="
+border-collapse:separate;
+border-spacing:20px;
+table-layout:fixed;
+">
 <tbody>
 `;
 
@@ -74,31 +24,18 @@ function generateTable(repos) {
 
 
         html += `
-<td width="50%" valign="top" style="
-width:50%;
-padding:10px;
-">
-
-
-<table width="100%" style="
-border:1px solid #30363d;
-border-radius:12px;
-height:330px;
-">
-
-
-<tr>
-
-<td style="
-padding:20px;
-vertical-align:top;
-">
+<td width="50%" valign="top">
 
 
 <div style="
-height:270px;
+border:1px solid #30363d;
+border-radius:12px;
+padding:18px;
+height:230px;
 display:flex;
 flex-direction:column;
+justify-content:space-between;
+transition:all 0.3s ease;
 ">
 
 
@@ -121,9 +58,9 @@ ${repo.name}
 
 
 <div style="
-height:100px;
+height:80px;
 overflow:hidden;
-margin-top:10px;
+margin-top:12px;
 ">
 
 <p>
@@ -140,44 +77,33 @@ ${repo.description || "_No description available._"}
 
 
 
-<div style="
-margin-top:auto;
-">
+<div>
 
 
-
-<p>
 <a href="${repo.url}" target="_blank">
-<img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white">
-</a>
-</p>
 
+<img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white">
+
+</a>
 
 
 
 ${repo.homepage ? `
-<p>
+
 <a href="${repo.homepage}" target="_blank">
+
 <img src="https://img.shields.io/badge/Live-Demo-38BDF8?style=for-the-badge&logo=googlechrome&logoColor=white">
+
 </a>
-</p>
+
 ` : ""}
 
 
-
 </div>
 
 
 
 </div>
-
-
-</td>
-
-</tr>
-
-
-</table>
 
 
 </td>
@@ -208,51 +134,3 @@ ${repo.homepage ? `
   return html;
 
 }
-
-
-
-
-
-async function updateReadme() {
-
-  const repoCards = await getPinnedRepos();
-
-
-  const readmePath = "README.md";
-
-
-  let readme = fs.readFileSync(readmePath, "utf8");
-
-
-  const start = "<!--START_PINNED-->";
-  const end = "<!--END_PINNED-->";
-
-
-
-  const newSection = `
-${start}
-
-${repoCards}
-
-${end}
-`;
-
-
-
-  readme = readme.replace(
-    new RegExp(`${start}[\\s\\S]*?${end}`),
-    newSection
-  );
-
-
-
-  fs.writeFileSync(readmePath, readme);
-
-
-  console.log("README updated successfully ✅");
-
-}
-
-
-
-updateReadme();
