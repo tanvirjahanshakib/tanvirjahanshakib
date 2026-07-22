@@ -74,56 +74,78 @@ function generateTable(repos) {
 
 
         html += `
-<td width="50%" valign="top" style="width:50%; padding:10px;">
+<td width="50%" valign="top" style="
+width:50%;
+padding:10px;
+">
+
 
 <table width="100%" style="
 border:1px solid #30363d;
-border-radius:10px;
-height:280px;
+border-radius:12px;
+height:300px;
 ">
 
+
 <tr>
+
 <td style="
 padding:20px;
+height:260px;
 vertical-align:top;
 ">
 
 
-<h3>
-📦 <a href="${repo.url}" target="_blank">
+<h3 style="margin-top:0;">
+📦 
+<a href="${repo.url}" target="_blank">
 ${repo.name}
 </a>
 </h3>
 
 
-<p style="
-height:60px;
+<div style="
+height:70px;
 overflow:hidden;
 ">
+
+
+<p>
 ${repo.description || "_No description available._"}
 </p>
 
 
+</div>
+
+
+
 <p>
-🔗 <a href="${repo.url}" target="_blank">
+🔗 
+<a href="${repo.url}" target="_blank">
 View Repository
 </a>
 </p>
 
 
+
 ${repo.homepage ? `
 <p>
-🌐 <a href="${repo.homepage}" target="_blank">
+🌐 
+<a href="${repo.homepage}" target="_blank">
 Live Link
 </a>
 </p>
 ` : ""}
 
 
+
 </td>
+
 </tr>
 
+
 </table>
+
 
 </td>
 `;
@@ -156,19 +178,21 @@ Live Link
 
 
 
-// Update README.md
 
 async function updateReadme() {
 
   const repoCards = await getPinnedRepos();
 
+
   const readmePath = "README.md";
+
 
   let readme = fs.readFileSync(readmePath, "utf8");
 
 
   const start = "<!--START_PINNED-->";
   const end = "<!--END_PINNED-->";
+
 
 
   const newSection = `
@@ -180,10 +204,12 @@ ${end}
 `;
 
 
+
   readme = readme.replace(
     new RegExp(`${start}[\\s\\S]*?${end}`),
     newSection
   );
+
 
 
   fs.writeFileSync(readmePath, readme);
@@ -192,6 +218,7 @@ ${end}
   console.log("README updated successfully ✅");
 
 }
+
 
 
 updateReadme();
