@@ -50,6 +50,7 @@ I love turning ideas into real-world applications with modern technologies. I en
 ## 📌 Featured Repositories
 
 
+
 <!--START_PINNED-->
 
 
@@ -58,25 +59,36 @@ I love turning ideas into real-world applications with modern technologies. I en
 <tr>
 <td width="50%" valign="top" style="width:50%; padding:10px;">
 
-<table width="100%" style="border:1px solid #30363d; border-radius:10px;">
+<table width="100%" style="
+border:1px solid #30363d;
+border-radius:10px;
+height:280px;
+">
+
 <tr>
-<td style="padding:20px;">
+<td style="
+padding:20px;
+vertical-align:top;
+">
 
 
 <h3>
-📦 <a href="https://github.com/tanvirjahanshakib/Assignment-01-WEB14-1311-">
+📦 <a href="https://github.com/tanvirjahanshakib/Assignment-01-WEB14-1311-" target="_blank">
 Assignment-01-WEB14-1311-
 </a>
 </h3>
 
 
-<p>
+<p style="
+height:60px;
+overflow:hidden;
+">
 _No description available._
 </p>
 
 
 <p>
-🔗 <a href="https://github.com/tanvirjahanshakib/Assignment-01-WEB14-1311-">
+🔗 <a href="https://github.com/tanvirjahanshakib/Assignment-01-WEB14-1311-" target="_blank">
 View Repository
 </a>
 </p>
@@ -87,31 +99,43 @@ View Repository
 
 </td>
 </tr>
+
 </table>
 
 </td>
 
 <td width="50%" valign="top" style="width:50%; padding:10px;">
 
-<table width="100%" style="border:1px solid #30363d; border-radius:10px;">
+<table width="100%" style="
+border:1px solid #30363d;
+border-radius:10px;
+height:280px;
+">
+
 <tr>
-<td style="padding:20px;">
+<td style="
+padding:20px;
+vertical-align:top;
+">
 
 
 <h3>
-📦 <a href="https://github.com/tanvirjahanshakib/My-first-github-project">
+📦 <a href="https://github.com/tanvirjahanshakib/My-first-github-project" target="_blank">
 My-first-github-project
 </a>
 </h3>
 
 
-<p>
+<p style="
+height:60px;
+overflow:hidden;
+">
 _No description available._
 </p>
 
 
 <p>
-🔗 <a href="https://github.com/tanvirjahanshakib/My-first-github-project">
+🔗 <a href="https://github.com/tanvirjahanshakib/My-first-github-project" target="_blank">
 View Repository
 </a>
 </p>
@@ -122,31 +146,43 @@ View Repository
 
 </td>
 </tr>
+
 </table>
 
 </td>
 </tr><tr>
 <td width="50%" valign="top" style="width:50%; padding:10px;">
 
-<table width="100%" style="border:1px solid #30363d; border-radius:10px;">
+<table width="100%" style="
+border:1px solid #30363d;
+border-radius:10px;
+height:280px;
+">
+
 <tr>
-<td style="padding:20px;">
+<td style="
+padding:20px;
+vertical-align:top;
+">
 
 
 <h3>
-📦 <a href="https://github.com/tanvirjahanshakib/JavaScript">
+📦 <a href="https://github.com/tanvirjahanshakib/JavaScript" target="_blank">
 JavaScript
 </a>
 </h3>
 
 
-<p>
+<p style="
+height:60px;
+overflow:hidden;
+">
 _No description available._
 </p>
 
 
 <p>
-🔗 <a href="https://github.com/tanvirjahanshakib/JavaScript">
+🔗 <a href="https://github.com/tanvirjahanshakib/JavaScript" target="_blank">
 View Repository
 </a>
 </p>
@@ -157,31 +193,43 @@ View Repository
 
 </td>
 </tr>
+
 </table>
 
 </td>
 
 <td width="50%" valign="top" style="width:50%; padding:10px;">
 
-<table width="100%" style="border:1px solid #30363d; border-radius:10px;">
+<table width="100%" style="
+border:1px solid #30363d;
+border-radius:10px;
+height:280px;
+">
+
 <tr>
-<td style="padding:20px;">
+<td style="
+padding:20px;
+vertical-align:top;
+">
 
 
 <h3>
-📦 <a href="https://github.com/tanvirjahanshakib/tanvirjahanshakib">
+📦 <a href="https://github.com/tanvirjahanshakib/tanvirjahanshakib" target="_blank">
 tanvirjahanshakib
 </a>
 </h3>
 
 
-<p>
+<p style="
+height:60px;
+overflow:hidden;
+">
 _No description available._
 </p>
 
 
 <p>
-🔗 <a href="https://github.com/tanvirjahanshakib/tanvirjahanshakib">
+🔗 <a href="https://github.com/tanvirjahanshakib/tanvirjahanshakib" target="_blank">
 View Repository
 </a>
 </p>
@@ -192,31 +240,43 @@ View Repository
 
 </td>
 </tr>
+
 </table>
 
 </td>
 </tr><tr>
 <td width="50%" valign="top" style="width:50%; padding:10px;">
 
-<table width="100%" style="border:1px solid #30363d; border-radius:10px;">
+<table width="100%" style="
+border:1px solid #30363d;
+border-radius:10px;
+height:280px;
+">
+
 <tr>
-<td style="padding:20px;">
+<td style="
+padding:20px;
+vertical-align:top;
+">
 
 
 <h3>
-📦 <a href="https://github.com/tanvirjahanshakib/Sawbia-Assignment">
+📦 <a href="https://github.com/tanvirjahanshakib/Sawbia-Assignment" target="_blank">
 Sawbia-Assignment
 </a>
 </h3>
 
 
-<p>
+<p style="
+height:60px;
+overflow:hidden;
+">
 _No description available._
 </p>
 
 
 <p>
-🔗 <a href="https://github.com/tanvirjahanshakib/Sawbia-Assignment">
+🔗 <a href="https://github.com/tanvirjahanshakib/Sawbia-Assignment" target="_blank">
 View Repository
 </a>
 </p>
@@ -227,31 +287,43 @@ View Repository
 
 </td>
 </tr>
+
 </table>
 
 </td>
 
 <td width="50%" valign="top" style="width:50%; padding:10px;">
 
-<table width="100%" style="border:1px solid #30363d; border-radius:10px;">
+<table width="100%" style="
+border:1px solid #30363d;
+border-radius:10px;
+height:280px;
+">
+
 <tr>
-<td style="padding:20px;">
+<td style="
+padding:20px;
+vertical-align:top;
+">
 
 
 <h3>
-📦 <a href="https://github.com/sawbiaakter/Sawbia-Assignment">
+📦 <a href="https://github.com/sawbiaakter/Sawbia-Assignment" target="_blank">
 Sawbia-Assignment
 </a>
 </h3>
 
 
-<p>
+<p style="
+height:60px;
+overflow:hidden;
+">
 _No description available._
 </p>
 
 
 <p>
-🔗 <a href="https://github.com/sawbiaakter/Sawbia-Assignment">
+🔗 <a href="https://github.com/sawbiaakter/Sawbia-Assignment" target="_blank">
 View Repository
 </a>
 </p>
@@ -262,6 +334,7 @@ View Repository
 
 </td>
 </tr>
+
 </table>
 
 </td>
@@ -271,6 +344,7 @@ View Repository
 
 
 <!--END_PINNED-->
+
 
 ## 📊 GitHub Stats
 
