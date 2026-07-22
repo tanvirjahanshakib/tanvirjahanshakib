@@ -51,6 +51,7 @@ I love turning ideas into real-world applications with modern technologies. I en
 
 
 
+
 <!--START_PINNED-->
 
 
@@ -94,6 +95,12 @@ View Repository
 </p>
 
 
+
+<p>
+🌐 <a href="https://tanvirjahanshakib.github.io/Assignment-01-WEB14-1311-/" target="_blank">
+Live Link
+</a>
+</p>
 
 
 
@@ -344,6 +351,7 @@ View Repository
 
 
 <!--END_PINNED-->
+
 
 
 ## 📊 GitHub Stats
