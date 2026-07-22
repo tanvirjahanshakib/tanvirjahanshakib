@@ -26,7 +26,13 @@ function generateTable(repos) {
 ${repo.name}
 </a>
 </h3>
-
+${repo.homepage ? `
+<p>
+🌐 <a href="${repo.homepage}">
+Live Demo
+</a>
+</p>
+` : ""}
 <p>
 ${repo.description || "_No description available._"}
 </p>
