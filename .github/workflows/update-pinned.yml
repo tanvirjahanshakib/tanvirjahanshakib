@@ -1,44 +1,41 @@
 name: Update Pinned Repositories
 
 on:
-  schedule:
-    # Every 15 minutes
-    - cron: "*/15 * * * *"
   workflow_dispatch:
+
+  schedule:
+    - cron: "0 */6 * * *"
 
 permissions:
   contents: write
 
 jobs:
-  update-readme:
+  update:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Update pinned repositories section
+      - name: Update README
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_USERNAME: tanvirjahanshakib
         run: node scripts/updatePinnedRepos.js
 
-      - name: Commit changes if README updated
+      - name: Commit changes
         run: |
-          if git diff --quiet; then
-            echo "No changes detected."
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add README.md
+
+          if git diff --cached --quiet; then
+            echo "No changes"
           else
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add README.md
             git commit -m "chore: update pinned repositories"
             git push
           fi
