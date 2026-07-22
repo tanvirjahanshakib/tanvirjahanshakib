@@ -55,6 +55,7 @@ I love turning ideas into real-world applications with modern technologies. I en
 
 
 
+
 <!--START_PINNED-->
 
 
@@ -132,10 +133,10 @@ margin-top:auto;
 ">
 
 
+
 <p>
-🔗 
 <a href="https://github.com/tanvirjahanshakib/Assignment-01-WEB14-1311-" target="_blank">
-View Repository
+<img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white">
 </a>
 </p>
 
@@ -144,9 +145,8 @@ View Repository
 
 
 <p>
-🌐 
 <a href="https://tanvirjahanshakib.github.io/Assignment-01-WEB14-1311-/" target="_blank">
-Live Link
+<img src="https://img.shields.io/badge/Live-Demo-38BDF8?style=for-the-badge&logo=googlechrome&logoColor=white">
 </a>
 </p>
 
@@ -177,6 +177,7 @@ Live Link
 
 
 <!--END_PINNED-->
+
 
 
 
