@@ -47,25 +47,9 @@ I love turning ideas into real-world applications with modern technologies. I en
 </p>
 
 ---
+## 📌 Featured Repositories
+
 <!--START_PINNED-->
-
-<table>
-<tr>
-
-<td width="50%">
-<a href="https://github.com/tanvirjahanshakib/tanvirjahanshakib">
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=tanvirjahanshakib&repo=tanvirjahanshakib&theme=tokyonight"/>
-</a>
-</td>
-
-<td width="50%">
-<a href="https://github.com/tanvirjahanshakib/Assignment-01-WEB14-1311-">
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=tanvirjahanshakib&repo=Assignment-01-WEB14-1311-&theme=tokyonight"/>
-</a>
-</td>
-</tr>
-</table>
-
 <!--END_PINNED-->
 ## 📊 GitHub Stats
 
