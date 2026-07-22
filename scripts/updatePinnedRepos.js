@@ -22,10 +22,21 @@ function generateTable(repos) {
 <td style="padding:20px;">
 
 <h3>
-📦 <a href="${repo.homepage}">
+📦 <a href="${repo.url}">
 ${repo.name}
 </a>
 </h3>
+
+<p>
+${repo.description || "_No description available._"}
+</p>
+
+<p>
+🔗 <a href="${repo.url}">
+View Repository
+</a>
+</p>
+
 ${repo.homepage ? `
 <p>
 🌐 <a href="${repo.homepage}">
@@ -33,15 +44,6 @@ Live Demo
 </a>
 </p>
 ` : ""}
-<p>
-${repo.description || "_No description available._"}
-</p>
-
-<p>
-🔗 <a href="${repo.homepage}">
-View Repository
-</a>
-</p>
 
 </td>
 </tr>
