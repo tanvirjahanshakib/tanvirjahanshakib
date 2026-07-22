@@ -31,11 +31,10 @@ table-layout:fixed;
 border:1px solid #30363d;
 border-radius:12px;
 padding:18px;
-height:230px;
+height:240px;
 display:flex;
 flex-direction:column;
 justify-content:space-between;
-transition:all 0.3s ease;
 ">
 
 
@@ -46,6 +45,7 @@ transition:all 0.3s ease;
 margin:0;
 height:35px;
 overflow:hidden;
+font-size:18px;
 ">
 
 📦 
@@ -58,7 +58,7 @@ ${repo.name}
 
 
 <div style="
-height:80px;
+height:85px;
 overflow:hidden;
 margin-top:12px;
 ">
@@ -77,7 +77,11 @@ ${repo.description || "_No description available._"}
 
 
 
-<div>
+<div style="
+display:flex;
+gap:10px;
+align-items:center;
+">
 
 
 <a href="${repo.url}" target="_blank">
