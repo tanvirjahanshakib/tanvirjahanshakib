@@ -13,22 +13,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
+
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: 22
 
+
       - name: Install Dependencies
         run: npm install
+
 
       - name: Update README
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_USERNAME: tanvirjahanshakib
         run: node scripts/updatePinnedRepos.js
+
 
       - name: Commit Changes
         run: |
