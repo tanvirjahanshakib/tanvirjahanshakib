@@ -3,7 +3,7 @@ function generateTable(repos) {
   let html = `
 <table width="100%" style="
 border-collapse:separate;
-border-spacing:20px;
+border-spacing:24px;
 table-layout:fixed;
 ">
 <tbody>
@@ -17,11 +17,9 @@ table-layout:fixed;
 
     for (let j = i; j < i + 2; j++) {
 
-
       if (repos[j]) {
 
         const repo = repos[j];
-
 
         html += `
 <td width="50%" valign="top">
@@ -30,11 +28,12 @@ table-layout:fixed;
 <div style="
 border:1px solid #30363d;
 border-radius:12px;
-padding:18px;
-height:240px;
+padding:20px;
+height:220px;
 display:flex;
 flex-direction:column;
 justify-content:space-between;
+box-sizing:border-box;
 ">
 
 
@@ -43,9 +42,9 @@ justify-content:space-between;
 
 <h3 style="
 margin:0;
+font-size:18px;
 height:35px;
 overflow:hidden;
-font-size:18px;
 ">
 
 📦 
@@ -57,36 +56,28 @@ ${repo.name}
 
 
 
-<div style="
-height:85px;
+<p style="
+height:70px;
 overflow:hidden;
-margin-top:12px;
+margin-top:15px;
 ">
 
-<p>
 ${repo.description || "_No description available._"}
+
 </p>
 
 
 </div>
 
 
-</div>
 
 
-
-
-
-<div style="
-display:flex;
-gap:10px;
-align-items:center;
-">
+<div>
 
 
 <a href="${repo.url}" target="_blank">
 
-<img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white">
+<img src="https://img.shields.io/badge/Repository-View-181717?style=for-the-badge&logo=github">
 
 </a>
 
@@ -96,11 +87,12 @@ ${repo.homepage ? `
 
 <a href="${repo.homepage}" target="_blank">
 
-<img src="https://img.shields.io/badge/Live-Demo-38BDF8?style=for-the-badge&logo=googlechrome&logoColor=white">
+<img src="https://img.shields.io/badge/Live-Link-38BDF8?style=for-the-badge&logo=googlechrome">
 
 </a>
 
 ` : ""}
+
 
 
 </div>
@@ -134,7 +126,5 @@ ${repo.homepage ? `
 </table>
 `;
 
-
   return html;
-
 }
