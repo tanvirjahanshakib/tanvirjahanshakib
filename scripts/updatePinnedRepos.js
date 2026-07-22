@@ -1,48 +1,50 @@
 const fs = require("fs");
 
-const TOKEN = process.env.GITHUB_TOKEN;
 const USERNAME = process.env.GITHUB_USERNAME;
 
-if (!TOKEN || !USERNAME) {
-  console.error("Missing GITHUB_TOKEN or GITHUB_USERNAME.");
+if (!USERNAME) {
+  console.error("Missing GITHUB_USERNAME");
   process.exit(1);
 }
 
-const query = `
-  query($login: String!) {
-    user(login: $login) {
-      pinnedItems(first: 6, types: REPOSITORY) {
-        nodes {
-          ... on Repository {
-            name
-            url
-          }
-        }
-      }
-    }
-  }
-`;
-
 async function fetchPinnedRepos() {
-  const response = await fetch("https://api.github.com/graphql", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${TOKEN}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      query,
-      variables: { login: USERNAME },
-    }),
-  });
+  const res = await fetch(`https://github.com/${USERNAME}`);
 
-  const data = await response.json();
-
-  if (data.errors) {
-    throw new Error(JSON.stringify(data.errors, null, 2));
+  if (!res.ok) {
+    throw new Error(`Failed to fetch profile: ${res.status}`);
   }
 
-  return data.data.user.pinnedItems.nodes;
+  const html = await res.text();
+
+  // Match pinned repository links
+  const regex = new RegExp(`href="/${USERNAME}/([^"]+)"`, "g");
+
+  const repos = [];
+  const seen = new Set();
+
+  let match;
+
+  while ((match = regex.exec(html)) !== null) {
+    const repo = match[1];
+
+    if (
+      !seen.has(repo) &&
+      repo !== "?tab=repositories" &&
+      !repo.includes("/") &&
+      repo !== ""
+    ) {
+      seen.add(repo);
+
+      repos.push({
+        name: repo,
+        url: `https://github.com/${USERNAME}/${repo}`,
+      });
+    }
+
+    if (repos.length === 6) break;
+  }
+
+  return repos;
 }
 
 function generateTable(repos) {
@@ -53,15 +55,15 @@ function generateTable(repos) {
 
     for (let j = i; j < i + 2; j++) {
       if (repos[j]) {
-        const repo = repos[j];
-        html += `<td width="50%">
-  <a href="${repo.url}">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=${USERNAME}&repo=${repo.name}&theme=tokyonight" />
-  </a>
+        html += `
+<td width="50%">
+<a href="${repos[j].url}">
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=${USERNAME}&repo=${repos[j].name}&theme=tokyonight"/>
+</a>
 </td>
 `;
       } else {
-        html += "<td width="50%"></td>\n";
+        html += `<td width="50%"></td>`;
       }
     }
 
@@ -69,44 +71,33 @@ function generateTable(repos) {
   }
 
   html += "</table>";
+
   return html;
 }
 
-function updateReadme(tableHtml) {
-  const readmePath = "README.md";
-  const readme = fs.readFileSync(readmePath, "utf8");
+function updateReadme(table) {
+  const readme = fs.readFileSync("README.md", "utf8");
 
-  const start = "<!--START_PINNED-->";
-  const end = "<!--END_PINNED-->";
+  const updated = readme.replace(
+    /<!--START_PINNED-->[\s\S]*<!--END_PINNED-->/,
+    `<!--START_PINNED-->
 
-  const regex = new RegExp(`${start}[\\s\\S]*?${end}`, "m");
+${table}
 
-  const replacement = `${start}\n\n${tableHtml}\n\n${end}`;
+<!--END_PINNED-->`
+  );
 
-  const updated = readme.replace(regex, replacement);
+  fs.writeFileSync("README.md", updated);
 
-  if (updated !== readme) {
-    fs.writeFileSync(readmePath, updated);
-    console.log("README updated successfully.");
-  } else {
-    console.log("README already up to date.");
-  }
+  console.log("README updated.");
 }
 
 (async () => {
-  try {
-    const repos = await fetchPinnedRepos();
+  const repos = await fetchPinnedRepos();
 
-    if (!repos.length) {
-      console.log("No pinned repositories found.");
-      process.exit(0);
-    }
-
-    const table = generateTable(repos);
-    updateReadme(table);
-  } catch (error) {
-    console.error("Failed to update pinned repositories:");
-    console.error(error.message);
-    process.exit(1);
+  if (!repos.length) {
+    throw new Error("No pinned repositories found.");
   }
+
+  updateReadme(generateTable(repos));
 })();
