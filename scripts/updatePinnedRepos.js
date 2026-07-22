@@ -1,4 +1,7 @@
+const fs = require("fs");
+
 const username = "tanvirjahanshakib";
+
 
 async function getPinnedRepos() {
 
@@ -67,7 +70,6 @@ function generateTable(repos) {
 
       if (repos[j]) {
 
-
         const repo = repos[j];
 
 
@@ -116,7 +118,6 @@ Live Demo
 
       } else {
 
-
         html += `
 <td width="50%"></td>
 `;
@@ -131,7 +132,6 @@ Live Demo
   }
 
 
-
   html += `
 </tbody>
 </table>
@@ -144,7 +144,42 @@ Live Demo
 
 
 
-// Generate README content
-getPinnedRepos().then(repoCards => {
-  console.log(repoCards);
-});
+// Update README.md
+
+async function updateReadme() {
+
+  const repoCards = await getPinnedRepos();
+
+  const readmePath = "README.md";
+
+  let readme = fs.readFileSync(readmePath, "utf8");
+
+
+  const start = "<!--START_PINNED-->";
+  const end = "<!--END_PINNED-->";
+
+
+  const newSection = `
+${start}
+
+${repoCards}
+
+${end}
+`;
+
+
+  readme = readme.replace(
+    new RegExp(`${start}[\\s\\S]*?${end}`),
+    newSection
+  );
+
+
+  fs.writeFileSync(readmePath, readme);
+
+
+  console.log("README updated successfully ✅");
+
+}
+
+
+updateReadme();
