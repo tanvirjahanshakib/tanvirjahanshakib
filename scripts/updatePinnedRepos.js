@@ -145,10 +145,10 @@ margin-top:auto;
 ">
 
 
+
 <p>
-🔗 
 <a href="${repo.url}" target="_blank">
-View Repository
+<img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white">
 </a>
 </p>
 
@@ -157,9 +157,8 @@ View Repository
 
 ${repo.homepage ? `
 <p>
-🌐 
 <a href="${repo.homepage}" target="_blank">
-Live Link
+<img src="https://img.shields.io/badge/Live-Demo-38BDF8?style=for-the-badge&logo=googlechrome&logoColor=white">
 </a>
 </p>
 ` : ""}
