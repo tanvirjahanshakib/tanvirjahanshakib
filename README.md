@@ -53,47 +53,13 @@ I love turning ideas into real-world applications with modern technologies. I en
 My highlighted projects and open-source work.
 </p>
 
+<h2 align="center">📌 Featured Repositories</h2>
+
+<p align="center">
+My pinned repositories, automatically updated.
+</p>
+
 <!--START_PINNED-->
-
-<table>
-<tr>
-
-<td width="50%">
-<a href="https://github.com/tanvirjahanshakib/tanvirjahanshakib">
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=tanvirjahanshakib&repo=tanvirjahanshakib&theme=tokyonight"/>
-</a>
-</td>
-
-<td width="50%">
-<a href="https://github.com/tanvirjahanshakib/My-first-github-project">
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=tanvirjahanshakib&repo=My-first-github-project&theme=tokyonight"/>
-</a>
-</td>
-</tr>
-<tr>
-
-<td width="50%">
-<a href="https://github.com/tanvirjahanshakib/Assignment-01-WEB14-1311-">
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=tanvirjahanshakib&repo=Assignment-01-WEB14-1311-&theme=tokyonight"/>
-</a>
-</td>
-
-<td width="50%">
-<a href="https://github.com/tanvirjahanshakib/JavaScript">
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=tanvirjahanshakib&repo=JavaScript&theme=tokyonight"/>
-</a>
-</td>
-</tr>
-<tr>
-
-<td width="50%">
-<a href="https://github.com/tanvirjahanshakib/Sawbia-Assignment">
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=tanvirjahanshakib&repo=Sawbia-Assignment&theme=tokyonight"/>
-</a>
-</td>
-<td width="50%"></td></tr>
-</table>
-
 <!--END_PINNED-->
 ## 📊 GitHub Stats
 
