@@ -83,7 +83,7 @@ padding:10px;
 <table width="100%" style="
 border:1px solid #30363d;
 border-radius:12px;
-height:320px;
+height:330px;
 ">
 
 
@@ -96,29 +96,36 @@ vertical-align:top;
 
 
 <div style="
-height:260px;
+height:280px;
 display:flex;
 flex-direction:column;
 justify-content:space-between;
 ">
 
 
+
 <div>
 
 
-<h3 style="margin-top:0;">
+<h3 style="
+margin-top:0;
+height:35px;
+overflow:hidden;
+">
+
 📦 
 <a href="${repo.url}" target="_blank">
 ${repo.name}
 </a>
+
 </h3>
 
 
+
 <div style="
-height:80px;
+height:90px;
 overflow:hidden;
 ">
-
 
 <p>
 ${repo.description || "_No description available._"}
@@ -129,6 +136,8 @@ ${repo.description || "_No description available._"}
 
 
 </div>
+
+
 
 
 
@@ -144,6 +153,7 @@ View Repository
 
 
 
+
 ${repo.homepage ? `
 <p>
 🌐 
@@ -154,7 +164,10 @@ Live Link
 ` : ""}
 
 
+
+
 </div>
+
 
 
 </div>
