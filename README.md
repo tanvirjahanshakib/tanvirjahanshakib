@@ -73,28 +73,15 @@ I love turning ideas into real-world applications with modern technologies. I en
 <tr>
 <td width="50%" valign="top">
 
-<img src="https://opengraph.githubassets.com/ee81973146b3d8a9bc9e1c9dc2a3ea482646a585523100a92f26e31f795e8730/tanvirjahanshakib/Assignment-01-WEB14-1311-" width="400" alt="Assignment-01-WEB14-1311- preview" /><br/>
+<img src="https://opengraph.githubassets.com/c3a384726c1e89eb6f999140768c7855cda3367aca8c0ce688a2b57aca93493a/tanvirjahanshakib/DEVCONF-2026" width="400" alt="DEVCONF-2026 preview" /><br/>
 
-### 📦 [Assignment-01-WEB14-1311-](https://github.com/tanvirjahanshakib/Assignment-01-WEB14-1311-)
+### 📦 [DEVCONF-2026](https://github.com/tanvirjahanshakib/DEVCONF-2026)
 
 No description provided.
 
 ![HTML](https://img.shields.io/badge/-HTML-e34c26?style=flat-square&labelColor=161b22&logo=github&logoColor=white) ![★](https://img.shields.io/badge/%E2%98%85-2-30363d?style=flat-square&labelColor=161b22) ![⑂](https://img.shields.io/badge/%E2%91%82-0-30363d?style=flat-square&labelColor=161b22)
 
-[![Repository](https://img.shields.io/badge/Repository-0D1117?style=for-the-badge&logo=github&logoColor=white&labelColor=000000)](https://github.com/tanvirjahanshakib/Assignment-01-WEB14-1311-) [![Live Project](https://img.shields.io/badge/Live%20Project-2563EB?style=for-the-badge&logo=google-chrome&logoColor=white&labelColor=1E40AF)](https://tanvirjahanshakib.github.io/Assignment-01-WEB14-1311-/)
-
-</td>
-<td width="50%" valign="top">
-
-<img src="https://opengraph.githubassets.com/b2ff15caab510763716d0f5263fb7140187820ba703cd6267a63564fa03607b8/tanvirjahanshakib/Sawbia-Assignment" width="400" alt="Sawbia-Assignment preview" /><br/>
-
-### 📦 [Sawbia-Assignment](https://github.com/tanvirjahanshakib/Sawbia-Assignment)
-
-No description provided.
-
-![HTML](https://img.shields.io/badge/-HTML-e34c26?style=flat-square&labelColor=161b22&logo=github&logoColor=white) ![★](https://img.shields.io/badge/%E2%98%85-0-30363d?style=flat-square&labelColor=161b22) ![⑂](https://img.shields.io/badge/%E2%91%82-0-30363d?style=flat-square&labelColor=161b22)
-
-[![Repository](https://img.shields.io/badge/Repository-0D1117?style=for-the-badge&logo=github&logoColor=white&labelColor=000000)](https://github.com/tanvirjahanshakib/Sawbia-Assignment)
+[![Repository](https://img.shields.io/badge/Repository-0D1117?style=for-the-badge&logo=github&logoColor=white&labelColor=000000)](https://github.com/tanvirjahanshakib/DEVCONF-2026) [![Live Project](https://img.shields.io/badge/Live%20Project-2563EB?style=for-the-badge&logo=google-chrome&logoColor=white&labelColor=1E40AF)](https://tanvirjahanshakib.github.io/DEVCONF-2026/)
 
 </td>
 </tr>
