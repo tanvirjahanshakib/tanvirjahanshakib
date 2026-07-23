@@ -216,14 +216,3 @@ No description provided.
 <p align="center">
 ⭐ Feel free to explore my repositories and connect with me!
 </p>
-<h2 align="center">
-  📅 My GitHub Contributions
-</h2>
-
-<p align="center">
-  <img 
-    src="./assets/contribution.svg"
-    width="100%"
-    alt="GitHub Contribution Calendar"
-  />
-</p>
