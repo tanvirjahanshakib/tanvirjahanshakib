@@ -1,259 +1,395 @@
+/**
+ * updatePinnedRepos.js
+ * ---------------------------------------------------------
+ * Auto update GitHub pinned repositories into README.md
+ * Premium GitHub dark card layout
+ * ---------------------------------------------------------
+ */
+
 const fs = require("fs");
-
-const username = "tanvirjahanshakib";
-const token = process.env.GH_TOKEN;
-
-
-async function getContributions() {
-
-  const query = `
-  query {
-    user(login: "${username}") {
-      contributionsCollection {
-        contributionCalendar {
-          totalContributions
-          weeks {
-            contributionDays {
-              contributionCount
-              date
-            }
-          }
-        }
-      }
-    }
-  }
-  `;
+const path = require("path");
+const https = require("https");
 
 
-  const response = await fetch(
-    "https://api.github.com/graphql",
-    {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        query
-      }),
-    }
-  );
+const README_PATH = path.join(process.cwd(), "README.md");
+
+const START_MARKER = "<!--START_PINNED-->";
+const END_MARKER = "<!--END_PINNED-->";
 
 
-  const result = await response.json();
+const MAX_REPOS = 6;
+const CARDS_PER_ROW = 2;
+
+const IMAGE_WIDTH = 420;
+const DESCRIPTION_MAX_LEN = 95;
 
 
-  if (result.errors) {
-    console.log(result.errors);
-    throw new Error("GitHub API Error");
-  }
+const GH_TOKEN =
+  process.env.GH_TOKEN ||
+  process.env.GITHUB_TOKEN;
 
 
-  return result.data.user
-    .contributionsCollection
-    .contributionCalendar;
+const GH_LOGIN =
+  process.env.GH_LOGIN ||
+  process.env.GITHUB_REPOSITORY_OWNER;
 
+
+
+if (!GH_TOKEN) {
+  console.error("❌ Missing GH_TOKEN");
+  process.exit(1);
+}
+
+
+if (!GH_LOGIN) {
+  console.error("❌ Missing GH_LOGIN");
+  process.exit(1);
 }
 
 
 
-function createSVG(calendar) {
+
+const QUERY = `
+query ($login: String!, $count: Int!) {
+
+  user(login: $login) {
+
+    pinnedItems(
+      first: $count,
+      types: [REPOSITORY]
+    ) {
+
+      nodes {
+
+        ... on Repository {
+
+          name
+          description
+
+          url
+          homepageUrl
+
+          stargazerCount
+          forkCount
+
+          openGraphImageUrl
 
 
-const colors = [
-  "#161b22",
-  "#0e4429",
-  "#006d32",
-  "#26a641",
-  "#39d353"
-];
+          primaryLanguage {
 
+            name
+            color
 
-let svgBoxes = "";
+          }
 
-let x = 40;
-let y = 70;
+        }
 
+      }
 
-calendar.weeks.forEach((week)=>{
+    }
 
+  }
 
-  week.contributionDays.forEach((day)=>{
-
-
-    let level = 0;
-
-
-    if(day.contributionCount > 0)
-      level = 1;
-
-    if(day.contributionCount > 3)
-      level = 2;
-
-    if(day.contributionCount > 6)
-      level = 3;
-
-    if(day.contributionCount > 10)
-      level = 4;
+}
+`;
 
 
 
-    svgBoxes += `
-
-    <rect
-      x="${x}"
-      y="${y}"
-      width="14"
-      height="14"
-      rx="3"
-      fill="${colors[level]}"
-    >
-
-    <title>
-    ${day.date}
-    : ${day.contributionCount} contributions
-    </title>
-
-    </rect>
-
-    `;
 
 
-    x += 18;
+function graphqlRequest(query, variables) {
+
+
+  const payload = JSON.stringify({
+    query,
+    variables
+  });
+
+
+
+  const options = {
+
+    hostname: "api.github.com",
+
+    path: "/graphql",
+
+    method: "POST",
+
+
+    headers: {
+
+      "Content-Type":
+        "application/json",
+
+      Authorization:
+        `bearer ${GH_TOKEN}`,
+
+      "User-Agent":
+        "Pinned-Repo-Updater",
+
+      Accept:
+        "application/vnd.github+json",
+
+
+      "Content-Length":
+        Buffer.byteLength(payload)
+
+    }
+
+  };
+
+
+
+
+
+  return new Promise((resolve,reject)=>{
+
+
+    const req = https.request(
+      options,
+      res=>{
+
+
+        let data="";
+
+
+        res.on(
+          "data",
+          chunk=>data+=chunk
+        );
+
+
+
+        res.on(
+          "end",
+          ()=>{
+
+
+            if(
+              res.statusCode < 200 ||
+              res.statusCode >=300
+            ){
+
+              reject(
+                new Error(
+                  `GitHub API Error ${res.statusCode}`
+                )
+              );
+
+              return;
+
+            }
+
+
+
+
+            try{
+
+
+              const json =
+                JSON.parse(data);
+
+
+
+              if(json.errors){
+
+                reject(
+                  new Error(
+                    JSON.stringify(
+                      json.errors
+                    )
+                  )
+                );
+
+                return;
+
+              }
+
+
+
+              resolve(json.data);
+
+
+            }
+            catch(err){
+
+              reject(err);
+
+            }
+
+
+          }
+        );
+
+
+      }
+    );
+
+
+
+    req.on(
+      "error",
+      reject
+    );
+
+
+    req.write(payload);
+
+    req.end();
 
 
   });
 
 
-  y += 18;
-  x = 40;
-
-
-});
+}
 
 
 
-return `
-
-<svg 
-width="1000"
-height="260"
-viewBox="0 0 1000 260"
-xmlns="http://www.w3.org/2000/svg">
-
-
-<rect
-width="100%"
-height="100%"
-rx="20"
-fill="#0d1117"
-/>
 
 
 
-<text
-x="40"
-y="40"
-fill="#ffffff"
-font-size="22"
-font-family="Arial"
-font-weight="bold">
 
-${username}'s Contribution Calendar
-
-</text>
+function escapeHtml(str=""){
 
 
+return str
 
-${svgBoxes}
+.replace(/&/g,"&amp;")
 
+.replace(/</g,"&lt;")
 
+.replace(/>/g,"&gt;")
 
-<text
-x="40"
-y="245"
-fill="#8b949e"
-font-size="14"
-font-family="Arial">
+.replace(/"/g,"&quot;");
 
-Less
-
-</text>
-
-
-
-<rect x="90" y="232" width="14" height="14" rx="3" fill="#161b22"/>
-<rect x="110" y="232" width="14" height="14" rx="3" fill="#0e4429"/>
-<rect x="130" y="232" width="14" height="14" rx="3" fill="#006d32"/>
-<rect x="150" y="232" width="14" height="14" rx="3" fill="#26a641"/>
-<rect x="170" y="232" width="14" height="14" rx="3" fill="#39d353"/>
-
-
-<text
-x="200"
-y="245"
-fill="#8b949e"
-font-size="14"
-font-family="Arial">
-
-More
-
-</text>
-
-
-</svg>
-
-`;
 
 }
 
 
 
-(async()=>{
-
-
-try {
-
-
-const calendar = await getContributions();
-
-
-const svg = createSVG(calendar);
 
 
 
-if(!fs.existsSync("assets")){
-  fs.mkdirSync("assets");
-}
+
+function truncateDescription(desc){
+
+
+if(!desc)
+
+return "No description provided.";
 
 
 
-fs.writeFileSync(
-  "assets/contribution.svg",
-  svg
+const clean =
+desc.trim()
+.replace(/\s+/g," ");
+
+
+
+if(
+clean.length <= DESCRIPTION_MAX_LEN
+)
+
+return clean;
+
+
+
+return (
+clean
+.slice(
+0,
+DESCRIPTION_MAX_LEN
+)
+.replace(/\s+\S*$/,"")
++"…"
 );
 
 
-
-console.log(
-  "✅ Contribution Calendar Updated"
-);
-
-
-
-}
-
-catch(error){
-
-console.error(
-"❌ Failed:",
-error.message
-);
-
-process.exit(1);
-
 }
 
 
 
-})();
+
+
+
+
+function shield(text){
+
+
+return encodeURIComponent(
+String(text)
+)
+
+.replace(/-/g,"--")
+
+.replace(/_/g,"__");
+
+
+}
+
+
+
+
+
+
+
+function languageBadge(lang){
+
+
+if(!lang || !lang.name){
+
+
+return `![Language](https://img.shields.io/badge/Language-Unknown-8b949e?style=flat-square)`;
+
+
+}
+
+
+
+const color =
+(lang.color || "#8b949e")
+.replace("#","");
+
+
+
+return `![${lang.name}](https://img.shields.io/badge/-${shield(
+lang.name
+)}-${color}?style=flat-square&logo=github&logoColor=white)`;
+
+}
+
+
+
+
+
+function statBadge(label,value,color){
+
+
+return `![${label}](https://img.shields.io/badge/${shield(label)}-${value}-${color}?style=flat-square)`;
+
+
+}
+
+
+
+
+
+function repoButton(url){
+
+
+return `[![Repository](https://img.shields.io/badge/GitHub-Repository-161b22?style=for-the-badge&logo=github)](${url})`;
+
+
+}
+
+
+
+
+
+function demoButton(url){
+
+
+return `[![Live Demo](https://img.shields.io/badge/Live-Demo-238636?style=for-the-badge&logo=vercel)](${url})`;
+
+
+}
