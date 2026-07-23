@@ -59,69 +59,81 @@ I love turning ideas into real-world applications with modern technologies. I en
 
 
 
+
+
 <!--START_PINNED-->
 
 
-<table width="100%" cellspacing="10" cellpadding="0">
+
+<table width="100%">
 <tbody>
-<tr>
-<td width="50%" valign="top">
-
-<table width="100%" cellpadding="16" cellspacing="0"
-style="border:1px solid #30363d; border-radius:12px;">
 
 <tr>
 
-<td>
+<td width="50%" valign="top" style="padding:10px;">
 
-<p align="center">
 
-<a href="https://github.com/tanvirjahanshakib/Assignment-01-WEB14-1311-">
+<table width="100%" 
+style="
+border:1px solid #30363d;
+border-radius:15px;
+">
 
-<img src="https://opengraph.githubassets.com/af25235a79f7cc1a85ac20c0b2f2d5a27989dd182afc077ca67a1c44672a92a7/tanvirjahanshakib/Assignment-01-WEB14-1311-" width="100%">
+<tr>
 
-</a>
+<td style="padding:20px;">
 
-</p>
 
 <h3>
 
-📦
+📦 
 <a href="https://github.com/tanvirjahanshakib/Assignment-01-WEB14-1311-">
 Assignment-01-WEB14-1311-
 </a>
 
 </h3>
 
-<p>
 
+
+<p>
 No description available.
-
 </p>
+
+
 
 <p>
 
-<img src="https://img.shields.io/badge/Language-HTML-blue?style=flat-square">
+🟠
+HTML
 
-<img src="https://img.shields.io/badge/⭐-2-yellow?style=flat-square">
+&nbsp;&nbsp;
 
-<img src="https://img.shields.io/badge/🍴-0-blue?style=flat-square">
+⭐ 2
+
+&nbsp;&nbsp;
+
+🍴 0
 
 </p>
 
-<p>
 
-
-<a href="https://tanvirjahanshakib.github.io/Assignment-01-WEB14-1311-/">
-<img src="https://img.shields.io/badge/🌐-Live_Demo-2ea44f?style=for-the-badge">
-</a>
 
 
 <a href="https://github.com/tanvirjahanshakib/Assignment-01-WEB14-1311-">
-<img src="https://img.shields.io/badge/🐙-Repository-181717?style=for-the-badge&logo=github&logoColor=white">
+<img src="https://img.shields.io/badge/Repository-181717?style=for-the-badge&logo=github&logoColor=white">
 </a>
 
-</p>
+
+
+
+
+<a href="https://tanvirjahanshakib.github.io/Assignment-01-WEB14-1311-/">
+<img src="https://img.shields.io/badge/Live_Project-00C7B7?style=for-the-badge&logo=googlechrome&logoColor=white">
+</a>
+
+
+
+
 
 </td>
 
@@ -129,61 +141,70 @@ No description available.
 
 </table>
 
+
 </td>
 
-<td width="50%" valign="top">
 
-<table width="100%" cellpadding="16" cellspacing="0"
-style="border:1px solid #30363d; border-radius:12px;">
+
+
+<td width="50%" valign="top" style="padding:10px;">
+
+
+<table width="100%" 
+style="
+border:1px solid #30363d;
+border-radius:15px;
+">
 
 <tr>
 
-<td>
+<td style="padding:20px;">
 
-<p align="center">
-
-<a href="https://github.com/tanvirjahanshakib/tanvirjahanshakib">
-
-<img src="https://opengraph.githubassets.com/9fc412ee575ac4b1c4484a0dcae2ba10f86856ca8b501f11ce82a159643c1e19/tanvirjahanshakib/tanvirjahanshakib" width="100%">
-
-</a>
-
-</p>
 
 <h3>
 
-📦
+📦 
 <a href="https://github.com/tanvirjahanshakib/tanvirjahanshakib">
 tanvirjahanshakib
 </a>
 
 </h3>
 
-<p>
 
+
+<p>
 No description available.
-
 </p>
+
+
 
 <p>
 
-<img src="https://img.shields.io/badge/Language-JavaScript-blue?style=flat-square">
+🟨
+JavaScript
 
-<img src="https://img.shields.io/badge/⭐-1-yellow?style=flat-square">
+&nbsp;&nbsp;
 
-<img src="https://img.shields.io/badge/🍴-0-blue?style=flat-square">
+⭐ 1
+
+&nbsp;&nbsp;
+
+🍴 0
 
 </p>
 
-<p>
 
 
 
 <a href="https://github.com/tanvirjahanshakib/tanvirjahanshakib">
-<img src="https://img.shields.io/badge/🐙-Repository-181717?style=for-the-badge&logo=github&logoColor=white">
+<img src="https://img.shields.io/badge/Repository-181717?style=for-the-badge&logo=github&logoColor=white">
 </a>
 
-</p>
+
+
+
+
+
 
 </td>
 
@@ -191,65 +212,76 @@ No description available.
 
 </table>
 
-</td>
-</tr><tr>
-<td width="50%" valign="top">
 
-<table width="100%" cellpadding="16" cellspacing="0"
-style="border:1px solid #30363d; border-radius:12px;">
+</td>
+
+
+</tr><tr>
+
+<td width="50%" valign="top" style="padding:10px;">
+
+
+<table width="100%" 
+style="
+border:1px solid #30363d;
+border-radius:15px;
+">
 
 <tr>
 
-<td>
+<td style="padding:20px;">
 
-<p align="center">
-
-<a href="https://github.com/tanvirjahanshakib/JavaScript">
-
-<img src="https://opengraph.githubassets.com/8148d2719ef2878e2fb6ea0f27fc9fcaab2b28b1c480c261e67ad38c2eee3ddc/tanvirjahanshakib/JavaScript" width="100%">
-
-</a>
-
-</p>
 
 <h3>
 
-📦
+📦 
 <a href="https://github.com/tanvirjahanshakib/JavaScript">
 JavaScript
 </a>
 
 </h3>
 
-<p>
 
+
+<p>
 No description available.
-
 </p>
+
+
 
 <p>
 
-<img src="https://img.shields.io/badge/Language-JavaScript-blue?style=flat-square">
+🟨
+JavaScript
 
-<img src="https://img.shields.io/badge/⭐-1-yellow?style=flat-square">
+&nbsp;&nbsp;
 
-<img src="https://img.shields.io/badge/🍴-0-blue?style=flat-square">
+⭐ 1
+
+&nbsp;&nbsp;
+
+🍴 0
 
 </p>
 
-<p>
 
-
-<a href="#">
-<img src="https://img.shields.io/badge/🌐-Live_Demo-2ea44f?style=for-the-badge">
-</a>
 
 
 <a href="https://github.com/tanvirjahanshakib/JavaScript">
-<img src="https://img.shields.io/badge/🐙-Repository-181717?style=for-the-badge&logo=github&logoColor=white">
+<img src="https://img.shields.io/badge/Repository-181717?style=for-the-badge&logo=github&logoColor=white">
 </a>
 
-</p>
+
+
+
+
+<a href="#">
+<img src="https://img.shields.io/badge/Live_Project-00C7B7?style=for-the-badge&logo=googlechrome&logoColor=white">
+</a>
+
+
+
+
 
 </td>
 
@@ -257,61 +289,70 @@ No description available.
 
 </table>
 
+
 </td>
 
-<td width="50%" valign="top">
 
-<table width="100%" cellpadding="16" cellspacing="0"
-style="border:1px solid #30363d; border-radius:12px;">
+
+
+<td width="50%" valign="top" style="padding:10px;">
+
+
+<table width="100%" 
+style="
+border:1px solid #30363d;
+border-radius:15px;
+">
 
 <tr>
 
-<td>
+<td style="padding:20px;">
 
-<p align="center">
-
-<a href="https://github.com/tanvirjahanshakib/My-first-github-project">
-
-<img src="https://opengraph.githubassets.com/e33e5a21063675c9a0cb0f40ddf221fbb32c8758e54a909f0fe023b53bb0d725/tanvirjahanshakib/My-first-github-project" width="100%">
-
-</a>
-
-</p>
 
 <h3>
 
-📦
+📦 
 <a href="https://github.com/tanvirjahanshakib/My-first-github-project">
 My-first-github-project
 </a>
 
 </h3>
 
-<p>
 
+
+<p>
 No description available.
-
 </p>
+
+
 
 <p>
 
-<img src="https://img.shields.io/badge/Language-HTML-blue?style=flat-square">
+🟠
+HTML
 
-<img src="https://img.shields.io/badge/⭐-2-yellow?style=flat-square">
+&nbsp;&nbsp;
 
-<img src="https://img.shields.io/badge/🍴-0-blue?style=flat-square">
+⭐ 2
+
+&nbsp;&nbsp;
+
+🍴 0
 
 </p>
 
-<p>
 
 
 
 <a href="https://github.com/tanvirjahanshakib/My-first-github-project">
-<img src="https://img.shields.io/badge/🐙-Repository-181717?style=for-the-badge&logo=github&logoColor=white">
+<img src="https://img.shields.io/badge/Repository-181717?style=for-the-badge&logo=github&logoColor=white">
 </a>
 
-</p>
+
+
+
+
+
 
 </td>
 
@@ -319,61 +360,70 @@ No description available.
 
 </table>
 
-</td>
-</tr><tr>
-<td width="50%" valign="top">
 
-<table width="100%" cellpadding="16" cellspacing="0"
-style="border:1px solid #30363d; border-radius:12px;">
+</td>
+
+
+</tr><tr>
+
+<td width="50%" valign="top" style="padding:10px;">
+
+
+<table width="100%" 
+style="
+border:1px solid #30363d;
+border-radius:15px;
+">
 
 <tr>
 
-<td>
+<td style="padding:20px;">
 
-<p align="center">
-
-<a href="https://github.com/tanvirjahanshakib/Sawbia-Assignment">
-
-<img src="https://opengraph.githubassets.com/32178eb8bd1b61abf50e6dfd9a415c0fc4f552b35292a5f124c1b30e4f92d2cf/tanvirjahanshakib/Sawbia-Assignment" width="100%">
-
-</a>
-
-</p>
 
 <h3>
 
-📦
+📦 
 <a href="https://github.com/tanvirjahanshakib/Sawbia-Assignment">
 Sawbia-Assignment
 </a>
 
 </h3>
 
-<p>
 
+
+<p>
 No description available.
-
 </p>
+
+
 
 <p>
 
-<img src="https://img.shields.io/badge/Language-HTML-blue?style=flat-square">
+🟠
+HTML
 
-<img src="https://img.shields.io/badge/⭐-0-yellow?style=flat-square">
+&nbsp;&nbsp;
 
-<img src="https://img.shields.io/badge/🍴-0-blue?style=flat-square">
+⭐ 0
+
+&nbsp;&nbsp;
+
+🍴 0
 
 </p>
 
-<p>
 
 
 
 <a href="https://github.com/tanvirjahanshakib/Sawbia-Assignment">
-<img src="https://img.shields.io/badge/🐙-Repository-181717?style=for-the-badge&logo=github&logoColor=white">
+<img src="https://img.shields.io/badge/Repository-181717?style=for-the-badge&logo=github&logoColor=white">
 </a>
 
-</p>
+
+
+
+
+
 
 </td>
 
@@ -381,13 +431,20 @@ No description available.
 
 </table>
 
+
 </td>
+
+
 <td width="50%"></td></tr>
+
 </tbody>
 </table>
 
 
+
 <!--END_PINNED-->
+
+
 
 
 
