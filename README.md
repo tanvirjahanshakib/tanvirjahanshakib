@@ -77,7 +77,7 @@ I love turning ideas into real-world applications with modern technologies. I en
 
 ### 📦 [DEVCONF-2026](https://github.com/tanvirjahanshakib/DEVCONF-2026)
 
-No description provided.
+DEVCONF 2026 is a modern, fully responsive conference landing page featuring speaker profiles, event…
 
 ![HTML](https://img.shields.io/badge/-HTML-e34c26?style=flat-square&labelColor=161b22&logo=github&logoColor=white) ![★](https://img.shields.io/badge/%E2%98%85-2-30363d?style=flat-square&labelColor=161b22) ![⑂](https://img.shields.io/badge/%E2%91%82-0-30363d?style=flat-square&labelColor=161b22)
 
