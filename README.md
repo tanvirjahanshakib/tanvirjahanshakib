@@ -169,27 +169,35 @@ No description provided.
 <h2 align="center">📬 Connect With Me</h2>
 
 <p align="center">
-  <a href="mailto:mdtanvirjahanshakib@gmail.com">
-    <img height="38" src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white" />
-  </a>
-  <a href="https://linkedin.com/in/YOUR_USERNAME">
-    <img height="38" src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
-  </a>
-  <a href="https://instagram.com/mdtanvirjahanshakib">
-    <img height="38" src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" />
-  </a>
-  <a href="https://facebook.com/mdtanvirjahanshakib">
-    <img height="38" src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" />
-  </a>
-  <a href="https://x.com/tanvir_shakib_">
-    <img height="38" src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white" />
-  </a>
+
+<a href="mailto:mdtanvirjahanshakib@gmail.com" target="_blank" rel="noopener noreferrer">
+<img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" />
+</a>
+
+<a href="https://www.linkedin.com/in/YOUR_USERNAME" target="_blank" rel="noopener noreferrer">
+<img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+</a>
+
+<a href="https://www.instagram.com/mdtanvirjahanshakib" target="_blank" rel="noopener noreferrer">
+<img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" />
+</a>
+
+<a href="https://www.facebook.com/mdtanvirjahanshakib" target="_blank" rel="noopener noreferrer">
+<img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook" />
+</a>
+
+<a href="https://x.com/tanvir_shakib_" target="_blank" rel="noopener noreferrer">
+<img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white" alt="X" />
+</a>
+
 </p>
 
 <p align="center">
-  <a href="YOUR_CV_LINK">
-    <img height="42" src="https://img.shields.io/badge/📄%20Download%20CV-2563EB?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" />
-  </a>
+
+<a href="YOUR_CV_LINK" target="_blank" rel="noopener noreferrer">
+<img src="https://img.shields.io/badge/📄%20Download%20CV-2563EB?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" alt="Download CV" />
+</a>
+
 </p>
 ---
 
