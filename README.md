@@ -67,6 +67,7 @@ I love turning ideas into real-world applications with modern technologies. I en
 
 
 
+
 <!--START_PINNED-->
 
 
@@ -602,6 +603,7 @@ margin-top:auto;
 
 
 <!--END_PINNED-->
+
 
 
 
