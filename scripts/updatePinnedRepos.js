@@ -36,8 +36,9 @@ const START_MARKER = "<!--START_PINNED-->";
 const END_MARKER = "<!--END_PINNED-->";
 const MAX_REPOS = 6;
 const CARDS_PER_ROW = 2;
-const IMAGE_WIDTH = 400; // fixed width -> identical image size on every card
-const DESCRIPTION_MAX_LEN = 110; // ~2 lines at typical README width
+
+const IMAGE_WIDTH = 420;
+const DESCRIPTION_MAX_LEN = 95;
 
 const GH_TOKEN = process.env.GH_TOKEN || process.env.GITHUB_TOKEN;
 const GH_LOGIN = process.env.GH_LOGIN || process.env.GITHUB_REPOSITORY_OWNER;
@@ -174,39 +175,86 @@ function demoButton(url) {
  * render a meaningless placeholder banner).
  */
 function renderCard(repo) {
+
   const hasRealPreview =
     repo.openGraphImageUrl &&
     !repo.openGraphImageUrl.includes("/opengraph/default") &&
     !repo.openGraphImageUrl.includes("avatars.githubusercontent.com");
 
+
   const imageBlock = hasRealPreview
-    ? `<img src="${repo.openGraphImageUrl}" width="${IMAGE_WIDTH}" alt="${escapeHtml(
-        repo.name
-      )} preview" /><br/>`
+    ? `
+<img 
+src="${repo.openGraphImageUrl}"
+width="${IMAGE_WIDTH}"
+alt="${escapeHtml(repo.name)} preview"
+/>
+
+<br/>
+`
     : "";
 
-  const description = escapeHtml(truncateDescription(repo.description));
+
+  const description = escapeHtml(
+    truncateDescription(repo.description)
+  );
+
 
   const stats = [
     languageBadge(repo.primaryLanguage),
-    statBadge("★", repo.stargazerCount, "30363d"),
-    statBadge("⑂", repo.forkCount, "30363d"),
+    statBadge("⭐ Stars", repo.stargazerCount, "30363d"),
+    statBadge("🍴 Forks", repo.forkCount, "30363d")
   ].join(" ");
 
+
+
   const buttons = repo.homepageUrl
-    ? `${repoButton(repo.url)} ${demoButton(repo.homepageUrl)}`
-    : repoButton(repo.url);
 
-  return `${imageBlock}
+    ? `
+${repoButton(repo.url)}
+&nbsp;
+${demoButton(repo.homepageUrl)}
+`
 
-### 📦 [${escapeHtml(repo.name)}](${repo.url})
+    :
 
-${description}
-
-${stats}
-
-${buttons}
+`
+${repoButton(repo.url)}
 `;
+
+
+
+return `
+<div>
+
+${imageBlock}
+
+<h3>
+<a href="${repo.url}">
+📦 ${escapeHtml(repo.name)}
+</a>
+</h3>
+
+
+<p>
+${description}
+</p>
+
+
+<p>
+${stats}
+</p>
+
+
+<p>
+${buttons}
+</p>
+
+
+</div>
+`;
+
+}
 }
 
 /**
@@ -215,34 +263,80 @@ ${buttons}
  * a row with a single repo simply contains a single <td>.
  */
 function buildGrid(repos) {
-  if (repos.length === 0) {
-    return "_No pinned repositories found yet._";
-  }
 
-  const rows = [];
-  for (let i = 0; i < repos.length; i += CARDS_PER_ROW) {
-    rows.push(repos.slice(i, i + CARDS_PER_ROW));
-  }
+if(repos.length === 0){
 
-  const colWidth = Math.floor(100 / CARDS_PER_ROW);
+return "_No pinned repositories found yet._";
 
-  const rowsHtml = rows
-    .map((row) => {
-      const cells = row
-        .map(
-          (repo) =>
-            `<td width="${colWidth}%" valign="top">\n\n${renderCard(
-              repo
-            )}\n</td>`
-        )
-        .join("\n");
-      return `<tr>\n${cells}\n</tr>`;
-    })
-    .join("\n");
-
-  return `<table>\n${rowsHtml}\n</table>`;
 }
 
+
+const rows=[];
+
+
+for(
+let i=0;
+i<repos.length;
+i+=CARDS_PER_ROW
+){
+
+rows.push(
+repos.slice(i,i+CARDS_PER_ROW)
+);
+
+}
+
+
+
+const rowsHtml = rows.map(row=>{
+
+
+const cells=row.map(repo=>{
+
+
+return `
+
+<td 
+width="50%"
+valign="top">
+
+
+${renderCard(repo)}
+
+
+</td>
+
+`;
+
+}).join("");
+
+
+
+return `
+
+<tr>
+
+${cells}
+
+</tr>
+
+`;
+
+}).join("");
+
+
+
+return `
+
+<table width="100%">
+
+${rowsHtml}
+
+</table>
+
+`;
+
+}
 async function main() {
   console.log(`Fetching pinned repositories for @${GH_LOGIN}...`);
   const data = await graphqlRequest(QUERY, { login: GH_LOGIN, count: MAX_REPOS });
