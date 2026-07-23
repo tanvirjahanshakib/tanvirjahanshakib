@@ -1,210 +1,266 @@
-const repos = result.data.user.pinnedItems.nodes.map(repo => ({
-  name: repo.name,
-  description: repo.description || "No description available.",
-  url: repo.url,
-  homepage: repo.homepageUrl,
-  stars: repo.stargazerCount,
-  forks: repo.forkCount,
-  language: repo.primaryLanguage?.name || "Unknown",
-  color: repo.primaryLanguage?.color || "#808080",
-  image: repo.openGraphImageUrl
-}));`;
+const fs = require("fs");
+const path = require("path");
+
+const username = process.env.GITHUB_USERNAME;
+const token = process.env.GITHUB_TOKEN;
+
+if (!username || !token) {
+  console.error("Missing GITHUB_USERNAME or GITHUB_TOKEN");
+  process.exit(1);
+}
+
+
+async function fetchPinnedRepos() {
+  const query = `
+    query($login:String!) {
+      user(login:$login) {
+        pinnedItems(first:12, types:REPOSITORY) {
+          nodes {
+            ... on Repository {
+              name
+              description
+              url
+              homepageUrl
+              stargazerCount
+              forkCount
+              primaryLanguage {
+                name
+                color
+              }
+            }
+          }
+        }
+      }
+    }
+  `;
 
 
   const response = await fetch(
     "https://api.github.com/graphql",
     {
       method: "POST",
-      headers: {
-        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-        "Content-Type": "application/json",
+      headers:{
+        "Authorization": `Bearer ${token}`,
+        "Content-Type":"application/json"
       },
-      body: JSON.stringify({ query }),
+      body: JSON.stringify({
+        query,
+        variables:{
+          login: username
+        }
+      })
     }
   );
 
 
-  const result = await response.json();
+  const data = await response.json();
 
 
-const repos = result.data.user.pinnedItems.nodes.map(repo => ({
-  name: repo.name,
-  description: repo.description || "No description available.",
-  url: repo.url,
-  homepage: repo.homepageUrl,
-
-  stars: repo.stargazerCount,
-  forks: repo.forkCount,
-
-  language: repo.primaryLanguage?.name || "Unknown",
-  color: repo.primaryLanguage?.color || "#586069",
-
-  image: repo.openGraphImageUrl
-}));
-
-
-  return generateTable(repos);
-}
-
-function generateTable(repos) {
-
-  let html = `
-<table width="100%" cellspacing="12" cellpadding="0">
-<tbody>
-`;
-
-  for (let i = 0; i < repos.length; i += 2) {
-
-    html += `<tr>`;
-
-    for (let j = i; j < i + 2; j++) {
-
-      if (!repos[j]) {
-        html += `<td width="50%"></td>`;
-        continue;
-      }
-
-      const repo = repos[j];
-
-      html += `
-<td width="50%" valign="top">
-
-<table width="100%" cellspacing="0" cellpadding="14" style="border:1px solid #30363d;">
-
-<tr>
-<td>
-
-<p align="center">
-<a href="${repo.url}">
-<img src="${repo.image}" width="100%">
-</a>
-</p>
-
-<h3>
-📦
-<a href="${repo.url}">
-${repo.name}
-</a>
-</h3>
-
-<p>
-${repo.description}
-</p>
-
-<p>
-
-<img src="https://img.shields.io/badge/${encodeURIComponent(repo.language)}-${repo.color.replace("#","")}?style=flat-square">
-
-<img src="https://img.shields.io/badge/⭐-${repo.stars}-yellow?style=flat-square">
-
-<img src="https://img.shields.io/badge/🍴-${repo.forks}-blue?style=flat-square">
-
-</p>
-
-<p>
-
-<h3>
-
-📦
-<a href="${repo.url}">
-${repo.name}
-</a>
-
-</h3>
-
-<p>
-
-${repo.description}
-
-</p>
-
-<p>
-
-<img src="https://img.shields.io/badge/Language-${encodeURIComponent(repo.language)}-blue?style=flat-square">
-
-<img src="https://img.shields.io/badge/⭐-${repo.stars}-yellow?style=flat-square">
-
-<img src="https://img.shields.io/badge/🍴-${repo.forks}-blue?style=flat-square">
-
-</p>
-
-<p>
-
-${repo.homepage ? `
-<a href="${repo.homepage}" target="_blank">
-<img src="https://img.shields.io/badge/🌐-Live_Demo-2ea44f?style=for-the-badge&logo=google-chrome&logoColor=white">
-</a>
-` : ""}
-
-<a href="${repo.url}" target="_blank">
-<img src="https://img.shields.io/badge/🐙-Repository-181717?style=for-the-badge&logo=github&logoColor=white">
-</a>
-
-</p>
-
-</td>
-</tr>
-
-</table>
-
-</td>
-`;
-    }
-
-    html += `</tr>`;
+  if(data.errors){
+    console.error(data.errors);
+    process.exit(1);
   }
 
-  html += `
-</tbody>
+
+  return data.data.user.pinnedItems.nodes;
+}
+
+
+
+function languageEmoji(language){
+
+  const map = {
+    JavaScript:"🟨",
+    TypeScript:"🔵",
+    Python:"🐍",
+    Java:"☕",
+    React:"⚛️",
+    Vue:"🟢",
+    PHP:"🟣",
+    HTML:"🟠",
+    CSS:"🎨"
+  };
+
+
+  return map[language] || "💻";
+}
+
+
+
+function createCard(repo){
+
+
+  const lang = repo.primaryLanguage
+    ? repo.primaryLanguage.name
+    : "Code";
+
+
+  const live =
+    repo.homepageUrl
+    ? `
+<a href="${repo.homepageUrl}">
+<img src="https://img.shields.io/badge/Live_Demo-00C7B7?style=for-the-badge&logo=vercel&logoColor=white"/>
+</a>
+`
+    : "";
+
+
+  return `
+<td width="50%" valign="top">
+
+<h3>📦 ${repo.name}</h3>
+
+<p>
+${repo.description || "A modern software project."}
+</p>
+
+
+<p>
+${languageEmoji(lang)} ${lang}
+&nbsp;
+⭐ ${repo.stargazerCount}
+&nbsp;
+🍴 ${repo.forkCount}
+</p>
+
+
+<a href="${repo.url}">
+<img src="https://img.shields.io/badge/Repository-181717?style=for-the-badge&logo=github&logoColor=white"/>
+</a>
+
+${live}
+
+
+</td>
+`;
+}
+
+
+
+function generateHTML(repos){
+
+
+ let html = `
+<table>
+`;
+
+
+ for(let i=0;i<repos.length;i+=2){
+
+   html += "<tr>";
+
+   html += createCard(repos[i]);
+
+
+   if(repos[i+1]){
+     html += createCard(repos[i+1]);
+   }
+   else{
+     html += "<td></td>";
+   }
+
+
+   html += "</tr>\n";
+
+ }
+
+
+ html += `
 </table>
 `;
 
-  return html;
-}
 
-
-
-
-async function updateReadme() {
-
-  const repoCards = await getPinnedRepos();
-
-
-  const readmePath = "README.md";
-
-
-  let readme = fs.readFileSync(readmePath, "utf8");
-
-
-  const start = "<!--START_PINNED-->";
-  const end = "<!--END_PINNED-->";
-
-
-
-  const newSection = `
-${start}
-
-${repoCards}
-
-${end}
-`;
-
-
-
-  readme = readme.replace(
-    new RegExp(`${start}[\\s\\S]*?${end}`),
-    newSection
-  );
-
-
-
-  fs.writeFileSync(readmePath, readme);
-
-
-  console.log("README updated successfully ✅");
+ return html;
 
 }
 
 
 
-updateReadme();
+
+function updateReadme(content){
+
+
+ const readmePath =
+ path.join(process.cwd(),"README.md");
+
+
+ let readme =
+ fs.readFileSync(
+  readmePath,
+  "utf8"
+ );
+
+
+ const start =
+ "<!-- PROJECTS_START -->";
+
+
+ const end =
+ "<!-- PROJECTS_END -->";
+
+
+
+ const regex =
+ new RegExp(
+ `${start}[\\s\\S]*?${end}`,
+ "m"
+ );
+
+
+ const updated =
+ `${start}
+
+${content}
+
+${end}`;
+
+
+
+ if(!regex.test(readme)){
+   console.error(
+    "README markers not found"
+   );
+   process.exit(1);
+ }
+
+
+ readme =
+ readme.replace(
+  regex,
+  updated
+ );
+
+
+ fs.writeFileSync(
+  readmePath,
+  readme
+ );
+
+
+ console.log(
+  "README updated successfully 🚀"
+ );
+
+}
+
+
+
+
+
+async function main(){
+
+ const repos =
+ await fetchPinnedRepos();
+
+
+ const html =
+ generateHTML(repos);
+
+
+ updateReadme(html);
+
+}
+
+
+
+main();
