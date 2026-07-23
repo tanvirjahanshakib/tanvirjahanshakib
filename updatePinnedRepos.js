@@ -159,7 +159,7 @@ function statBadge(label, value, color) {
 }
 
 function repoButton(url) {
-  return `[![Repository](https://img.shields.io/badge/-Repository-0d1117?style=for-the-badge&logo=github&logoColor=white)](${url})`;
+  return `[![View Repository](https://img.shields.io/badge/View%20Repository-181717?style=for-the-badge&logo=github&logoColor=white&labelColor=181717)](${url})`;
 }
 
 function demoButton(url) {
