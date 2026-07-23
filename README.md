@@ -81,7 +81,7 @@ No description provided.
 
 ![HTML](https://img.shields.io/badge/-HTML-e34c26?style=flat-square&labelColor=161b22&logo=github&logoColor=white) ![★](https://img.shields.io/badge/%E2%98%85-2-30363d?style=flat-square&labelColor=161b22) ![⑂](https://img.shields.io/badge/%E2%91%82-0-30363d?style=flat-square&labelColor=161b22)
 
-[![View Repository](https://img.shields.io/badge/View%20Repository-181717?style=for-the-badge&logo=github&logoColor=white&labelColor=181717)](https://github.com/tanvirjahanshakib/Assignment-01-WEB14-1311-) [![Live Demo](https://img.shields.io/badge/-Live%20Demo-238636?style=for-the-badge&logo=vercel&logoColor=white)](https://tanvirjahanshakib.github.io/Assignment-01-WEB14-1311-/)
+[![Repository](https://img.shields.io/badge/Repository-0D1117?style=for-the-badge&logo=github&logoColor=white&labelColor=000000)](https://github.com/tanvirjahanshakib/Assignment-01-WEB14-1311-) [![Live Project](https://img.shields.io/badge/Live%20Project-2563EB?style=for-the-badge&logo=google-chrome&logoColor=white&labelColor=1E40AF)](https://tanvirjahanshakib.github.io/Assignment-01-WEB14-1311-/)
 
 </td>
 <td width="50%" valign="top">
@@ -94,7 +94,7 @@ No description provided.
 
 ![HTML](https://img.shields.io/badge/-HTML-e34c26?style=flat-square&labelColor=161b22&logo=github&logoColor=white) ![★](https://img.shields.io/badge/%E2%98%85-0-30363d?style=flat-square&labelColor=161b22) ![⑂](https://img.shields.io/badge/%E2%91%82-0-30363d?style=flat-square&labelColor=161b22)
 
-[![View Repository](https://img.shields.io/badge/View%20Repository-181717?style=for-the-badge&logo=github&logoColor=white&labelColor=181717)](https://github.com/tanvirjahanshakib/Sawbia-Assignment)
+[![Repository](https://img.shields.io/badge/Repository-0D1117?style=for-the-badge&logo=github&logoColor=white&labelColor=000000)](https://github.com/tanvirjahanshakib/Sawbia-Assignment)
 
 </td>
 </tr>
