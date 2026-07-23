@@ -4,6 +4,7 @@ on:
   workflow_dispatch:
 
   schedule:
+    # প্রতি 6 ঘণ্টা পর auto update
     - cron: "0 */6 * * *"
 
   push:
@@ -17,7 +18,7 @@ permissions:
 
 jobs:
 
-  update-pinned:
+  update-pinned-repos:
 
     runs-on: ubuntu-latest
 
@@ -57,7 +58,7 @@ jobs:
           git add README.md
 
 
-          git commit -m "🚀 Update pinned repositories" || echo "No changes"
+          git commit -m "🚀 Update pinned repositories" || echo "No changes to commit"
 
 
           git push
