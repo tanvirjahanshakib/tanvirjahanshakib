@@ -216,3 +216,12 @@ No description provided.
 <p align="center">
 ⭐ Feel free to explore my repositories and connect with me!
 </p>
+<h2 align="center">📅 Contributions in the Last Year</h2>
+
+<p align="center">
+  <img
+    src="https://ghchart.rshah.org/0e4429/tanvirjahanshakib"
+    width="95%"
+    alt="GitHub Contribution Chart"
+  />
+</p>
