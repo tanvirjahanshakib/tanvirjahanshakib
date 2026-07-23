@@ -20,8 +20,9 @@ const END_MARKER = "<!--END_PINNED-->";
 const MAX_REPOS = 6;
 const CARDS_PER_ROW = 2;
 
-const IMAGE_WIDTH = 420;
-const DESCRIPTION_MAX_LEN = 95;
+const IMAGE_WIDTH = 380;
+
+const DESCRIPTION_MAX_LEN = 100;
 
 
 const GH_TOKEN =
@@ -50,49 +51,35 @@ if (!GH_LOGIN) {
 
 
 const QUERY = `
-query ($login: String!, $count: Int!) {
+query($login:String!) {
 
-  user(login: $login) {
+ user(login:$login){
 
-    pinnedItems(
-      first: $count,
-      types: [REPOSITORY]
-    ) {
+  contributionsCollection {
 
-      nodes {
+   contributionCalendar {
 
-        ... on Repository {
+    totalContributions
 
-          name
-          description
+    weeks {
 
-          url
-          homepageUrl
+     contributionDays {
 
-          stargazerCount
-          forkCount
+      contributionCount
+      date
 
-          openGraphImageUrl
-
-
-          primaryLanguage {
-
-            name
-            color
-
-          }
-
-        }
-
-      }
+     }
 
     }
 
+   }
+
   }
+
+ }
 
 }
 `;
-
 
 
 
@@ -398,83 +385,99 @@ return `[![Live Demo](https://img.shields.io/badge/Live-Demo-238636?style=for-th
 function renderCard(repo) {
 
 
-  const hasRealPreview =
-    repo.openGraphImageUrl &&
-    !repo.openGraphImageUrl.includes("/opengraph/default") &&
-    !repo.openGraphImageUrl.includes("avatars.githubusercontent.com");
+const hasRealPreview =
+repo.openGraphImageUrl &&
+!repo.openGraphImageUrl.includes("/opengraph/default") &&
+!repo.openGraphImageUrl.includes("avatars.githubusercontent.com");
 
 
 
-  const imageBlock = hasRealPreview
+const imageBlock = hasRealPreview
+?
+`
+<p align="center">
 
-    ? `
-<img 
+<img
 src="${repo.openGraphImageUrl}"
 width="${IMAGE_WIDTH}"
 alt="${escapeHtml(repo.name)} preview"
 />
 
-<br/>
+</p>
+
 `
-
-    : "";
-
-
-
-
-  const description =
-    escapeHtml(
-      truncateDescription(repo.description)
-    );
+:
+"";
 
 
 
 
-
-  const stats = [
-
-    languageBadge(repo.primaryLanguage),
-
-    statBadge(
-      "⭐ Stars",
-      repo.stargazerCount,
-      "30363d"
-    ),
-
-    statBadge(
-      "🍴 Forks",
-      repo.forkCount,
-      "30363d"
-    )
-
-
-  ].join(" ");
+const description =
+escapeHtml(
+truncateDescription(repo.description)
+);
 
 
 
 
 
-  const buttons = repo.homepageUrl
+const stats = [
 
-    ? `
+languageBadge(repo.primaryLanguage),
+
+statBadge(
+"⭐ Stars",
+repo.stargazerCount,
+"30363d"
+),
+
+statBadge(
+"🍴 Forks",
+repo.forkCount,
+"30363d"
+)
+
+].join(" ");
+
+
+
+
+
+const buttons = repo.homepageUrl
+
+?
+
+`
+<p align="center">
+
 ${repoButton(repo.url)}
 
 &nbsp;
 
 ${demoButton(repo.homepageUrl)}
+
+</p>
 `
 
-    :
+:
 
 `
+
+<p align="center">
+
 ${repoButton(repo.url)}
+
+</p>
+
 `;
 
 
 
 
 
+
 return `
+
 
 <div>
 
@@ -483,7 +486,7 @@ ${imageBlock}
 
 
 
-<h3>
+<h3 align="center">
 
 <a href="${repo.url}">
 
@@ -495,7 +498,7 @@ ${imageBlock}
 
 
 
-<p>
+<p align="center">
 
 ${description}
 
@@ -503,23 +506,20 @@ ${description}
 
 
 
-<p>
+<p align="center">
 
 ${stats}
 
 </p>
 
 
-
-<p>
-
 ${buttons}
-
-</p>
 
 
 
 </div>
+
+
 
 `;
 
@@ -530,17 +530,14 @@ ${buttons}
 
 
 
-
 function buildGrid(repos){
 
 
-
-if(repos.length === 0){
+if(repos.length===0){
 
 return "_No pinned repositories found yet._";
 
 }
-
 
 
 
@@ -554,7 +551,6 @@ i<repos.length;
 i+=CARDS_PER_ROW
 ){
 
-
 rows.push(
 repos.slice(
 i,
@@ -562,17 +558,17 @@ i+CARDS_PER_ROW
 )
 );
 
-
 }
 
 
 
 
+const html =
+rows.map(row=>{
 
-const rowsHtml = rows.map(row=>{
 
-
-const cells = row.map(repo=>{
+const cells =
+row.map(repo=>{
 
 
 return `
@@ -582,13 +578,18 @@ width="50%"
 valign="top">
 
 
+<div>
+
+
 ${renderCard(repo)}
+
+
+</div>
 
 
 </td>
 
 `;
-
 
 
 }).join("\n");
@@ -616,19 +617,20 @@ ${cells}
 
 
 
-
 return `
 
-<table width="100%">
+<table 
+width="100%"
+cellpadding="15"
+cellspacing="20">
 
-${rowsHtml}
+${html}
 
 </table>
 
 `;
 
 }
-
 
 
 
