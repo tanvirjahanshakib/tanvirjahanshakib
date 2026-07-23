@@ -10,7 +10,7 @@
  *   <!--END_PINNED-->
  *
  * 100% GitHub-README compatible:
- *   - Only Markdown + inline HTML (<table>, <tr>, <td>, <img>, <a>, <b>, <br>)
+ *   - Only Markdown + inline HTML (<table>, <tr>, <td>, <img>, <a>, <h3>, <p>, <br>)
  *   - No <style>, no inline `style="..."`, no CSS grid/flexbox/box-shadow
  *     (GitHub's HTML sanitizer strips the `style` attribute entirely, so all
  *     "theming" below — colors, borders, badges, buttons — is done with
@@ -130,7 +130,7 @@ function escapeHtml(str = "") {
 }
 
 function truncateDescription(desc) {
-  if (!desc) return "No description provided.";
+  if (!desc) return "";
   const clean = desc.trim().replace(/\s+/g, " ");
   if (clean.length <= DESCRIPTION_MAX_LEN) return clean;
   return clean.slice(0, DESCRIPTION_MAX_LEN).replace(/\s+\S*$/, "") + "…";
@@ -164,7 +164,7 @@ function repoButton(url) {
 }
 
 function demoButton(url) {
-  return `[![Live Demo](https://img.shields.io/badge/-Live%20Demo-238636?style=for-the-badge&logo=vercel&logoColor=white)](${url})`;
+  return `[![Live Demo](https://img.shields.io/badge/-Live%20Project-238636?style=for-the-badge&logo=vercel&logoColor=white)](${url})`;
 }
 
 /**
@@ -175,16 +175,14 @@ function demoButton(url) {
  * render a meaningless placeholder banner).
  */
 function renderCard(repo) {
-
   const hasRealPreview =
     repo.openGraphImageUrl &&
     !repo.openGraphImageUrl.includes("/opengraph/default") &&
     !repo.openGraphImageUrl.includes("avatars.githubusercontent.com");
 
-
   const imageBlock = hasRealPreview
     ? `
-<img 
+<img
 src="${repo.openGraphImageUrl}"
 width="${IMAGE_WIDTH}"
 alt="${escapeHtml(repo.name)} preview"
@@ -194,37 +192,32 @@ alt="${escapeHtml(repo.name)} preview"
 `
     : "";
 
-
-  const description = escapeHtml(
-    truncateDescription(repo.description)
-  );
-
+  const cleanDescription = (repo.description || "").trim();
+  const descriptionBlock = cleanDescription
+    ? `
+<p>
+${escapeHtml(truncateDescription(cleanDescription))}
+</p>
+`
+    : "";
 
   const stats = [
     languageBadge(repo.primaryLanguage),
     statBadge("⭐ Stars", repo.stargazerCount, "30363d"),
-    statBadge("🍴 Forks", repo.forkCount, "30363d")
+    statBadge("🍴 Forks", repo.forkCount, "30363d"),
   ].join(" ");
 
-
-
   const buttons = repo.homepageUrl
-
     ? `
 ${repoButton(repo.url)}
 &nbsp;
 ${demoButton(repo.homepageUrl)}
 `
-
-    :
-
-`
+    : `
 ${repoButton(repo.url)}
 `;
 
-
-
-return `
+  return `
 <div>
 
 ${imageBlock}
@@ -235,26 +228,18 @@ ${imageBlock}
 </a>
 </h3>
 
-
-<p>
-${description}
-</p>
-
+${descriptionBlock}
 
 <p>
 ${stats}
 </p>
 
-
 <p>
 ${buttons}
 </p>
 
-
 </div>
 `;
-
-}
 }
 
 /**
@@ -263,80 +248,50 @@ ${buttons}
  * a row with a single repo simply contains a single <td>.
  */
 function buildGrid(repos) {
+  if (repos.length === 0) {
+    return "_No pinned repositories found yet._";
+  }
 
-if(repos.length === 0){
+  const rows = [];
+  for (let i = 0; i < repos.length; i += CARDS_PER_ROW) {
+    rows.push(repos.slice(i, i + CARDS_PER_ROW));
+  }
 
-return "_No pinned repositories found yet._";
-
-}
-
-
-const rows=[];
-
-
-for(
-let i=0;
-i<repos.length;
-i+=CARDS_PER_ROW
-){
-
-rows.push(
-repos.slice(i,i+CARDS_PER_ROW)
-);
-
-}
-
-
-
-const rowsHtml = rows.map(row=>{
-
-
-const cells=row.map(repo=>{
-
-
-return `
-
-<td 
+  const rowsHtml = rows
+    .map((row) => {
+      const cells = row
+        .map((repo) => {
+          return `
+<td
 width="50%"
 valign="top">
 
-
 ${renderCard(repo)}
 
-
 </td>
-
 `;
+        })
+        .join("");
 
-}).join("");
-
-
-
-return `
-
+      return `
 <tr>
 
 ${cells}
 
 </tr>
-
 `;
+    })
+    .join("");
 
-}).join("");
-
-
-
-return `
-
+  return `
 <table width="100%">
 
 ${rowsHtml}
 
 </table>
-
 `;
-
 }
+
 async function main() {
   console.log(`Fetching pinned repositories for @${GH_LOGIN}...`);
   const data = await graphqlRequest(QUERY, { login: GH_LOGIN, count: MAX_REPOS });
@@ -382,5 +337,3 @@ main().catch((err) => {
   console.error(err);
   process.exit(1);
 });
-
-
