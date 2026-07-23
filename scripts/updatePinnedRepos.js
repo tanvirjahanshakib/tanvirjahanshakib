@@ -192,14 +192,7 @@ alt="${escapeHtml(repo.name)} preview"
 `
     : "";
 
-  const cleanDescription = (repo.description || "").trim();
-  const descriptionBlock = cleanDescription
-    ? `
-<p>
-${escapeHtml(truncateDescription(cleanDescription))}
-</p>
-`
-    : "";
+  const descriptionBlock = "";
 
   const stats = [
     languageBadge(repo.primaryLanguage),
@@ -227,8 +220,6 @@ ${imageBlock}
 📦 ${escapeHtml(repo.name)}
 </a>
 </h3>
-
-${descriptionBlock}
 
 <p>
 ${stats}
