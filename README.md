@@ -216,11 +216,14 @@ No description provided.
 <p align="center">
 ⭐ Feel free to explore my repositories and connect with me!
 </p>
-<h2 align="center">📅 Contributions in the Last Year</h2>
+<h2 align="center">
+  📅 My GitHub Contributions
+</h2>
 
 <p align="center">
-    <img
-        src="./assets/contribution-calendar.svg"
-        width="100%"
-        alt="Contribution Calendar">
+  <img 
+    src="./assets/contribution.svg"
+    width="100%"
+    alt="GitHub Contribution Calendar"
+  />
 </p>
