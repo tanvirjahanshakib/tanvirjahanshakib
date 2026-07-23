@@ -96,37 +96,30 @@ function generateTable(repos) {
 
 let html = `
 
-<table width="100%">
+<table width="50%">
 <tbody>
 
 `;
 
 
-
 for(let i=0;i<repos.length;i+=2){
-
 
 html += `<tr>`;
 
-
-
 for(let j=i;j<i+2;j++){
-
 
 if(repos[j]){
 
-
 const repo = repos[j];
-
 
 html += `
 
-<td width="50%" valign="top" style="padding:10px;">
+<td width="50%" valign="top" style="padding:5px;">
 
 
-<table width="100%" 
+<table width="150%" 
 style="
-border:1px solid #30363d;
+border:0px solid #30363d;
 border-radius:15px;
 ">
 
@@ -166,15 +159,9 @@ ${repo.language}
 🍴 ${repo.forks}
 
 </p>
-
-
-
-
 <a href="${repo.url}">
 <img src="https://img.shields.io/badge/Repository-181717?style=for-the-badge&logo=github&logoColor=white">
 </a>
-
-
 
 ${repo.homepage ? `
 
@@ -183,7 +170,6 @@ ${repo.homepage ? `
 </a>
 
 `:""}
-
 
 
 </td>
