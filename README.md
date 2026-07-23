@@ -58,541 +58,337 @@ I love turning ideas into real-world applications with modern technologies. I en
 
 
 
+
 <!--START_PINNED-->
 
 
-<table width="100%" style="table-layout:fixed;">
+<table width="100%" cellspacing="10" cellpadding="0">
 <tbody>
 <tr>
-<td width="50%" valign="top" style="
-width:50%;
-padding:10px;
-">
+<td width="50%" valign="top">
 
-
-<table width="100%" style="
-border:1px solid #30363d;
-border-radius:12px;
-height:330px;
-">
-
+<table width="100%" cellpadding="16" cellspacing="0"
+style="border:1px solid #30363d; border-radius:12px;">
 
 <tr>
 
-<td style="
-padding:20px;
-vertical-align:top;
-">
+<td>
 
+<p align="center">
 
-<div style="
-height:270px;
-display:flex;
-flex-direction:column;
-">
+<a href="https://github.com/tanvirjahanshakib/Assignment-01-WEB14-1311-">
 
+<img src="https://opengraph.githubassets.com/af25235a79f7cc1a85ac20c0b2f2d5a27989dd182afc077ca67a1c44672a92a7/tanvirjahanshakib/Assignment-01-WEB14-1311-" width="100%">
 
-<div>
+</a>
 
+</p>
 
-<h3 style="
-margin:0;
-height:35px;
-overflow:hidden;
-">
+<h3>
 
-📦 
-<a href="https://github.com/tanvirjahanshakib/Assignment-01-WEB14-1311-" target="_blank">
+📦
+<a href="https://github.com/tanvirjahanshakib/Assignment-01-WEB14-1311-">
 Assignment-01-WEB14-1311-
 </a>
 
 </h3>
 
-
-
-<div style="
-height:100px;
-overflow:hidden;
-margin-top:10px;
-">
-
 <p>
-_No description available._
+
+No description available.
+
 </p>
 
+<p>
 
-</div>
+<img src="https://img.shields.io/badge/Language-HTML-blue?style=flat-square">
 
+<img src="https://img.shields.io/badge/⭐-2-yellow?style=flat-square">
 
-</div>
+<img src="https://img.shields.io/badge/🍴-0-blue?style=flat-square">
 
-
-
-
-
-<div style="
-margin-top:auto;
-">
-
-
+</p>
 
 <p>
-<a href="https://github.com/tanvirjahanshakib/Assignment-01-WEB14-1311-" target="_blank">
-<img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white">
+
+
+<a href="https://tanvirjahanshakib.github.io/Assignment-01-WEB14-1311-/">
+<img src="https://img.shields.io/badge/🌐-Live_Demo-2ea44f?style=for-the-badge">
 </a>
-</p>
 
 
-
-
-
-<p>
-<a href="https://tanvirjahanshakib.github.io/Assignment-01-WEB14-1311-/" target="_blank">
-<img src="https://img.shields.io/badge/Live-Demo-38BDF8?style=for-the-badge&logo=googlechrome&logoColor=white">
+<a href="https://github.com/tanvirjahanshakib/Assignment-01-WEB14-1311-">
+<img src="https://img.shields.io/badge/🐙-Repository-181717?style=for-the-badge&logo=github&logoColor=white">
 </a>
+
 </p>
-
-
-
-
-</div>
-
-
-
-</div>
-
 
 </td>
 
 </tr>
 
-
 </table>
-
 
 </td>
 
-<td width="50%" valign="top" style="
-width:50%;
-padding:10px;
-">
+<td width="50%" valign="top">
 
-
-<table width="100%" style="
-border:1px solid #30363d;
-border-radius:12px;
-height:330px;
-">
-
+<table width="100%" cellpadding="16" cellspacing="0"
+style="border:1px solid #30363d; border-radius:12px;">
 
 <tr>
 
-<td style="
-padding:20px;
-vertical-align:top;
-">
+<td>
 
+<p align="center">
 
-<div style="
-height:270px;
-display:flex;
-flex-direction:column;
-">
+<a href="https://github.com/tanvirjahanshakib/tanvirjahanshakib">
 
+<img src="https://opengraph.githubassets.com/9fc412ee575ac4b1c4484a0dcae2ba10f86856ca8b501f11ce82a159643c1e19/tanvirjahanshakib/tanvirjahanshakib" width="100%">
 
-<div>
+</a>
 
+</p>
 
-<h3 style="
-margin:0;
-height:35px;
-overflow:hidden;
-">
+<h3>
 
-📦 
-<a href="https://github.com/tanvirjahanshakib/tanvirjahanshakib" target="_blank">
+📦
+<a href="https://github.com/tanvirjahanshakib/tanvirjahanshakib">
 tanvirjahanshakib
 </a>
 
 </h3>
 
-
-
-<div style="
-height:100px;
-overflow:hidden;
-margin-top:10px;
-">
-
 <p>
-_No description available._
+
+No description available.
+
 </p>
 
+<p>
 
-</div>
+<img src="https://img.shields.io/badge/Language-JavaScript-blue?style=flat-square">
 
+<img src="https://img.shields.io/badge/⭐-1-yellow?style=flat-square">
 
-</div>
+<img src="https://img.shields.io/badge/🍴-0-blue?style=flat-square">
 
-
-
-
-
-<div style="
-margin-top:auto;
-">
-
-
+</p>
 
 <p>
-<a href="https://github.com/tanvirjahanshakib/tanvirjahanshakib" target="_blank">
-<img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white">
+
+
+
+<a href="https://github.com/tanvirjahanshakib/tanvirjahanshakib">
+<img src="https://img.shields.io/badge/🐙-Repository-181717?style=for-the-badge&logo=github&logoColor=white">
 </a>
+
 </p>
-
-
-
-
-
-
-
-
-</div>
-
-
-
-</div>
-
 
 </td>
 
 </tr>
 
-
 </table>
-
 
 </td>
 </tr><tr>
-<td width="50%" valign="top" style="
-width:50%;
-padding:10px;
-">
+<td width="50%" valign="top">
 
-
-<table width="100%" style="
-border:1px solid #30363d;
-border-radius:12px;
-height:330px;
-">
-
+<table width="100%" cellpadding="16" cellspacing="0"
+style="border:1px solid #30363d; border-radius:12px;">
 
 <tr>
 
-<td style="
-padding:20px;
-vertical-align:top;
-">
+<td>
 
+<p align="center">
 
-<div style="
-height:270px;
-display:flex;
-flex-direction:column;
-">
+<a href="https://github.com/tanvirjahanshakib/JavaScript">
 
+<img src="https://opengraph.githubassets.com/8148d2719ef2878e2fb6ea0f27fc9fcaab2b28b1c480c261e67ad38c2eee3ddc/tanvirjahanshakib/JavaScript" width="100%">
 
-<div>
+</a>
 
+</p>
 
-<h3 style="
-margin:0;
-height:35px;
-overflow:hidden;
-">
+<h3>
 
-📦 
-<a href="https://github.com/tanvirjahanshakib/JavaScript" target="_blank">
+📦
+<a href="https://github.com/tanvirjahanshakib/JavaScript">
 JavaScript
 </a>
 
 </h3>
 
-
-
-<div style="
-height:100px;
-overflow:hidden;
-margin-top:10px;
-">
-
 <p>
-_No description available._
+
+No description available.
+
 </p>
 
+<p>
 
-</div>
+<img src="https://img.shields.io/badge/Language-JavaScript-blue?style=flat-square">
 
+<img src="https://img.shields.io/badge/⭐-1-yellow?style=flat-square">
 
-</div>
+<img src="https://img.shields.io/badge/🍴-0-blue?style=flat-square">
 
-
-
-
-
-<div style="
-margin-top:auto;
-">
-
-
+</p>
 
 <p>
-<a href="https://github.com/tanvirjahanshakib/JavaScript" target="_blank">
-<img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white">
+
+
+<a href="#">
+<img src="https://img.shields.io/badge/🌐-Live_Demo-2ea44f?style=for-the-badge">
 </a>
-</p>
 
 
-
-
-
-<p>
-<a href="#" target="_blank">
-<img src="https://img.shields.io/badge/Live-Demo-38BDF8?style=for-the-badge&logo=googlechrome&logoColor=white">
+<a href="https://github.com/tanvirjahanshakib/JavaScript">
+<img src="https://img.shields.io/badge/🐙-Repository-181717?style=for-the-badge&logo=github&logoColor=white">
 </a>
+
 </p>
-
-
-
-
-</div>
-
-
-
-</div>
-
 
 </td>
 
 </tr>
 
-
 </table>
-
 
 </td>
 
-<td width="50%" valign="top" style="
-width:50%;
-padding:10px;
-">
+<td width="50%" valign="top">
 
-
-<table width="100%" style="
-border:1px solid #30363d;
-border-radius:12px;
-height:330px;
-">
-
+<table width="100%" cellpadding="16" cellspacing="0"
+style="border:1px solid #30363d; border-radius:12px;">
 
 <tr>
 
-<td style="
-padding:20px;
-vertical-align:top;
-">
+<td>
 
+<p align="center">
 
-<div style="
-height:270px;
-display:flex;
-flex-direction:column;
-">
+<a href="https://github.com/tanvirjahanshakib/My-first-github-project">
 
+<img src="https://opengraph.githubassets.com/e33e5a21063675c9a0cb0f40ddf221fbb32c8758e54a909f0fe023b53bb0d725/tanvirjahanshakib/My-first-github-project" width="100%">
 
-<div>
+</a>
 
+</p>
 
-<h3 style="
-margin:0;
-height:35px;
-overflow:hidden;
-">
+<h3>
 
-📦 
-<a href="https://github.com/tanvirjahanshakib/My-first-github-project" target="_blank">
+📦
+<a href="https://github.com/tanvirjahanshakib/My-first-github-project">
 My-first-github-project
 </a>
 
 </h3>
 
-
-
-<div style="
-height:100px;
-overflow:hidden;
-margin-top:10px;
-">
-
 <p>
-_No description available._
+
+No description available.
+
 </p>
 
+<p>
 
-</div>
+<img src="https://img.shields.io/badge/Language-HTML-blue?style=flat-square">
 
+<img src="https://img.shields.io/badge/⭐-2-yellow?style=flat-square">
 
-</div>
+<img src="https://img.shields.io/badge/🍴-0-blue?style=flat-square">
 
-
-
-
-
-<div style="
-margin-top:auto;
-">
-
-
+</p>
 
 <p>
-<a href="https://github.com/tanvirjahanshakib/My-first-github-project" target="_blank">
-<img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white">
+
+
+
+<a href="https://github.com/tanvirjahanshakib/My-first-github-project">
+<img src="https://img.shields.io/badge/🐙-Repository-181717?style=for-the-badge&logo=github&logoColor=white">
 </a>
+
 </p>
-
-
-
-
-
-
-
-
-</div>
-
-
-
-</div>
-
 
 </td>
 
 </tr>
 
-
 </table>
-
 
 </td>
 </tr><tr>
-<td width="50%" valign="top" style="
-width:50%;
-padding:10px;
-">
+<td width="50%" valign="top">
 
-
-<table width="100%" style="
-border:1px solid #30363d;
-border-radius:12px;
-height:330px;
-">
-
+<table width="100%" cellpadding="16" cellspacing="0"
+style="border:1px solid #30363d; border-radius:12px;">
 
 <tr>
 
-<td style="
-padding:20px;
-vertical-align:top;
-">
+<td>
 
+<p align="center">
 
-<div style="
-height:270px;
-display:flex;
-flex-direction:column;
-">
+<a href="https://github.com/tanvirjahanshakib/Sawbia-Assignment">
 
+<img src="https://opengraph.githubassets.com/32178eb8bd1b61abf50e6dfd9a415c0fc4f552b35292a5f124c1b30e4f92d2cf/tanvirjahanshakib/Sawbia-Assignment" width="100%">
 
-<div>
+</a>
 
+</p>
 
-<h3 style="
-margin:0;
-height:35px;
-overflow:hidden;
-">
+<h3>
 
-📦 
-<a href="https://github.com/tanvirjahanshakib/Sawbia-Assignment" target="_blank">
+📦
+<a href="https://github.com/tanvirjahanshakib/Sawbia-Assignment">
 Sawbia-Assignment
 </a>
 
 </h3>
 
-
-
-<div style="
-height:100px;
-overflow:hidden;
-margin-top:10px;
-">
-
 <p>
-_No description available._
+
+No description available.
+
 </p>
 
+<p>
 
-</div>
+<img src="https://img.shields.io/badge/Language-HTML-blue?style=flat-square">
 
+<img src="https://img.shields.io/badge/⭐-0-yellow?style=flat-square">
 
-</div>
+<img src="https://img.shields.io/badge/🍴-0-blue?style=flat-square">
 
-
-
-
-
-<div style="
-margin-top:auto;
-">
-
-
+</p>
 
 <p>
-<a href="https://github.com/tanvirjahanshakib/Sawbia-Assignment" target="_blank">
-<img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white">
+
+
+
+<a href="https://github.com/tanvirjahanshakib/Sawbia-Assignment">
+<img src="https://img.shields.io/badge/🐙-Repository-181717?style=for-the-badge&logo=github&logoColor=white">
 </a>
+
 </p>
-
-
-
-
-
-
-
-
-</div>
-
-
-
-</div>
-
 
 </td>
 
 </tr>
-
 
 </table>
 
-
 </td>
-
-<td width="50%"></td>
-</tr>
+<td width="50%"></td></tr>
 </tbody>
 </table>
 
 
 <!--END_PINNED-->
+
 
 
 
