@@ -216,3 +216,8 @@ No description provided.
 <p align="center">
 ⭐ Feel free to explore my repositories and connect with me!
 </p>
+## 📊 GitHub Analytics
+
+<p align="center">
+  <img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=tanvirjahanshakib&theme=tokyo-night&hide_border=true" />
+</p>
