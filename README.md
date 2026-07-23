@@ -216,6 +216,3 @@ No description provided.
 <p align="center">
 ⭐ Feel free to explore my repositories and connect with me!
 </p>
-## 📈 Contribution Graph
-
-[![GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=tanvirjahanshakib&theme=tokyo-night)](https://github.com/tanvirjahanshakib)
