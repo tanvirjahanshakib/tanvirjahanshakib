@@ -61,21 +61,23 @@ I love turning ideas into real-world applications with modern technologies. I en
 
 
 
+
+
 <!--START_PINNED-->
 
 
 
-<table width="100%">
+<table width="50%">
 <tbody>
 
 <tr>
 
-<td width="50%" valign="top" style="padding:10px;">
+<td width="50%" valign="top" style="padding:5px;">
 
 
-<table width="100%" 
+<table width="150%" 
 style="
-border:1px solid #30363d;
+border:0px solid #30363d;
 border-radius:15px;
 ">
 
@@ -115,22 +117,15 @@ HTML
 🍴 0
 
 </p>
-
-
-
-
 <a href="https://github.com/tanvirjahanshakib/Assignment-01-WEB14-1311-">
 <img src="https://img.shields.io/badge/Repository-181717?style=for-the-badge&logo=github&logoColor=white">
 </a>
 
 
 
-
-
 <a href="https://tanvirjahanshakib.github.io/Assignment-01-WEB14-1311-/">
 <img src="https://img.shields.io/badge/Live_Project-00C7B7?style=for-the-badge&logo=googlechrome&logoColor=white">
 </a>
-
 
 
 
@@ -147,12 +142,12 @@ HTML
 
 
 
-<td width="50%" valign="top" style="padding:10px;">
+<td width="50%" valign="top" style="padding:5px;">
 
 
-<table width="100%" 
+<table width="150%" 
 style="
-border:1px solid #30363d;
+border:0px solid #30363d;
 border-radius:15px;
 ">
 
@@ -192,16 +187,9 @@ JavaScript
 🍴 0
 
 </p>
-
-
-
-
 <a href="https://github.com/tanvirjahanshakib/tanvirjahanshakib">
 <img src="https://img.shields.io/badge/Repository-181717?style=for-the-badge&logo=github&logoColor=white">
 </a>
-
-
-
 
 
 
@@ -218,12 +206,12 @@ JavaScript
 
 </tr><tr>
 
-<td width="50%" valign="top" style="padding:10px;">
+<td width="50%" valign="top" style="padding:5px;">
 
 
-<table width="100%" 
+<table width="150%" 
 style="
-border:1px solid #30363d;
+border:0px solid #30363d;
 border-radius:15px;
 ">
 
@@ -263,22 +251,15 @@ JavaScript
 🍴 0
 
 </p>
-
-
-
-
 <a href="https://github.com/tanvirjahanshakib/JavaScript">
 <img src="https://img.shields.io/badge/Repository-181717?style=for-the-badge&logo=github&logoColor=white">
 </a>
 
 
 
-
-
 <a href="#">
 <img src="https://img.shields.io/badge/Live_Project-00C7B7?style=for-the-badge&logo=googlechrome&logoColor=white">
 </a>
-
 
 
 
@@ -295,12 +276,12 @@ JavaScript
 
 
 
-<td width="50%" valign="top" style="padding:10px;">
+<td width="50%" valign="top" style="padding:5px;">
 
 
-<table width="100%" 
+<table width="150%" 
 style="
-border:1px solid #30363d;
+border:0px solid #30363d;
 border-radius:15px;
 ">
 
@@ -340,16 +321,9 @@ HTML
 🍴 0
 
 </p>
-
-
-
-
 <a href="https://github.com/tanvirjahanshakib/My-first-github-project">
 <img src="https://img.shields.io/badge/Repository-181717?style=for-the-badge&logo=github&logoColor=white">
 </a>
-
-
-
 
 
 
@@ -366,12 +340,12 @@ HTML
 
 </tr><tr>
 
-<td width="50%" valign="top" style="padding:10px;">
+<td width="50%" valign="top" style="padding:5px;">
 
 
-<table width="100%" 
+<table width="150%" 
 style="
-border:1px solid #30363d;
+border:0px solid #30363d;
 border-radius:15px;
 ">
 
@@ -411,16 +385,9 @@ HTML
 🍴 0
 
 </p>
-
-
-
-
 <a href="https://github.com/tanvirjahanshakib/Sawbia-Assignment">
 <img src="https://img.shields.io/badge/Repository-181717?style=for-the-badge&logo=github&logoColor=white">
 </a>
-
-
-
 
 
 
@@ -443,6 +410,8 @@ HTML
 
 
 <!--END_PINNED-->
+
+
 
 
 
