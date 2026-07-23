@@ -73,7 +73,7 @@ I love turning ideas into real-world applications with modern technologies. I en
 <tr>
 <td width="50%" valign="top">
 
-<img src="https://opengraph.githubassets.com/c3a384726c1e89eb6f999140768c7855cda3367aca8c0ce688a2b57aca93493a/tanvirjahanshakib/DEVCONF-2026" width="400" alt="DEVCONF-2026 preview" /><br/>
+<img src="https://repository-images.githubusercontent.com/1295653762/0165fadb-c394-43b5-ba91-1e9162b440f2" width="400" alt="DEVCONF-2026 preview" /><br/>
 
 ### 📦 [DEVCONF-2026](https://github.com/tanvirjahanshakib/DEVCONF-2026)
 
