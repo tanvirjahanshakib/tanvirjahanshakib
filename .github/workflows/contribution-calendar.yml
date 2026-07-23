@@ -1,10 +1,16 @@
 name: Update Contribution Calendar
 
+permissions:
+  contents: write
+
+
 on:
+
   schedule:
     - cron: "0 */12 * * *"
 
   workflow_dispatch:
+
 
 
 jobs:
@@ -16,17 +22,22 @@ jobs:
 
     steps:
 
-    - name: Checkout
+
+    - name: Checkout Repository
       uses: actions/checkout@v4
+      with:
+        persist-credentials: true
 
 
-    - name: Setup Node
+
+    - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
         node-version: 20
 
 
-    - name: Generate Calendar
+
+    - name: Generate Contribution Calendar
       env:
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
@@ -34,14 +45,19 @@ jobs:
         node scripts/generate-calendar.js
 
 
-    - name: Commit SVG
+
+    - name: Commit and Push SVG
 
       run: |
-        git config user.name github-actions
-        git config user.email github-actions@github.com
+
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
 
         git add assets/contribution.svg
 
-        git commit -m "Update contribution calendar" || exit 0
+
+        git commit -m "Update contribution calendar" || echo "No changes to commit"
+
 
         git push
