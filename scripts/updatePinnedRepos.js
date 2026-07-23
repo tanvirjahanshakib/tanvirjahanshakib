@@ -1,37 +1,30 @@
 const fs = require("fs");
-const path = require("path");
 
-const username = process.env.GITHUB_USERNAME;
-const token = process.env.GITHUB_TOKEN;
-
-if (!username || !token) {
-  console.error("Missing GITHUB_USERNAME or GITHUB_TOKEN");
-  process.exit(1);
-}
+const username = "tanvirjahanshakib";
 
 
-async function fetchPinnedRepos() {
+async function getPinnedRepos() {
+
   const query = `
-    query($login:String!) {
-      user(login:$login) {
-        pinnedItems(first:12, types:REPOSITORY) {
-          nodes {
-            ... on Repository {
+  query {
+    user(login: "${username}") {
+      pinnedItems(first: 12, types: REPOSITORY) {
+        nodes {
+          ... on Repository {
+            name
+            description
+            url
+            homepageUrl
+            stargazerCount
+            forkCount
+            primaryLanguage {
               name
-              description
-              url
-              homepageUrl
-              stargazerCount
-              forkCount
-              primaryLanguage {
-                name
-                color
-              }
             }
           }
         }
       }
     }
+  }
   `;
 
 
@@ -39,37 +32,45 @@ async function fetchPinnedRepos() {
     "https://api.github.com/graphql",
     {
       method: "POST",
-      headers:{
-        "Authorization": `Bearer ${token}`,
-        "Content-Type":"application/json"
+      headers: {
+        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        query,
-        variables:{
-          login: username
-        }
-      })
+      body: JSON.stringify({ query }),
     }
   );
 
 
-  const data = await response.json();
+  const result = await response.json();
 
 
-  if(data.errors){
-    console.error(data.errors);
+  if(result.errors){
+    console.log(result.errors);
     process.exit(1);
   }
 
 
-  return data.data.user.pinnedItems.nodes;
+  const repos = result.data.user.pinnedItems.nodes.map(repo => ({
+    name: repo.name,
+    description: repo.description,
+    url: repo.url,
+    homepage: repo.homepageUrl,
+    stars: repo.stargazerCount,
+    forks: repo.forkCount,
+    language: repo.primaryLanguage?.name || "Code"
+  }));
+
+
+  return generateTable(repos);
 }
 
 
 
-function languageEmoji(language){
 
-  const map = {
+
+function getLanguageIcon(language){
+
+  const icons = {
     JavaScript:"🟨",
     TypeScript:"🔵",
     Python:"🐍",
@@ -82,164 +83,151 @@ function languageEmoji(language){
   };
 
 
-  return map[language] || "💻";
+  return icons[language] || "💻";
+
 }
 
 
 
-function createCard(repo){
 
 
-  const lang = repo.primaryLanguage
-    ? repo.primaryLanguage.name
-    : "Code";
+function generateTable(repos) {
 
 
-  const live =
-    repo.homepageUrl
-    ? `
-<a href="${repo.homepageUrl}">
-<img src="https://img.shields.io/badge/Live_Demo-00C7B7?style=for-the-badge&logo=vercel&logoColor=white"/>
+let html = `
+
+<table width="100%">
+<tbody>
+
+`;
+
+
+
+for(let i=0;i<repos.length;i+=2){
+
+
+html += `<tr>`;
+
+
+
+for(let j=i;j<i+2;j++){
+
+
+if(repos[j]){
+
+
+const repo = repos[j];
+
+
+html += `
+
+<td width="50%" valign="top" style="padding:10px;">
+
+
+<table width="100%" 
+style="
+border:1px solid #30363d;
+border-radius:15px;
+">
+
+<tr>
+
+<td style="padding:20px;">
+
+
+<h3>
+
+📦 
+<a href="${repo.url}">
+${repo.name}
 </a>
-`
-    : "";
 
+</h3>
 
-  return `
-<td width="50%" valign="top">
-
-<h3>📦 ${repo.name}</h3>
-
-<p>
-${repo.description || "A modern software project."}
-</p>
 
 
 <p>
-${languageEmoji(lang)} ${lang}
-&nbsp;
-⭐ ${repo.stargazerCount}
-&nbsp;
-🍴 ${repo.forkCount}
+${repo.description || "No description available."}
 </p>
+
+
+
+<p>
+
+${getLanguageIcon(repo.language)}
+${repo.language}
+
+&nbsp;&nbsp;
+
+⭐ ${repo.stars}
+
+&nbsp;&nbsp;
+
+🍴 ${repo.forks}
+
+</p>
+
+
 
 
 <a href="${repo.url}">
-<img src="https://img.shields.io/badge/Repository-181717?style=for-the-badge&logo=github&logoColor=white"/>
+<img src="https://img.shields.io/badge/Repository-181717?style=for-the-badge&logo=github&logoColor=white">
 </a>
 
-${live}
+
+
+${repo.homepage ? `
+
+<a href="${repo.homepage}">
+<img src="https://img.shields.io/badge/Live_Project-00C7B7?style=for-the-badge&logo=googlechrome&logoColor=white">
+</a>
+
+`:""}
+
 
 
 </td>
-`;
-}
 
+</tr>
 
-
-function generateHTML(repos){
-
-
- let html = `
-<table>
-`;
-
-
- for(let i=0;i<repos.length;i+=2){
-
-   html += "<tr>";
-
-   html += createCard(repos[i]);
-
-
-   if(repos[i+1]){
-     html += createCard(repos[i+1]);
-   }
-   else{
-     html += "<td></td>";
-   }
-
-
-   html += "</tr>\n";
-
- }
-
-
- html += `
 </table>
+
+
+</td>
+
+
 `;
 
 
- return html;
+
+}else{
+
+
+html += `<td width="50%"></td>`;
+
+}
+
 
 }
 
 
 
-
-function updateReadme(content){
-
-
- const readmePath =
- path.join(process.cwd(),"README.md");
+html += `</tr>`;
 
 
- let readme =
- fs.readFileSync(
-  readmePath,
-  "utf8"
- );
-
-
- const start =
- "<!-- PROJECTS_START -->";
-
-
- const end =
- "<!-- PROJECTS_END -->";
+}
 
 
 
- const regex =
- new RegExp(
- `${start}[\\s\\S]*?${end}`,
- "m"
- );
+html += `
+
+</tbody>
+</table>
+
+`;
 
 
- const updated =
- `${start}
-
-${content}
-
-${end}`;
-
-
-
- if(!regex.test(readme)){
-   console.error(
-    "README markers not found"
-   );
-   process.exit(1);
- }
-
-
- readme =
- readme.replace(
-  regex,
-  updated
- );
-
-
- fs.writeFileSync(
-  readmePath,
-  readme
- );
-
-
- console.log(
-  "README updated successfully 🚀"
- );
+return html;
 
 }
 
@@ -247,20 +235,69 @@ ${end}`;
 
 
 
-async function main(){
-
- const repos =
- await fetchPinnedRepos();
 
 
- const html =
- generateHTML(repos);
+async function updateReadme(){
 
 
- updateReadme(html);
+const repoCards = await getPinnedRepos();
+
+
+
+const readmePath="README.md";
+
+
+let readme = fs.readFileSync(
+readmePath,
+"utf8"
+);
+
+
+
+const start="<!--START_PINNED-->";
+const end="<!--END_PINNED-->";
+
+
+
+const newSection = `
+
+${start}
+
+${repoCards}
+
+${end}
+
+`;
+
+
+
+const regex = new RegExp(
+`${start}[\\s\\S]*?${end}`
+);
+
+
+
+readme = readme.replace(
+regex,
+newSection
+);
+
+
+
+fs.writeFileSync(
+readmePath,
+readme
+);
+
+
+
+console.log(
+"README updated successfully ✅"
+);
+
 
 }
 
 
 
-main();
+updateReadme();
