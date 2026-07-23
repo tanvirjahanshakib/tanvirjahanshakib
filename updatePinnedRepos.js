@@ -159,11 +159,11 @@ function statBadge(label, value, color) {
 }
 
 function repoButton(url) {
-  return `[![View Repository](https://img.shields.io/badge/View%20Repository-181717?style=for-the-badge&logo=github&logoColor=white&labelColor=181717)](${url})`;
+  return `[![Repository](https://img.shields.io/badge/Repository-0D1117?style=for-the-badge&logo=github&logoColor=white&labelColor=000000)](${url})`;
 }
 
 function demoButton(url) {
-  return `[![Live Demo](https://img.shields.io/badge/-Live%20Demo-238636?style=for-the-badge&logo=vercel&logoColor=white)](${url})`;
+  return `[![Live Project](https://img.shields.io/badge/Live%20Project-2563EB?style=for-the-badge&logo=google-chrome&logoColor=white&labelColor=1E40AF)](${url})`;
 }
 
 /**
