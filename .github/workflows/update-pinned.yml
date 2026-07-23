@@ -1,151 +1,63 @@
-function generateTable(repos) {
+name: Update Pinned Repositories
 
-let html = `
-<table width="100%">
-<tbody>
-`;
+on:
+  workflow_dispatch:
 
+  schedule:
+    - cron: "0 */6 * * *"
 
+  push:
+    branches:
+      - main
 
-for(let i = 0; i < repos.length; i += 2){
 
-html += `<tr>`;
+permissions:
+  contents: write
 
 
-for(let j = i; j < i + 2 && j < repos.length; j++){
+jobs:
 
+  update-pinned:
 
-const repo = repos[j];
+    runs-on: ubuntu-latest
 
 
-html += `
+    steps:
 
-<td width="50%" valign="top" style="padding:10px;">
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
 
-<table width="100%" height="260"
-style="
-border:1px solid #30363d;
-border-radius:15px;
-">
 
-<tr>
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
 
-<td style="
-padding:20px;
-vertical-align:top;
-height:260px;
-">
 
 
-<div style="
-height:220px;
-display:flex;
-flex-direction:column;
-justify-content:space-between;
-">
+      - name: Update README pinned projects
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node scripts/updatePinnedRepos.js
 
 
-<div>
 
+      - name: Commit README changes
+        run: |
 
-<h3 style="
-margin-top:0;
-">
+          git config --global user.name "github-actions[bot]"
 
-📦 
-<a href="${repo.url}">
-${repo.name}
-</a>
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-</h3>
 
+          git add README.md
 
 
-<p style="
-height:60px;
-overflow:hidden;
-">
+          git commit -m "🚀 Update pinned repositories" || echo "No changes"
 
-${repo.description || "No description available."}
 
-</p>
-
-
-
-<p>
-
-${getLanguageIcon(repo.language)}
-${repo.language}
-
-&nbsp;
-
-⭐ ${repo.stars}
-
-&nbsp;
-
-🍴 ${repo.forks}
-
-</p>
-
-
-</div>
-
-
-
-<div>
-
-
-<a href="${repo.url}">
-<img src="https://img.shields.io/badge/Repository-181717?style=for-the-badge&logo=github">
-</a>
-
-
-${repo.homepage ? `
-
-<a href="${repo.homepage}">
-<img src="https://img.shields.io/badge/Live_Project-00C7B7?style=for-the-badge&logo=googlechrome">
-</a>
-
-`: ""}
-
-
-
-</div>
-
-
-</div>
-
-
-</td>
-
-</tr>
-
-</table>
-
-
-</td>
-
-
-`;
-
-}
-
-
-
-html += `</tr>`;
-
-
-}
-
-
-
-html += `
-</tbody>
-</table>
-`;
-
-
-return html;
-
-}
+          git push
