@@ -1,48 +1,104 @@
+const fs = require("fs");
+
+const username = "tanvirjahanshakib";
+
+
+async function getPinnedRepos() {
+
+  const query = `
+  query {
+    user(login: "${username}") {
+      pinnedItems(first: 6, types: REPOSITORY) {
+        nodes {
+          ... on Repository {
+            name
+            description
+            url
+            homepageUrl
+          }
+        }
+      }
+    }
+  }
+  `;
+
+
+  const response = await fetch(
+    "https://api.github.com/graphql",
+    {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ query }),
+    }
+  );
+
+
+  const result = await response.json();
+
+
+  const repos = result.data.user.pinnedItems.nodes.map(repo => ({
+    name: repo.name,
+    description: repo.description,
+    url: repo.url,
+    homepage: repo.homepageUrl
+  }));
+
+
+  return generateTable(repos);
+}
+
+
+
 function generateTable(repos) {
 
-let html = `
-<table width="100%">
+  let html = `
+<table width="100%" style="table-layout:fixed;">
 <tbody>
 `;
 
 
+  for (let i = 0; i < repos.length; i += 2) {
 
-for(let i = 0; i < repos.length; i += 2){
-
-html += `<tr>`;
-
-
-for(let j = i; j < i + 2 && j < repos.length; j++){
+    html += `<tr>`;
 
 
-const repo = repos[j];
+    for (let j = i; j < i + 2; j++) {
 
 
-html += `
+      if (repos[j]) {
 
-<td width="50%" valign="top" style="padding:10px;">
+        const repo = repos[j];
 
 
-<table width="100%" height="260"
-style="
-border:1px solid #30363d;
-border-radius:15px;
+        html += `
+<td width="50%" valign="top" style="
+width:50%;
+padding:10px;
 ">
+
+
+<table width="100%" style="
+border:1px solid #30363d;
+border-radius:12px;
+height:330px;
+">
+
 
 <tr>
 
 <td style="
 padding:20px;
 vertical-align:top;
-height:260px;
 ">
 
 
 <div style="
-height:220px;
+height:270px;
 display:flex;
 flex-direction:column;
-justify-content:space-between;
 ">
 
 
@@ -50,11 +106,13 @@ justify-content:space-between;
 
 
 <h3 style="
-margin-top:0;
+margin:0;
+height:35px;
+overflow:hidden;
 ">
 
 📦 
-<a href="${repo.url}">
+<a href="${repo.url}" target="_blank">
 ${repo.name}
 </a>
 
@@ -62,56 +120,53 @@ ${repo.name}
 
 
 
-<p style="
-height:60px;
+<div style="
+height:100px;
 overflow:hidden;
+margin-top:10px;
 ">
 
-${repo.description || "No description available."}
-
+<p>
+${repo.description || "_No description available._"}
 </p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div style="
+margin-top:auto;
+">
 
 
 
 <p>
-
-${getLanguageIcon(repo.language)}
-${repo.language}
-
-&nbsp;
-
-⭐ ${repo.stars}
-
-&nbsp;
-
-🍴 ${repo.forks}
-
+<a href="${repo.url}" target="_blank">
+<img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white">
+</a>
 </p>
 
 
-</div>
-
-
-
-<div>
-
-
-<a href="${repo.url}">
-<img src="https://img.shields.io/badge/Repository-181717?style=for-the-badge&logo=github">
-</a>
 
 
 ${repo.homepage ? `
-
-<a href="${repo.homepage}">
-<img src="https://img.shields.io/badge/Live_Project-00C7B7?style=for-the-badge&logo=googlechrome">
+<p>
+<a href="${repo.homepage}" target="_blank">
+<img src="https://img.shields.io/badge/Live-Demo-38BDF8?style=for-the-badge&logo=googlechrome&logoColor=white">
 </a>
-
-`: ""}
+</p>
+` : ""}
 
 
 
 </div>
+
 
 
 </div>
@@ -121,31 +176,83 @@ ${repo.homepage ? `
 
 </tr>
 
+
 </table>
 
 
 </td>
-
-
 `;
 
-}
+      } else {
+
+        html += `
+<td width="50%"></td>
+`;
+
+      }
+
+    }
 
 
+    html += `</tr>`;
 
-html += `</tr>`;
-
-
-}
+  }
 
 
-
-html += `
+  html += `
 </tbody>
 </table>
 `;
 
 
-return html;
+  return html;
 
 }
+
+
+
+
+
+async function updateReadme() {
+
+  const repoCards = await getPinnedRepos();
+
+
+  const readmePath = "README.md";
+
+
+  let readme = fs.readFileSync(readmePath, "utf8");
+
+
+  const start = "<!--START_PINNED-->";
+  const end = "<!--END_PINNED-->";
+
+
+
+  const newSection = `
+${start}
+
+${repoCards}
+
+${end}
+`;
+
+
+
+  readme = readme.replace(
+    new RegExp(`${start}[\\s\\S]*?${end}`),
+    newSection
+  );
+
+
+
+  fs.writeFileSync(readmePath, readme);
+
+
+  console.log("README updated successfully ✅");
+
+}
+
+
+
+updateReadme();
