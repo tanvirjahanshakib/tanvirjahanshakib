@@ -84,6 +84,19 @@ No description provided.
 [![Repository](https://img.shields.io/badge/Repository-0D1117?style=for-the-badge&logo=github&logoColor=white&labelColor=000000)](https://github.com/tanvirjahanshakib/DEVCONF-2026) [![Live Project](https://img.shields.io/badge/Live%20Project-2563EB?style=for-the-badge&logo=google-chrome&logoColor=white&labelColor=1E40AF)](https://tanvirjahanshakib.github.io/DEVCONF-2026/)
 
 </td>
+<td width="50%" valign="top">
+
+<img src="https://repository-images.githubusercontent.com/1312752819/7bf50e9d-f449-445b-803d-3fd20680b0a3" width="400" alt="TotalTap preview" /><br/>
+
+### 📦 [TotalTap](https://github.com/tanvirjahanshakib/TotalTap)
+
+No description provided.
+
+![JavaScript](https://img.shields.io/badge/-JavaScript-f1e05a?style=flat-square&labelColor=161b22&logo=github&logoColor=white) ![★](https://img.shields.io/badge/%E2%98%85-0-30363d?style=flat-square&labelColor=161b22) ![⑂](https://img.shields.io/badge/%E2%91%82-0-30363d?style=flat-square&labelColor=161b22)
+
+[![Repository](https://img.shields.io/badge/Repository-0D1117?style=for-the-badge&logo=github&logoColor=white&labelColor=000000)](https://github.com/tanvirjahanshakib/TotalTap)
+
+</td>
 </tr>
 </table>
 <!--END_PINNED-->
