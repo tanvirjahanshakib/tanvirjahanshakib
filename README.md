@@ -73,26 +73,26 @@ I love turning ideas into real-world applications with modern technologies. I en
 <tr>
 <td width="50%" valign="top">
 
-<img src="https://repository-images.githubusercontent.com/github-production-repository-image-32fea6/1295653762/0165fadb-c394-43b5-ba91-1e9162b440f2?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20260731%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260731T132338Z&X-Amz-Expires=300&X-Amz-Signature=b9cb10467c1edf4eae15514e82d12eb6d3d9f00397dfa15ace2780f5dec57fc7&X-Amz-SignedHeaders=host&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoiaHR0cHM6Ly9yZXBvc2l0b3J5LWltYWdlcy5naXRodWJ1c2VyY29udGVudC5jb20vIiwia2V5Ijoia2V5MSIsImV4cCI6MTc4NTUwNDUxOCwibmJmIjoxNzg1NTA0MjE4LCJwYXRoIjoicmVwb3NpdG9yeS1pbWFnZXMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIn0.beEIFyoxJF7_B_rwUGyRDNIV4Rgz0BWoDqZJ_o_jCqM" width="400" alt="DEVCONF-2026 preview" /><br/>
+<img src="https://repository-images.githubusercontent.com/github-production-repository-image-32fea6/1295653762/0165fadb-c394-43b5-ba91-1e9162b440f2?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20260731%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260731T172642Z&X-Amz-Expires=300&X-Amz-Signature=6a09497973e2f442ea83b9abc8206870f002d8fe14c9e7e41412b753ef2a2906&X-Amz-SignedHeaders=host&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoiaHR0cHM6Ly9yZXBvc2l0b3J5LWltYWdlcy5naXRodWJ1c2VyY29udGVudC5jb20vIiwia2V5Ijoia2V5MSIsImV4cCI6MTc4NTUxOTEwMiwibmJmIjoxNzg1NTE4ODAyLCJwYXRoIjoicmVwb3NpdG9yeS1pbWFnZXMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIn0.NiSgWF3Qf46VSHeIDZoJl1wxOZjVmRs3a5VYkbrJI24" width="400" alt="DEVCONF-2026 preview" /><br/>
 
 ### 📦 [DEVCONF-2026](https://github.com/tanvirjahanshakib/DEVCONF-2026)
 
 No description provided.
 
-![HTML](https://img.shields.io/badge/-HTML-e34c26?style=flat-square&labelColor=161b22&logo=github&logoColor=white) ![★](https://img.shields.io/badge/%E2%98%85-3-30363d?style=flat-square&labelColor=161b22) ![⑂](https://img.shields.io/badge/%E2%91%82-0-30363d?style=flat-square&labelColor=161b22)
+![HTML](https://img.shields.io/badge/-HTML-e34c26?style=flat-square&labelColor=161b22&logo=github&logoColor=white) ![★](https://img.shields.io/badge/%E2%98%85-6-30363d?style=flat-square&labelColor=161b22) ![⑂](https://img.shields.io/badge/%E2%91%82-0-30363d?style=flat-square&labelColor=161b22)
 
 [![Repository](https://img.shields.io/badge/Repository-0D1117?style=for-the-badge&logo=github&logoColor=white&labelColor=000000)](https://github.com/tanvirjahanshakib/DEVCONF-2026) [![Live Project](https://img.shields.io/badge/Live%20Project-2563EB?style=for-the-badge&logo=google-chrome&logoColor=white&labelColor=1E40AF)](https://tanvirjahanshakib.github.io/DEVCONF-2026/)
 
 </td>
 <td width="50%" valign="top">
 
-<img src="https://repository-images.githubusercontent.com/github-production-repository-image-32fea6/1312752819/7bf50e9d-f449-445b-803d-3fd20680b0a3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20260731%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260731T132338Z&X-Amz-Expires=300&X-Amz-Signature=ba8f98ffe4a839811af5bf6b6643ace22e7a9c154fcd59cbfdec7a14859f747e&X-Amz-SignedHeaders=host&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoiaHR0cHM6Ly9yZXBvc2l0b3J5LWltYWdlcy5naXRodWJ1c2VyY29udGVudC5jb20vIiwia2V5Ijoia2V5MSIsImV4cCI6MTc4NTUwNDUxOCwibmJmIjoxNzg1NTA0MjE4LCJwYXRoIjoicmVwb3NpdG9yeS1pbWFnZXMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIn0.beEIFyoxJF7_B_rwUGyRDNIV4Rgz0BWoDqZJ_o_jCqM" width="400" alt="TotalTap preview" /><br/>
+<img src="https://repository-images.githubusercontent.com/github-production-repository-image-32fea6/1312752819/7bf50e9d-f449-445b-803d-3fd20680b0a3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20260731%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260731T172642Z&X-Amz-Expires=300&X-Amz-Signature=df74622966d9d823e88443ef765f647b833836dc0b4c2f9ec210e7ecf955eb31&X-Amz-SignedHeaders=host&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoiaHR0cHM6Ly9yZXBvc2l0b3J5LWltYWdlcy5naXRodWJ1c2VyY29udGVudC5jb20vIiwia2V5Ijoia2V5MSIsImV4cCI6MTc4NTUxOTEwMiwibmJmIjoxNzg1NTE4ODAyLCJwYXRoIjoicmVwb3NpdG9yeS1pbWFnZXMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIn0.NiSgWF3Qf46VSHeIDZoJl1wxOZjVmRs3a5VYkbrJI24" width="400" alt="TotalTap preview" /><br/>
 
 ### 📦 [TotalTap](https://github.com/tanvirjahanshakib/TotalTap)
 
 No description provided.
 
-![JavaScript](https://img.shields.io/badge/-JavaScript-f1e05a?style=flat-square&labelColor=161b22&logo=github&logoColor=white) ![★](https://img.shields.io/badge/%E2%98%85-4-30363d?style=flat-square&labelColor=161b22) ![⑂](https://img.shields.io/badge/%E2%91%82-0-30363d?style=flat-square&labelColor=161b22)
+![JavaScript](https://img.shields.io/badge/-JavaScript-f1e05a?style=flat-square&labelColor=161b22&logo=github&logoColor=white) ![★](https://img.shields.io/badge/%E2%98%85-6-30363d?style=flat-square&labelColor=161b22) ![⑂](https://img.shields.io/badge/%E2%91%82-0-30363d?style=flat-square&labelColor=161b22)
 
 [![Repository](https://img.shields.io/badge/Repository-0D1117?style=for-the-badge&logo=github&logoColor=white&labelColor=000000)](https://github.com/tanvirjahanshakib/TotalTap)
 
