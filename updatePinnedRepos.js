@@ -16,6 +16,14 @@
  *     "theming" below — colors, borders, badges, buttons — is done with
  *     pre-rendered shields.io badge IMAGES, which GitHub does not sanitize).
  *
+ * Preview images:
+ *   NOTE: GraphQL's `openGraphImageUrl` field returns a temporary, signed
+ *   S3 URL (expires ~5 minutes after the API call) — embedding it directly
+ *   causes broken images shortly after every workflow run. Instead we build
+ *   the permanent `opengraph.githubassets.com` URL ourselves, which never
+ *   expires and always resolves (GitHub auto-generates a card even for
+ *   repos without a custom social preview image).
+ *
  * Required environment variables:
  *   GH_TOKEN     - a GitHub token (classic PAT with `read:user` scope is enough,
  *                  a fine-grained token with "Read access to profile" also works)
@@ -63,7 +71,6 @@ query ($login: String!, $count: Int!) {
           homepageUrl
           stargazerCount
           forkCount
-          openGraphImageUrl
           isTemplate
           primaryLanguage {
             name
@@ -167,23 +174,29 @@ function demoButton(url) {
 }
 
 /**
+ * Builds a permanent, never-expiring OpenGraph preview image URL for a repo.
+ * Unlike GraphQL's `openGraphImageUrl` (a signed S3 URL that dies after a
+ * few minutes), this endpoint is served live by GitHub on every request and
+ * always resolves — even for repos with no custom social preview image
+ * (GitHub renders an auto-generated card in that case instead of a broken
+ * image).
+ */
+function permanentOgImageUrl(owner, repoName) {
+  return `https://opengraph.githubassets.com/1/${encodeURIComponent(
+    owner
+  )}/${encodeURIComponent(repoName)}`;
+}
+
+/**
  * Renders a single repository as the inner HTML/Markdown that goes inside a
- * <td>. No image area is emitted at all when there is no openGraphImageUrl
- * worth showing (GitHub returns a generic default OG image even for repos
- * without a custom social preview — we detect and skip that case so we never
- * render a meaningless placeholder banner).
+ * <td>.
  */
 function renderCard(repo) {
-  const hasRealPreview =
-    repo.openGraphImageUrl &&
-    !repo.openGraphImageUrl.includes("/opengraph/default") &&
-    !repo.openGraphImageUrl.includes("avatars.githubusercontent.com");
+  const imageUrl = permanentOgImageUrl(GH_LOGIN, repo.name);
 
-  const imageBlock = hasRealPreview
-    ? `<img src="${repo.openGraphImageUrl}" width="${IMAGE_WIDTH}" alt="${escapeHtml(
-        repo.name
-      )} preview" /><br/>`
-    : "";
+  const imageBlock = `<img src="${imageUrl}" width="${IMAGE_WIDTH}" alt="${escapeHtml(
+    repo.name
+  )} preview" /><br/>`;
 
   const description = escapeHtml(truncateDescription(repo.description));
 
