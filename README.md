@@ -73,7 +73,7 @@ I love turning ideas into real-world applications with modern technologies. I en
 <tr>
 <td width="50%" valign="top">
 
-<img src="https://repository-images.githubusercontent.com/github-production-repository-image-32fea6/1295653762/0165fadb-c394-43b5-ba91-1e9162b440f2?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20260801%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260801T075624Z&X-Amz-Expires=300&X-Amz-Signature=b506cce31c32d04f74e44db2bcca08877752c9a07ab5da2e5528566e3999e6da&X-Amz-SignedHeaders=host&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoiaHR0cHM6Ly9yZXBvc2l0b3J5LWltYWdlcy5naXRodWJ1c2VyY29udGVudC5jb20vIiwia2V5Ijoia2V5MSIsImV4cCI6MTc4NTU3MTI4NCwibmJmIjoxNzg1NTcwOTg0LCJwYXRoIjoicmVwb3NpdG9yeS1pbWFnZXMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIn0.-n0sZBiRDIPlYAYGyV_dBwT_F4hQp1GOr-tKJ_tifz4" width="400" alt="DEVCONF-2026 preview" /><br/>
+<img src="https://repository-images.githubusercontent.com/github-production-repository-image-32fea6/1295653762/0165fadb-c394-43b5-ba91-1e9162b440f2?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20260801%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260801T124716Z&X-Amz-Expires=300&X-Amz-Signature=cca5a6614230b72792fad6dcfa81e4d1bfc5fd3f0cf2a5bca7218cf8c8b06665&X-Amz-SignedHeaders=host&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoiaHR0cHM6Ly9yZXBvc2l0b3J5LWltYWdlcy5naXRodWJ1c2VyY29udGVudC5jb20vIiwia2V5Ijoia2V5MSIsImV4cCI6MTc4NTU4ODczNiwibmJmIjoxNzg1NTg4NDM2LCJwYXRoIjoicmVwb3NpdG9yeS1pbWFnZXMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIn0.R6SsRWACkHVrJ5lXyxR7BJ7U96OEpXslQRK6WTgYzjw" width="400" alt="DEVCONF-2026 preview" /><br/>
 
 ### 📦 [DEVCONF-2026](https://github.com/tanvirjahanshakib/DEVCONF-2026)
 
@@ -86,7 +86,7 @@ No description provided.
 </td>
 <td width="50%" valign="top">
 
-<img src="https://repository-images.githubusercontent.com/github-production-repository-image-32fea6/1312752819/7bf50e9d-f449-445b-803d-3fd20680b0a3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20260801%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260801T075624Z&X-Amz-Expires=300&X-Amz-Signature=d13b905bfe7787a2a7c40ad08fcc6e276c1b49d17cacb3ce22535ce2b2809d8b&X-Amz-SignedHeaders=host&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoiaHR0cHM6Ly9yZXBvc2l0b3J5LWltYWdlcy5naXRodWJ1c2VyY29udGVudC5jb20vIiwia2V5Ijoia2V5MSIsImV4cCI6MTc4NTU3MTI4NCwibmJmIjoxNzg1NTcwOTg0LCJwYXRoIjoicmVwb3NpdG9yeS1pbWFnZXMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIn0.-n0sZBiRDIPlYAYGyV_dBwT_F4hQp1GOr-tKJ_tifz4" width="400" alt="TotalTap preview" /><br/>
+<img src="https://repository-images.githubusercontent.com/github-production-repository-image-32fea6/1312752819/7bf50e9d-f449-445b-803d-3fd20680b0a3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20260801%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260801T124716Z&X-Amz-Expires=300&X-Amz-Signature=add0fd6a682846464f59a8cf85fd264e3a4002ce7777e45d36587118dfaebb32&X-Amz-SignedHeaders=host&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoiaHR0cHM6Ly9yZXBvc2l0b3J5LWltYWdlcy5naXRodWJ1c2VyY29udGVudC5jb20vIiwia2V5Ijoia2V5MSIsImV4cCI6MTc4NTU4ODczNiwibmJmIjoxNzg1NTg4NDM2LCJwYXRoIjoicmVwb3NpdG9yeS1pbWFnZXMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIn0.R6SsRWACkHVrJ5lXyxR7BJ7U96OEpXslQRK6WTgYzjw" width="400" alt="TotalTap preview" /><br/>
 
 ### 📦 [TotalTap](https://github.com/tanvirjahanshakib/TotalTap)
 
