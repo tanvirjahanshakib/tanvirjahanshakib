@@ -1,5 +1,4 @@
 name: Update Pinned Repositories
-
 on:
   schedule:
     # every 6 hours — catches any change to your pinned repos automatically
@@ -9,34 +8,29 @@ on:
     branches: [main]
     paths:
       - "updatePinnedRepos.js"
-
 permissions:
   contents: write
-
 jobs:
   update-readme:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-
       - name: Fetch pinned repos & update README
         env:
           GH_TOKEN: ${{ secrets.PINNED_REPOS_TOKEN }}
           GH_LOGIN: ${{ github.repository_owner }}
         run: node updatePinnedRepos.js
-
       - name: Commit & push if changed
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          if ! git diff --quiet -- README.md; then
-            git add README.md
+          git add README.md assets/pinned
+          if ! git diff --cached --quiet; then
             git commit -m "chore: auto-update pinned repositories"
             git push
           else
