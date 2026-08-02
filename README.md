@@ -73,7 +73,7 @@ I love turning ideas into real-world applications with modern technologies. I en
 <tr>
 <td width="50%" valign="top">
 
-
+<img src="https://raw.githubusercontent.com/tanvirjahanshakib/tanvirjahanshakib/main/assets/pinned/DEVCONF-2026.png" width="400" alt="DEVCONF-2026 preview" /><br/>
 
 ### 📦 [DEVCONF-2026](https://github.com/tanvirjahanshakib/DEVCONF-2026)
 
@@ -86,7 +86,7 @@ No description provided.
 </td>
 <td width="50%" valign="top">
 
-
+<img src="https://raw.githubusercontent.com/tanvirjahanshakib/tanvirjahanshakib/main/assets/pinned/TotalTap.png" width="400" alt="TotalTap preview" /><br/>
 
 ### 📦 [TotalTap](https://github.com/tanvirjahanshakib/TotalTap)
 
