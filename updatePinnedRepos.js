@@ -358,6 +358,17 @@ async function main() {
 
   fs.writeFileSync(README_PATH, updated, "utf8");
   console.log("README.md updated with latest pinned repositories.");
+
+  // Surface repo count + names as step outputs so the workflow can build an
+  // informative commit message instead of a generic static string.
+  const outputPath = process.env.GITHUB_OUTPUT;
+  if (outputPath) {
+    const repoNames = repos.map((r) => r.name).join(", ");
+    fs.appendFileSync(
+      outputPath,
+      `repo_count=${repos.length}\nrepo_names=${repoNames}\n`
+    );
+  }
 }
 
 main().catch((err) => {
