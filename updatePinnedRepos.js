@@ -19,10 +19,19 @@
  * Preview images:
  *   NOTE: GraphQL's `openGraphImageUrl` field returns a temporary, signed
  *   S3 URL (expires ~5 minutes after the API call) — embedding it directly
- *   causes broken images shortly after every workflow run. Instead we build
- *   the permanent `opengraph.githubassets.com` URL ourselves, which never
- *   expires and always resolves (GitHub auto-generates a card even for
- *   repos without a custom social preview image).
+ *   causes broken images shortly after every workflow run.
+ *
+ *   The naive fix of building `https://opengraph.githubassets.com/1/{owner}/{repo}`
+ *   ourselves is ALSO wrong: that `/1/` path is GitHub's generic
+ *   auto-generated stats card (name, contributors, issues, stars, forks) and
+ *   completely ignores any custom image you've uploaded under repo
+ *   Settings -> Social preview.
+ *
+ *   The correct, permanent link to YOUR actual custom preview (falling back
+ *   to the auto-generated card only when no custom image is set) comes from
+ *   the REST API: `GET /repos/{owner}/{repo}` -> `social_preview_image_url`.
+ *   That URL is stable/non-expiring, so it's safe to commit straight into
+ *   README.md.
  *
  * Required environment variables:
  *   GH_TOKEN     - a GitHub token (classic PAT with `read:user` scope is enough,
@@ -81,6 +90,47 @@ query ($login: String!, $count: Int!) {
     }
   }
 }`;
+
+/**
+ * Fetches the repository's real social preview image URL via the REST API.
+ * Returns the custom-uploaded image URL if one is set (Settings -> Social
+ * preview), or GitHub's auto-generated stats-card URL otherwise. Both forms
+ * returned by this endpoint are stable/non-expiring and safe to commit.
+ */
+function fetchSocialPreviewUrl(owner, repoName) {
+  const options = {
+    hostname: "api.github.com",
+    path: `/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repoName)}`,
+    method: "GET",
+    headers: {
+      Authorization: `bearer ${GH_TOKEN}`,
+      "User-Agent": "updatePinnedRepos-script",
+      Accept: "application/vnd.github+json",
+    },
+  };
+
+  return new Promise((resolve, reject) => {
+    const req = https.request(options, (res) => {
+      let data = "";
+      res.on("data", (chunk) => (data += chunk));
+      res.on("end", () => {
+        if (res.statusCode < 200 || res.statusCode >= 300) {
+          return reject(
+            new Error(`GitHub API responded ${res.statusCode}: ${data}`)
+          );
+        }
+        try {
+          const parsed = JSON.parse(data);
+          resolve(parsed.social_preview_image_url || null);
+        } catch (err) {
+          reject(err);
+        }
+      });
+    });
+    req.on("error", reject);
+    req.end();
+  });
+}
 
 function graphqlRequest(query, variables) {
   const payload = JSON.stringify({ query, variables });
@@ -174,29 +224,17 @@ function demoButton(url) {
 }
 
 /**
- * Builds a permanent, never-expiring OpenGraph preview image URL for a repo.
- * Unlike GraphQL's `openGraphImageUrl` (a signed S3 URL that dies after a
- * few minutes), this endpoint is served live by GitHub on every request and
- * always resolves — even for repos with no custom social preview image
- * (GitHub renders an auto-generated card in that case instead of a broken
- * image).
- */
-function permanentOgImageUrl(owner, repoName) {
-  return `https://opengraph.githubassets.com/1/${encodeURIComponent(
-    owner
-  )}/${encodeURIComponent(repoName)}`;
-}
-
-/**
  * Renders a single repository as the inner HTML/Markdown that goes inside a
- * <td>.
+ * <td>. `imageUrl` must already be resolved (see fetchSocialPreviewUrl) and
+ * is passed in rather than looked up here, since resolving it requires an
+ * async REST call per repo.
  */
-function renderCard(repo) {
-  const imageUrl = permanentOgImageUrl(GH_LOGIN, repo.name);
-
-  const imageBlock = `<img src="${imageUrl}" width="${IMAGE_WIDTH}" alt="${escapeHtml(
-    repo.name
-  )} preview" /><br/>`;
+function renderCard(repo, imageUrl) {
+  const imageBlock = imageUrl
+    ? `<img src="${imageUrl}" width="${IMAGE_WIDTH}" alt="${escapeHtml(
+        repo.name
+      )} preview" /><br/>`
+    : "";
 
   const description = escapeHtml(truncateDescription(repo.description));
 
@@ -227,14 +265,33 @@ ${buttons}
  * The final, possibly-partial row NEVER gets a padding/empty <td> —
  * a row with a single repo simply contains a single <td>.
  */
-function buildGrid(repos) {
+async function buildGrid(repos) {
   if (repos.length === 0) {
     return "_No pinned repositories found yet._";
   }
 
+  // Resolve each repo's real preview image URL up front (sequential, to
+  // stay comfortably within GitHub's REST rate limits for a handful of
+  // pinned repos).
+  const imageUrls = [];
+  for (const repo of repos) {
+    try {
+      const url = await fetchSocialPreviewUrl(GH_LOGIN, repo.name);
+      imageUrls.push(url);
+    } catch (err) {
+      console.error(
+        `Could not fetch social preview for ${repo.name}: ${err.message}`
+      );
+      imageUrls.push(null);
+    }
+  }
+
   const rows = [];
   for (let i = 0; i < repos.length; i += CARDS_PER_ROW) {
-    rows.push(repos.slice(i, i + CARDS_PER_ROW));
+    rows.push(repos.slice(i, i + CARDS_PER_ROW).map((repo, j) => ({
+      repo,
+      imageUrl: imageUrls[i + j],
+    })));
   }
 
   const colWidth = Math.floor(100 / CARDS_PER_ROW);
@@ -243,9 +300,10 @@ function buildGrid(repos) {
     .map((row) => {
       const cells = row
         .map(
-          (repo) =>
+          ({ repo, imageUrl }) =>
             `<td width="${colWidth}%" valign="top">\n\n${renderCard(
-              repo
+              repo,
+              imageUrl
             )}\n</td>`
         )
         .join("\n");
@@ -265,7 +323,7 @@ async function main() {
 
   console.log(`Found ${repos.length} pinned repositories.`);
 
-  const grid = buildGrid(repos);
+  const grid = await buildGrid(repos);
   const block = `${START_MARKER}\n${grid}\n${END_MARKER}`;
 
   if (!fs.existsSync(README_PATH)) {
