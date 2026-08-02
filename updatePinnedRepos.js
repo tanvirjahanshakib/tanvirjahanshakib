@@ -17,21 +17,24 @@
  *     pre-rendered shields.io badge IMAGES, which GitHub does not sanitize).
  *
  * Preview images:
- *   NOTE: GraphQL's `openGraphImageUrl` field returns a temporary, signed
- *   S3 URL (expires ~5 minutes after the API call) — embedding it directly
- *   causes broken images shortly after every workflow run.
+ *   GraphQL's `openGraphImageUrl` field correctly returns each repo's real
+ *   social preview (your custom uploaded image if one is set under repo
+ *   Settings -> Social preview, otherwise GitHub's auto-generated stats
+ *   card) — but as a temporary, signed S3 URL that expires ~5 minutes after
+ *   the API call. Committing that URL directly into README.md breaks the
+ *   image shortly after every workflow run.
  *
- *   The naive fix of building `https://opengraph.githubassets.com/1/{owner}/{repo}`
- *   ourselves is ALSO wrong: that `/1/` path is GitHub's generic
- *   auto-generated stats card (name, contributors, issues, stars, forks) and
- *   completely ignores any custom image you've uploaded under repo
- *   Settings -> Social preview.
+ *   There is currently no public REST or GraphQL field that returns a
+ *   permanent link to a repo's *custom* social preview image (only the
+ *   generic auto-card has a stable URL, at opengraph.githubassets.com/1/...,
+ *   which ignores any custom image you've uploaded).
  *
- *   The correct, permanent link to YOUR actual custom preview (falling back
- *   to the auto-generated card only when no custom image is set) comes from
- *   the REST API: `GET /repos/{owner}/{repo}` -> `social_preview_image_url`.
- *   That URL is stable/non-expiring, so it's safe to commit straight into
- *   README.md.
+ *   So instead of linking to a URL at all, this script DOWNLOADS the image
+ *   bytes from the signed URL immediately (while it's still valid) and
+ *   saves them as a local file under IMAGE_DIR, which gets committed to the
+ *   repo alongside README.md. README.md then references that local file via
+ *   a raw.githubusercontent.com URL, which never expires because it's your
+ *   own committed content.
  *
  * Required environment variables:
  *   GH_TOKEN     - a GitHub token (classic PAT with `read:user` scope is enough,
@@ -49,12 +52,15 @@ const path = require("path");
 const https = require("https");
 
 const README_PATH = path.join(process.cwd(), "README.md");
+const IMAGE_DIR = path.join(process.cwd(), "assets", "pinned");
+const IMAGE_DIR_REL = "assets/pinned"; // used when building README URLs
 const START_MARKER = "<!--START_PINNED-->";
 const END_MARKER = "<!--END_PINNED-->";
 const MAX_REPOS = 6;
 const CARDS_PER_ROW = 2;
 const IMAGE_WIDTH = 400; // fixed width -> identical image size on every card
 const DESCRIPTION_MAX_LEN = 110; // ~2 lines at typical README width
+const BRANCH = process.env.GITHUB_REF_NAME || "main";
 
 const GH_TOKEN = process.env.GH_TOKEN || process.env.GITHUB_TOKEN;
 const GH_LOGIN = process.env.GH_LOGIN || process.env.GITHUB_REPOSITORY_OWNER;
@@ -80,6 +86,7 @@ query ($login: String!, $count: Int!) {
           homepageUrl
           stargazerCount
           forkCount
+          openGraphImageUrl
           isTemplate
           primaryLanguage {
             name
@@ -90,47 +97,6 @@ query ($login: String!, $count: Int!) {
     }
   }
 }`;
-
-/**
- * Fetches the repository's real social preview image URL via the REST API.
- * Returns the custom-uploaded image URL if one is set (Settings -> Social
- * preview), or GitHub's auto-generated stats-card URL otherwise. Both forms
- * returned by this endpoint are stable/non-expiring and safe to commit.
- */
-function fetchSocialPreviewUrl(owner, repoName) {
-  const options = {
-    hostname: "api.github.com",
-    path: `/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repoName)}`,
-    method: "GET",
-    headers: {
-      Authorization: `bearer ${GH_TOKEN}`,
-      "User-Agent": "updatePinnedRepos-script",
-      Accept: "application/vnd.github+json",
-    },
-  };
-
-  return new Promise((resolve, reject) => {
-    const req = https.request(options, (res) => {
-      let data = "";
-      res.on("data", (chunk) => (data += chunk));
-      res.on("end", () => {
-        if (res.statusCode < 200 || res.statusCode >= 300) {
-          return reject(
-            new Error(`GitHub API responded ${res.statusCode}: ${data}`)
-          );
-        }
-        try {
-          const parsed = JSON.parse(data);
-          resolve(parsed.social_preview_image_url || null);
-        } catch (err) {
-          reject(err);
-        }
-      });
-    });
-    req.on("error", reject);
-    req.end();
-  });
-}
 
 function graphqlRequest(query, variables) {
   const payload = JSON.stringify({ query, variables });
@@ -174,6 +140,37 @@ function graphqlRequest(query, variables) {
     req.on("error", reject);
     req.write(payload);
     req.end();
+  });
+}
+
+/**
+ * Downloads binary content from a URL (follows redirects), returning a
+ * Buffer. Used to grab the OpenGraph image bytes while the signed URL is
+ * still valid, right after the GraphQL call that produced it.
+ */
+function downloadBuffer(url, redirectsLeft = 5) {
+  return new Promise((resolve, reject) => {
+    https
+      .get(url, { headers: { "User-Agent": "updatePinnedRepos-script" } }, (res) => {
+        if (
+          res.statusCode >= 300 &&
+          res.statusCode < 400 &&
+          res.headers.location &&
+          redirectsLeft > 0
+        ) {
+          res.resume();
+          return resolve(downloadBuffer(res.headers.location, redirectsLeft - 1));
+        }
+        if (res.statusCode < 200 || res.statusCode >= 300) {
+          res.resume();
+          return reject(new Error(`Image download failed: ${res.statusCode}`));
+        }
+        const chunks = [];
+        res.on("data", (chunk) => chunks.push(chunk));
+        res.on("end", () => resolve(Buffer.concat(chunks)));
+        res.on("error", reject);
+      })
+      .on("error", reject);
   });
 }
 
@@ -224,10 +221,30 @@ function demoButton(url) {
 }
 
 /**
+ * Downloads the repo's OpenGraph image (while its signed URL is still
+ * valid) and saves it locally as `<repoName>.png`. Returns the permanent
+ * raw.githubusercontent.com URL to reference in README.md, or null if the
+ * download failed (in which case the card renders without an image rather
+ * than with a broken link).
+ */
+async function saveLocalPreviewImage(repo) {
+  if (!repo.openGraphImageUrl) return null;
+
+  try {
+    const bytes = await downloadBuffer(repo.openGraphImageUrl);
+    fs.mkdirSync(IMAGE_DIR, { recursive: true });
+    const fileName = `${repo.name}.png`;
+    fs.writeFileSync(path.join(IMAGE_DIR, fileName), bytes);
+    return `https://raw.githubusercontent.com/${GH_LOGIN}/${GH_LOGIN}/${BRANCH}/${IMAGE_DIR_REL}/${fileName}`;
+  } catch (err) {
+    console.error(`Could not save preview image for ${repo.name}: ${err.message}`);
+    return null;
+  }
+}
+
+/**
  * Renders a single repository as the inner HTML/Markdown that goes inside a
- * <td>. `imageUrl` must already be resolved (see fetchSocialPreviewUrl) and
- * is passed in rather than looked up here, since resolving it requires an
- * async REST call per repo.
+ * <td>. `imageUrl` must already be resolved (see saveLocalPreviewImage).
  */
 function renderCard(repo, imageUrl) {
   const imageBlock = imageUrl
@@ -270,28 +287,21 @@ async function buildGrid(repos) {
     return "_No pinned repositories found yet._";
   }
 
-  // Resolve each repo's real preview image URL up front (sequential, to
-  // stay comfortably within GitHub's REST rate limits for a handful of
-  // pinned repos).
+  // Download + save each repo's preview image up front (sequential, so we
+  // don't race the 5-minute expiry on many signed URLs at once).
   const imageUrls = [];
   for (const repo of repos) {
-    try {
-      const url = await fetchSocialPreviewUrl(GH_LOGIN, repo.name);
-      imageUrls.push(url);
-    } catch (err) {
-      console.error(
-        `Could not fetch social preview for ${repo.name}: ${err.message}`
-      );
-      imageUrls.push(null);
-    }
+    imageUrls.push(await saveLocalPreviewImage(repo));
   }
 
   const rows = [];
   for (let i = 0; i < repos.length; i += CARDS_PER_ROW) {
-    rows.push(repos.slice(i, i + CARDS_PER_ROW).map((repo, j) => ({
-      repo,
-      imageUrl: imageUrls[i + j],
-    })));
+    rows.push(
+      repos.slice(i, i + CARDS_PER_ROW).map((repo, j) => ({
+        repo,
+        imageUrl: imageUrls[i + j],
+      }))
+    );
   }
 
   const colWidth = Math.floor(100 / CARDS_PER_ROW);
@@ -344,11 +354,6 @@ async function main() {
   } else {
     // Markers not present yet -> append a new section at the end.
     updated = `${original.trim()}\n\n## ✨ Featured Repositories\n\n${block}\n`;
-  }
-
-  if (updated === original) {
-    console.log("No changes detected — README.md already up to date.");
-    return;
   }
 
   fs.writeFileSync(README_PATH, updated, "utf8");
