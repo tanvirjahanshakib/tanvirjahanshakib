@@ -140,19 +140,6 @@ No description provided.
 [![Repository](https://img.shields.io/badge/Repository-0D1117?style=for-the-badge&logo=github&logoColor=white&labelColor=000000)](https://github.com/tanvirjahanshakib/tanvirjahanshakib)
 
 </td>
-<td width="50%" valign="top">
-
-<img src="https://raw.githubusercontent.com/tanvirjahanshakib/tanvirjahanshakib/main/assets/pinned/tidyup.png" width="400" alt="tidyup preview" /><br/>
-
-### 📦 [tidyup](https://github.com/tanvirjahanshakib/tidyup)
-
-No description provided.
-
-![Python](https://img.shields.io/badge/-Python-3572A5?style=flat-square&labelColor=161b22&logo=github&logoColor=white) ![★](https://img.shields.io/badge/%E2%98%85-3-30363d?style=flat-square&labelColor=161b22) ![⑂](https://img.shields.io/badge/%E2%91%82-0-30363d?style=flat-square&labelColor=161b22)
-
-[![Repository](https://img.shields.io/badge/Repository-0D1117?style=for-the-badge&logo=github&logoColor=white&labelColor=000000)](https://github.com/tanvirjahanshakib/tidyup)
-
-</td>
 </tr>
 </table>
 <!--END_PINNED-->
