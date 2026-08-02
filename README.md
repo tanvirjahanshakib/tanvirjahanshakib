@@ -98,6 +98,34 @@ No description provided.
 
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top">
+
+
+
+### 📦 [lanmirror](https://github.com/tanvirjahanshakib/lanmirror)
+
+No description provided.
+
+![JavaScript](https://img.shields.io/badge/-JavaScript-f1e05a?style=flat-square&labelColor=161b22&logo=github&logoColor=white) ![★](https://img.shields.io/badge/%E2%98%85-3-30363d?style=flat-square&labelColor=161b22) ![⑂](https://img.shields.io/badge/%E2%91%82-0-30363d?style=flat-square&labelColor=161b22)
+
+[![Repository](https://img.shields.io/badge/Repository-0D1117?style=for-the-badge&logo=github&logoColor=white&labelColor=000000)](https://github.com/tanvirjahanshakib/lanmirror)
+
+</td>
+<td width="50%" valign="top">
+
+<img src="https://raw.githubusercontent.com/tanvirjahanshakib/tanvirjahanshakib/main/assets/pinned/Scanora-SEO-Health-Checker.png" width="400" alt="Scanora-SEO-Health-Checker preview" /><br/>
+
+### 📦 [Scanora-SEO-Health-Checker](https://github.com/tanvirjahanshakib/Scanora-SEO-Health-Checker)
+
+No description provided.
+
+![JavaScript](https://img.shields.io/badge/-JavaScript-f1e05a?style=flat-square&labelColor=161b22&logo=github&logoColor=white) ![★](https://img.shields.io/badge/%E2%98%85-3-30363d?style=flat-square&labelColor=161b22) ![⑂](https://img.shields.io/badge/%E2%91%82-0-30363d?style=flat-square&labelColor=161b22)
+
+[![Repository](https://img.shields.io/badge/Repository-0D1117?style=for-the-badge&logo=github&logoColor=white&labelColor=000000)](https://github.com/tanvirjahanshakib/Scanora-SEO-Health-Checker)
+
+</td>
+</tr>
 </table>
 <!--END_PINNED-->
 
