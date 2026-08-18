@@ -4,7 +4,7 @@
 <h1 align="center">Hey 👋, I'm Md. Tanvir Jahan Shakib</h1>
 
 <h3 align="center">
-Full-Stack Developer | MERN Stack Enthusiast
+Full-Stack Developer
 </h3>
 
 <p align="center">
