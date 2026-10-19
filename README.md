@@ -101,7 +101,7 @@ No description provided.
 <tr>
 <td width="50%" valign="top">
 
-<img src="https://raw.githubusercontent.com/tanvirjahanshakib/tanvirjahanshakib/main/assets/pinned/lanmirror.png" width="400" alt="lanmirror preview" /><br/>
+
 
 ### 📦 [lanmirror](https://github.com/tanvirjahanshakib/lanmirror)
 
